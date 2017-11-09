@@ -5,11 +5,18 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
 /**
+<<<<<<< Updated upstream
  * Created by fumiyatakahashi on 2017/11/06.
  */
 
 public class ZukanActivity extends AppCompatActivity{
 
+=======
+ * Created by fumiyatakahashi on 2017/11/09.
+ */
+
+public class ZukanActivity extends AppCompatActivity{
+>>>>>>> Stashed changes
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
