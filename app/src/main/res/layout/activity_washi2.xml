@@ -1,65 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <ImageView
         android:id="@+id/ImageViewHaikei"
-        android:layout_width="599dp"
-        android:layout_height="708dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:scaleType="matrix"
         android:src="@drawable/wasi2_haikei"
-        app:layout_constraintHorizontal_bias="0.285"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
         />
-
 
     <ImageView
         android:id="@+id/imageViewWasi"
         android:layout_width="398dp"
         android:layout_height="340dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginLeft="185dp"
+        android:layout_marginTop="10dp"
         android:scaleType="fitXY"
         android:src="@drawable/wasiwhite"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintLeft_toRightOf="@+id/frameLayout"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        />
+
+    <ImageView
+        android:id="@+id/imageView2S"
+        android:layout_width="93dp"
+        android:layout_height="91dp"
+        android:layout_marginLeft="400dp"
+        android:layout_marginTop="130dp"
+        android:src="@drawable/momiji1kage"
+         />
+
+    <ImageView
+        android:id="@+id/ImageView3S"
+        android:layout_width="76dp"
+        android:layout_height="70dp"
+        android:layout_marginLeft="220dp"
+        android:layout_marginTop="230dp"
+        android:src="@drawable/momiji2kage"
+        />
 
     <FrameLayout
         android:id="@+id/frameLayout"
         android:layout_width="150dp"
         android:layout_height="250dp"
-        android:layout_margin="8dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
         android:background="#8b4513"
-        app:layout_constraintBottom_toTopOf="@+id/button"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.578">
-
-
+        >
         <FrameLayout
             android:layout_width="140dp"
             android:layout_height="240dp"
             android:layout_gravity="center"
             android:background="@android:color/white"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-
+            >
         </FrameLayout>
     </FrameLayout>
 
@@ -67,89 +61,37 @@
         android:id="@+id/button"
         android:layout_width="88dp"
         android:layout_height="47dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="295dp"
         android:background="@drawable/shape_sample"
         android:onClick="onClickButton"
-        android:text="もどる"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="@+id/frameLayout"
-        app:layout_constraintRight_toRightOf="@+id/frameLayout" />
-
-    <ImageView
-        android:id="@+id/imageView2S"
-        android:layout_width="93dp"
-        android:layout_height="91dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:src="@drawable/momiji1kage"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="@+id/imageViewWasi"
-        app:layout_constraintRight_toRightOf="@+id/ImageView3S"
-        app:layout_constraintTop_toTopOf="@+id/ImageView3S" />
-
-    <ImageView
-        android:id="@+id/ImageView3S"
-        android:layout_width="76dp"
-        android:layout_height="70dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:src="@drawable/momiji2kage"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toRightOf="@+id/frameLayout"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="もどる" />
 
     <ImageView
         android:id="@+id/ImageView1"
         android:layout_width="100dp"
         android:layout_height="69dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="50dp"
         android:scaleType="fitCenter"
-        app:srcCompat="@drawable/kuroba"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/imageViewWasi"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/ImageView2" />
 
+        app:srcCompat="@drawable/kuroba" />
     <ImageView
         android:id="@+id/ImageView2"
         android:layout_width="100dp"
         android:layout_height="82dp"
+        android:layout_marginTop="125dp"
+        android:layout_marginLeft="40dp"
         android:src="@drawable/momiji1"
-        android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="@+id/ImageView1"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintHorizontal_bias="0.521"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/ImageView3" />
-
+        />
     <ImageView
         android:id="@+id/ImageView3"
         android:layout_width="100dp"
         android:layout_height="65dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="210dp"
         android:src="@drawable/momiji2"
-        android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="@+id/frameLayout"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintBottom_toBottomOf="@+id/frameLayout"
-        android:layout_marginBottom="8dp" />
-
-
-
-
-</android.support.constraint.ConstraintLayout>
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="@+id/frameLayout" />
+</FrameLayout>
