@@ -5,20 +5,20 @@
     android:layout_height="match_parent">
 
     <TextView
+        android:id="@+id/titleTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="かなっこ"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:textSize="80dp"
-        android:id="@+id/titleTextView"
         />
 
     <Button
+        android:id="@+id/titleButton"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#0000"
-        android:id="@+id/titleButton"
         />
 
 </RelativeLayout>
