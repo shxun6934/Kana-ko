@@ -9,187 +9,137 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import static smartphoneapp_project.kanazawaapp_2017.R.drawable.kuroba;
+
 public class Washi2Activity extends Activity implements View.OnTouchListener {
-
-    ImageView target1;
-    ImageView target2;
-    ImageView target3;
-    int currentX;
-    int currentY;
-    int offsetX;
-    int offsetY;
-
-    int currentX2;
-    int currentY2;
-    int offsetX2;
-    int offsetY2;
-
-    int currentX3;
-    int currentY3;
-    int offsetX3;
-    int offsetY3;
-
-
-
-    private Animation anime;
-
+    private ImageView kurobaView;
+    private ImageView momijiView;
+    private ImageView otibaView;
     private Rect rect = new Rect();
-    private ImageView bt2;
-    private ImageView bt3;
-    private boolean isBt2Click;
+    private ImageView momijishadow;
+    private ImageView otibashadow;
+    private int oldX;
+    private int oldY;
+    int x;
+    int y;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_washi2);
         Resources r = getResources();
-        Bitmap bmp1 = BitmapFactory.decodeResource(r, R.drawable.kuroba);
-        Bitmap bmp2 = BitmapFactory.decodeResource(r, R.drawable.momiji1);
-        Bitmap bmp3 = BitmapFactory.decodeResource(r, R.drawable.momiji2);
-        Bitmap bmp4 = BitmapFactory.decodeResource(r, R.drawable.momiji1kage);
-        Bitmap bmp5 = BitmapFactory.decodeResource(r, R.drawable.momiji2kage);
-        Button button = (Button)findViewById(R.id.button);
-        target1 = (ImageView) findViewById(R.id.ImageView1);
-        target2 = (ImageView) findViewById(R.id.ImageView2);
-        target3 = (ImageView) findViewById(R.id.ImageView3);
-        bt2 = (ImageView)findViewById(R.id.imageView2S) ;
-        bt2.setImageBitmap(bmp4);
-        bt3 = (ImageView)findViewById(R.id.ImageView3S);
-        bt3.setImageBitmap(bmp5);
-        target1.setImageBitmap(bmp1);
-        target2.setImageBitmap(bmp2);
-        target3.setImageBitmap(bmp3);
-        this.target1.setOnTouchListener(this);
-        this.target2.setOnTouchListener(this);
-        this.target3.setOnTouchListener(this);
-
+        Bitmap kurobaBmp = BitmapFactory.decodeResource(r, kuroba);
+        Bitmap momijiBmp = BitmapFactory.decodeResource(r, R.drawable.momiji1);
+        Bitmap otibaBmp = BitmapFactory.decodeResource(r, R.drawable.momiji2);
+        Bitmap momijikage = BitmapFactory.decodeResource(r, R.drawable.momiji1kage);
+        Bitmap otibakage = BitmapFactory.decodeResource(r, R.drawable.momiji2kage);
+        Button returnButton = (Button)findViewById(R.id.button);
+        kurobaView = (ImageView) findViewById(R.id.ImageView1);
+        momijiView = (ImageView) findViewById(R.id.ImageView2);
+        otibaView = (ImageView) findViewById(R.id.ImageView3);
+        momijishadow = (ImageView)findViewById(R.id.imageView2S) ;
+        momijishadow.setImageBitmap(momijikage);
+        otibashadow = (ImageView)findViewById(R.id.ImageView3S);
+        otibashadow.setImageBitmap(otibakage);
+        kurobaView.setImageBitmap(kurobaBmp);
+        momijiView.setImageBitmap(momijiBmp);
+        otibaView.setImageBitmap(otibaBmp);
+        this.kurobaView.setOnTouchListener(this);
+        this.momijiView.setOnTouchListener(this);
+        this.otibaView.setOnTouchListener(this);
     }
-
     @Override
     public boolean onTouch(View view, MotionEvent event) {
         switch (view.getId()) {
-
             case R.id.ImageView1://黄色のクローバーのドラッグアンドドロップの動作
-
-                int x = (int) event.getRawX();
-                int y = (int) event.getRawY();
-
+                // タッチした時の位置を取得
+                 x = (int) event.getRawX();
+                 y = (int) event.getRawY();
                 if (event.getAction() == MotionEvent.ACTION_MOVE) {
-                    int diffX = target1.getLeft() + (x - offsetX);
-                    int diffY = target1.getTop()  +  (y - offsetY);
-                    currentX = diffX;
-                    currentY = diffY;
-                    target1.layout(currentX, currentY, currentX + target1.getWidth(),
-                            currentY + target1.getHeight());
-                    offsetX = x;
-                    offsetY = y;
+                    //viewの位置を計算
+                    int diffX = kurobaView.getLeft() + (x - oldX);
+                    int diffY = kurobaView.getTop()  +  (y - oldY);
+                    //viewの移動
+                    kurobaView.layout(diffX, diffY, diffX + kurobaView.getWidth(),
+                            diffY + kurobaView.getHeight());
+                    //今回のタッチ位置を保持
+                    oldX = x;
+                    oldY = y;
                 } else if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                    offsetX = x;
-                    offsetY = y;
+                    oldX = x;
+                    oldY = y;
                 } else if (event.getAction() == MotionEvent.ACTION_UP) {
-                    target1.setVisibility(target1.VISIBLE);
+                    kurobaView.setVisibility(kurobaView.VISIBLE);
                 }
-
-
-
                 break;
-
             case R.id.ImageView2://枝分かれしている紅葉のドラッグアンドドロップの操作
-
                 Resources r = getResources();
                 Bitmap bmp2 = BitmapFactory.decodeResource(r, R.drawable.momiji1);
-                int x2 = (int) event.getRawX();
-                int y2 = (int) event.getRawY();
+                //タッチしたときの位置を取得
+                 x = (int) event.getRawX();
+                 y = (int) event.getRawY();
                 if (event.getAction() == MotionEvent.ACTION_MOVE) {
-
-                    int diffX = target2.getLeft()  +  (x2 - offsetX2);
-                    int diffY = target2.getTop()  +  (y2 - offsetY2);
-
-                    currentX2 = diffX;
-                    currentY2 = diffY;
-
-
-                    target2.layout(currentX2, currentY2, currentX2 + target2.getWidth()
-                            , currentY2 + target2.getHeight());
-
-                    offsetX2 = x2;
-                    offsetY2 = y2;
-
+                    //viewの位置を計算
+                    int diffX = momijiView.getLeft()  +  (x - oldX);
+                    int diffY = momijiView.getTop()  +  (y - oldY);
+                    //viewの移動
+                    momijiView.layout(diffX, diffY, diffX + momijiView.getWidth()
+                            , diffY + momijiView.getHeight());
+                    //今回のviewの位置を保持
+                    oldX = x;
+                    oldY = y;
                 } else if (event.getAction() == MotionEvent.ACTION_DOWN) {
-
-                    offsetX2 = x2;
-                    offsetY2 = y2;
-
-
+                    oldX = x;
+                    oldY = y;
                 } else if (event.getAction() == MotionEvent.ACTION_UP) {
-
-                    bt2.getHitRect(rect);
-                    if (rect.contains(x2, y2)) {
-                        bt2.setImageBitmap(bmp2);
-                        target2.setVisibility(target2.INVISIBLE);
+                    momijishadow.getHitRect(rect);
+                    if (rect.contains(x, y)) {
+                        //シルエットにドロップしたときの処理
+                        momijishadow.setImageBitmap(bmp2);
+                        momijiView.setVisibility(momijiView.INVISIBLE);
                     }else {
-                        target2.setVisibility(target2.VISIBLE);
+                        //シルエット以外の場所にドロップしたとき
                     }
-
-
-
                 }
-
                 break;
-
             case R.id.ImageView3://一枚の葉っぱの形をしたモミジのドラッグアンドドロップ
-                int StartX =(int) target3.getX();
-                int StartY =(int) target3.getY();
+                //タッチしたときのviewの位置を取得
+                int startX =(int) otibaView.getX();
+                int startY =(int) otibaView.getY();
                 Resources r2 = getResources();
                 Bitmap bmp3 = BitmapFactory.decodeResource(r2, R.drawable.momiji2);
-                int x3 = (int) event.getRawX();
-                int y3 = (int) event.getRawY();
-
+                //タッチしたviewの位置を取得
+                 x = (int) event.getRawX();
+                 y = (int) event.getRawY();
                 if (event.getAction() == MotionEvent.ACTION_MOVE) {
-
-                    int diffX = target3.getLeft()  +  (x3 - offsetX3);
-                    int diffY = target3.getTop()  +  (y3 - offsetY3);
-
-                    currentX3 = diffX;
-                    currentY3 = diffY;
-
-
-                    target3.layout(currentX3, currentY3, currentX3 + target3.getWidth()
-                            , currentY3 + target3.getHeight());
-
-                    offsetX3 = x3;
-                    offsetY3 = y3;
-
+                    //viewの位置を計算
+                    int diffX = otibaView.getLeft()  +  (x - oldX);
+                    int diffY = otibaView.getTop()  +  (y - oldY);
+                    //viewの移動
+                    otibaView.layout(diffX,diffY, diffX + otibaView.getWidth()
+                            , diffY + otibaView.getHeight());
+                    //今回のviewの位置を保持
+                    oldX = x;
+                    oldY = y;
                 } else if (event.getAction() == MotionEvent.ACTION_DOWN) {
-
-                    offsetX3 = x3;
-                    offsetY3 = y3;
-
-
+                    oldX = x;
+                    oldY = y;
                 } else if (event.getAction() == MotionEvent.ACTION_UP) {
-
-                    bt3.getHitRect(rect);
-                    if (rect.contains(x3, y3)) {
-                        bt3.setImageBitmap(bmp3);
-                        target3.setVisibility(target3.INVISIBLE);
+                    otibashadow.getHitRect(rect);
+                    if (rect.contains(x, y)) {
+                        //シルエットにドロップしたときの処理
+                        otibashadow.setImageBitmap(bmp3);
+                        otibaView.setVisibility(otibaView.INVISIBLE);
                     }else {
-                        target3.layout(StartX, StartY, target3.getWidth()
-                                , target3.getHeight());
-
+                        //シルエット以外にドロップしたときの処理
+                        otibaView.layout(startX, startY, otibaView.getWidth()
+                                , otibaView.getHeight());
                     }
-
                 }
-
                 break;
-
-
         }
-
-
         return true;
-
     }
 }
