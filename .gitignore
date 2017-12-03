@@ -8,3 +8,4 @@ gradlew.bat
 settings.gradle
 *.iml
 .DS_Store
+local.properties
