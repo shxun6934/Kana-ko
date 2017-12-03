@@ -16,11 +16,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="fitXY"
-        android:src="@drawable/sea" />
+        android:src="@drawable/map_sea" />
 
     <ImageView
         android:id="@+id/imageView2"
-        android:src="@drawable/kanazawamap0"
+        android:src="@drawable/map_kanazawamap0"
         android:layout_width="520dp"
         android:layout_height="520dp"
         android:layout_marginLeft="-45dp"
@@ -32,7 +32,7 @@
         android:layout_height="161dp"
         android:layout_gravity="bottom"
         android:layout_marginLeft="18dp"
-        android:src="@drawable/kanazawazukann"/>
+        android:src="@drawable/map_kanazawazukann"/>
 
     <!--画面遷移１-->
     <Button
