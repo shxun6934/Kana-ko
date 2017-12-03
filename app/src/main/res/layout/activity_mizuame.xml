@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="ざいりょうをいれよう！！"
+        android:textColor="#000"
+        android:textSize="28dp" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginTop="40dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/mizuame_pot" />
+
+    <Button
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="470dp"
+        android:background="@drawable/shape_rounded_corners_100dp"
+        android:text="やめる" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="170dp"
+        android:layout_marginTop="350dp"
+        android:text="ざいりょう"
+        android:textColor="#000"
+        android:textSize="30dp"
+        android:gravity="center"/>
+
+    <LinearLayout
+        android:layout_width="240dp"
+        android:layout_height="140dp"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="400dp">
+
+        <ImageButton
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:scaleType="fitXY"
+            android:layout_gravity="center"
+            android:background="#0000"
+            android:src="@drawable/mizuame_rice"/>
+
+        <ImageButton
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:background="#0000"
+            android:scaleType="fitXY"
+            android:src="@drawable/mizuame_wheat"/>
+
+    </LinearLayout>
+
+</FrameLayout>
