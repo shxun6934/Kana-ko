@@ -11,12 +11,10 @@
         <activity android:name=".MapActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <!-- 画面遷移先のActivity追加 -->
         <activity android:name=".map1Activity" />
         <activity android:name=".map2Activity" />
         <activity android:name=".map3Activity" />
@@ -25,6 +23,7 @@
         <activity android:name=".map6Activity" />
         <activity android:name=".map7Activity" />
         <activity android:name=".zukannActivity"/>
+        
 
     </application>
 
