@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 
@@ -25,6 +26,9 @@ public class Washi2Activity extends Activity implements View.OnTouchListener {
     private int oldY;
     int x;
     int y;
+    ViewGroup.MarginLayoutParams startmarginkuroba;
+    ViewGroup.MarginLayoutParams startmarginmomiji;
+    ViewGroup.MarginLayoutParams startmarginotiba;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +53,9 @@ public class Washi2Activity extends Activity implements View.OnTouchListener {
         this.kurobaView.setOnTouchListener(this);
         this.momijiView.setOnTouchListener(this);
         this.otibaView.setOnTouchListener(this);
+        startmarginkuroba = (ViewGroup.MarginLayoutParams)kurobaView.getLayoutParams();
+        startmarginmomiji = (ViewGroup.MarginLayoutParams)momijiView.getLayoutParams();
+        startmarginotiba = (ViewGroup.MarginLayoutParams)otibaView.getLayoutParams();
     }
     @Override
     public boolean onTouch(View view, MotionEvent event) {
@@ -71,7 +78,7 @@ public class Washi2Activity extends Activity implements View.OnTouchListener {
                     oldX = x;
                     oldY = y;
                 } else if (event.getAction() == MotionEvent.ACTION_UP) {
-                    kurobaView.setVisibility(kurobaView.VISIBLE);
+                    kurobaView.setLayoutParams(startmarginkuroba);
                 }
                 break;
             case R.id.ImageView2://枝分かれしている紅葉のドラッグアンドドロップの操作
@@ -101,6 +108,7 @@ public class Washi2Activity extends Activity implements View.OnTouchListener {
                         momijiView.setVisibility(momijiView.INVISIBLE);
                     }else {
                         //シルエット以外の場所にドロップしたとき
+                        momijiView.setLayoutParams(startmarginmomiji);
                     }
                 }
                 break;
@@ -134,8 +142,7 @@ public class Washi2Activity extends Activity implements View.OnTouchListener {
                         otibaView.setVisibility(otibaView.INVISIBLE);
                     }else {
                         //シルエット以外にドロップしたときの処理
-                        otibaView.layout(startX, startY, otibaView.getWidth()
-                                , otibaView.getHeight());
+                        otibaView.setLayoutParams(startmarginotiba);
                     }
                 }
                 break;
