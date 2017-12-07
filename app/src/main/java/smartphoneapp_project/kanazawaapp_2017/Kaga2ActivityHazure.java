@@ -4,27 +4,28 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
-import static smartphoneapp_project.kanazawaapp_2017.Kaga2Test.a;
+/**
+ * Created by Yuta on 2017/12/07.
+ */
 
-//正解画面
-public class Kaga2Activity extends Activity {
+public class Kaga2ActivityHazure extends Activity{
     String kotae;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_kaga2);
-        ImageView yasai_syasinn=(ImageView)findViewById(R.id.yasai);
+        setContentView(R.layout.activity_kaga2_hazere);
         TextView textView=(TextView)findViewById(R.id.yasai_name);
-        TextView textView_description=(TextView)findViewById(R.id.description);
+        TextView  textView_description=(TextView)findViewById(R.id.description);
         Button button=(Button)findViewById(R.id.next_button);
-        final Intent intent=getIntent();
+        Intent intent=getIntent();
+
         kotae=intent.getStringExtra("kotae");
+        textView.setText(kotae);
+
         switch (kotae){
             case "かがふときゅうり":
                 textView_description.setText(R.string.hutokyuuri_description);
@@ -42,19 +43,15 @@ public class Kaga2Activity extends Activity {
                 textView_description.setText(R.string.kinnzisou_description);
                 break;
         }
-        textView.setText(kotae);
+
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//            intent.putExtra("nextQ","nimonme");
-                a++;
-
-                intent.putExtra("nextQ",a);
-                setResult(RESULT_OK,intent);
-                finish();
+                Intent intent1=new Intent(Kaga2ActivityHazure.this,Kaga2Test.class);
+                startActivity(intent1);
             }
         });
     }
+    }
 
-}

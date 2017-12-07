@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/KanazawaApp_2017.iml" filepath="$PROJECT_DIR$/KanazawaApp_2017.iml" />
+      <module fileurl="file://$PROJECT_DIR$/KanazawaApp-2017.iml" filepath="$PROJECT_DIR$/KanazawaApp-2017.iml" />
+      <module fileurl="file://C:\Users\Yuta\Desktop\KanazawaApp-2017\KanazawaApp_2017.iml" filepath="C:\Users\Yuta\Desktop\KanazawaApp-2017\KanazawaApp_2017.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
