@@ -1,6 +1,7 @@
 package smartphoneapp_project.kanazawaapp_2017;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -15,7 +16,7 @@ import android.widget.ImageView;
 
 import static smartphoneapp_project.kanazawaapp_2017.R.drawable.kuroba;
 
-public class Washi2Activity extends Activity implements View.OnTouchListener {
+public class Washi2Activity extends Activity  implements View.OnTouchListener {
     private ImageView kurobaView;
     private ImageView momijiView;
     private ImageView otibaView;
@@ -26,6 +27,8 @@ public class Washi2Activity extends Activity implements View.OnTouchListener {
     private int oldY;
     int x;
     int y;
+    int count = 0;
+    Button button;
     ViewGroup.MarginLayoutParams startmarginkuroba;
     ViewGroup.MarginLayoutParams startmarginmomiji;
     ViewGroup.MarginLayoutParams startmarginotiba;
@@ -39,13 +42,13 @@ public class Washi2Activity extends Activity implements View.OnTouchListener {
         Bitmap otibaBmp = BitmapFactory.decodeResource(r, R.drawable.momiji2);
         Bitmap momijikage = BitmapFactory.decodeResource(r, R.drawable.momiji1kage);
         Bitmap otibakage = BitmapFactory.decodeResource(r, R.drawable.momiji2kage);
-        Button returnButton = (Button)findViewById(R.id.button);
+        Button returnButton = (Button) findViewById(R.id.button);
         kurobaView = (ImageView) findViewById(R.id.ImageView1);
         momijiView = (ImageView) findViewById(R.id.ImageView2);
         otibaView = (ImageView) findViewById(R.id.ImageView3);
-        momijishadow = (ImageView)findViewById(R.id.imageView2S) ;
+        momijishadow = (ImageView) findViewById(R.id.imageView2S);
         momijishadow.setImageBitmap(momijikage);
-        otibashadow = (ImageView)findViewById(R.id.ImageView3S);
+        otibashadow = (ImageView) findViewById(R.id.ImageView3S);
         otibashadow.setImageBitmap(otibakage);
         kurobaView.setImageBitmap(kurobaBmp);
         momijiView.setImageBitmap(momijiBmp);
@@ -53,21 +56,23 @@ public class Washi2Activity extends Activity implements View.OnTouchListener {
         this.kurobaView.setOnTouchListener(this);
         this.momijiView.setOnTouchListener(this);
         this.otibaView.setOnTouchListener(this);
-        startmarginkuroba = (ViewGroup.MarginLayoutParams)kurobaView.getLayoutParams();
-        startmarginmomiji = (ViewGroup.MarginLayoutParams)momijiView.getLayoutParams();
-        startmarginotiba = (ViewGroup.MarginLayoutParams)otibaView.getLayoutParams();
+        startmarginkuroba = (ViewGroup.MarginLayoutParams) kurobaView.getLayoutParams();
+        startmarginmomiji = (ViewGroup.MarginLayoutParams) momijiView.getLayoutParams();
+        startmarginotiba = (ViewGroup.MarginLayoutParams) otibaView.getLayoutParams();
+        button = (Button) findViewById(R.id.button2);
     }
+
     @Override
     public boolean onTouch(View view, MotionEvent event) {
         switch (view.getId()) {
             case R.id.ImageView1://黄色のクローバーのドラッグアンドドロップの動作
                 // タッチした時の位置を取得
-                 x = (int) event.getRawX();
-                 y = (int) event.getRawY();
+                x = (int) event.getRawX();
+                y = (int) event.getRawY();
                 if (event.getAction() == MotionEvent.ACTION_MOVE) {
                     //viewの位置を計算
                     int diffX = kurobaView.getLeft() + (x - oldX);
-                    int diffY = kurobaView.getTop()  +  (y - oldY);
+                    int diffY = kurobaView.getTop() + (y - oldY);
                     //viewの移動
                     kurobaView.layout(diffX, diffY, diffX + kurobaView.getWidth(),
                             diffY + kurobaView.getHeight());
@@ -85,12 +90,12 @@ public class Washi2Activity extends Activity implements View.OnTouchListener {
                 Resources r = getResources();
                 Bitmap bmp2 = BitmapFactory.decodeResource(r, R.drawable.momiji1);
                 //タッチしたときの位置を取得
-                 x = (int) event.getRawX();
-                 y = (int) event.getRawY();
+                x = (int) event.getRawX();
+                y = (int) event.getRawY();
                 if (event.getAction() == MotionEvent.ACTION_MOVE) {
                     //viewの位置を計算
-                    int diffX = momijiView.getLeft()  +  (x - oldX);
-                    int diffY = momijiView.getTop()  +  (y - oldY);
+                    int diffX = momijiView.getLeft() + (x - oldX);
+                    int diffY = momijiView.getTop() + (y - oldY);
                     //viewの移動
                     momijiView.layout(diffX, diffY, diffX + momijiView.getWidth()
                             , diffY + momijiView.getHeight());
@@ -106,7 +111,11 @@ public class Washi2Activity extends Activity implements View.OnTouchListener {
                         //シルエットにドロップしたときの処理
                         momijishadow.setImageBitmap(bmp2);
                         momijiView.setVisibility(momijiView.INVISIBLE);
-                    }else {
+                        count++;
+                        if (count == 2){
+                            button.setVisibility(button.VISIBLE);
+                        }
+                    } else {
                         //シルエット以外の場所にドロップしたとき
                         momijiView.setLayoutParams(startmarginmomiji);
                     }
@@ -114,19 +123,19 @@ public class Washi2Activity extends Activity implements View.OnTouchListener {
                 break;
             case R.id.ImageView3://一枚の葉っぱの形をしたモミジのドラッグアンドドロップ
                 //タッチしたときのviewの位置を取得
-                int startX =(int) otibaView.getX();
-                int startY =(int) otibaView.getY();
+                int startX = (int) otibaView.getX();
+                int startY = (int) otibaView.getY();
                 Resources r2 = getResources();
                 Bitmap bmp3 = BitmapFactory.decodeResource(r2, R.drawable.momiji2);
                 //タッチしたviewの位置を取得
-                 x = (int) event.getRawX();
-                 y = (int) event.getRawY();
+                x = (int) event.getRawX();
+                y = (int) event.getRawY();
                 if (event.getAction() == MotionEvent.ACTION_MOVE) {
                     //viewの位置を計算
-                    int diffX = otibaView.getLeft()  +  (x - oldX);
-                    int diffY = otibaView.getTop()  +  (y - oldY);
+                    int diffX = otibaView.getLeft() + (x - oldX);
+                    int diffY = otibaView.getTop() + (y - oldY);
                     //viewの移動
-                    otibaView.layout(diffX,diffY, diffX + otibaView.getWidth()
+                    otibaView.layout(diffX, diffY, diffX + otibaView.getWidth()
                             , diffY + otibaView.getHeight());
                     //今回のviewの位置を保持
                     oldX = x;
@@ -140,7 +149,11 @@ public class Washi2Activity extends Activity implements View.OnTouchListener {
                         //シルエットにドロップしたときの処理
                         otibashadow.setImageBitmap(bmp3);
                         otibaView.setVisibility(otibaView.INVISIBLE);
-                    }else {
+                        count++;
+                        if (count == 2){
+                            button.setVisibility(button.VISIBLE);
+                        }
+                    } else {
                         //シルエット以外にドロップしたときの処理
                         otibaView.setLayoutParams(startmarginotiba);
                     }
@@ -149,4 +162,14 @@ public class Washi2Activity extends Activity implements View.OnTouchListener {
         }
         return true;
     }
+    //戻るボタンで和紙1の画面に行く処理
+    public void returnClick(View view){
+        Intent intent= new Intent(this,Washi1Activity.class);
+        startActivity(intent);
+    }
+    //ゲームクリア時に出てくるボタンの処理(結果画面に進む)
+    /*public void onClick(View view) {
+      Intent intent = new Intent(this, Wasi3.Activity.class);
+       startActivity(intent);
+    }*/
 }
