@@ -14,13 +14,15 @@ public class DetailsZukanActivity extends Activity implements View.OnClickListen
 
     String[] kagayasainame = {"かなざわ","いっぽんふとねぎ", "かがふときゅうり", "きんじそう", "かがれんこん"};
     String[] kagayasaidescription = {null,
-            "かなざわいっぽんねぎはふつうのねぎよりもやわらかい。ふゆになるほどあまくなり、すきやきやなべにいれる",
+            "かなざわいっぽんねぎはふつうのねぎよりもやわらかい。\nふゆになるほどあまくなり、すきやきやなべにいれる。",
             "かがふときゅうりはおもさがふつうのきゅうりよりおもい。やわらかくあまい。かわをむいてあんかけにするなどしてたべる",
             "きんじそうは、はのうらがきんときいものいろににているからきんじそうとよばれている。そのははすこしあまい。",
             "かがれんこんはふつうのれんこんよりねばりがつよい。れんこんをむしたり、もちにしてたべるのがおすすめ。"};
 
     String[] washiname = {"わ"};
     String[] washidescription = {".........."};
+
+    private static int key;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -33,9 +35,9 @@ public class DetailsZukanActivity extends Activity implements View.OnClickListen
         ImageView backbutton = (ImageView) findViewById(R.id.back);
         backbutton.setOnClickListener(this);
         Intent intent = getIntent();
-        int i = intent.getIntExtra("key",0);
+        key = intent.getIntExtra("key",0);
 
-        switch (i){
+        switch (key){
             case 1:
                 imageview.setImageResource(R.drawable.negi);
                 nametext.setText(kagayasainame[0] + "\n" + kagayasainame[1]);

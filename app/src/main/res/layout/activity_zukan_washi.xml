@@ -13,13 +13,8 @@
         android:layout_width="350dp"
         android:layout_height="70dp"
         android:layout_gravity="center_horizontal"
-        android:background="@drawable/waku"
+        android:background="@drawable/sienna"
         android:layout_marginTop="12dp">
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="centerCrop"
-            android:src="@drawable/washi2"/>
     </LinearLayout>
 
     <TextView
@@ -30,7 +25,7 @@
         android:text="わし"
         android:textSize="50dp"
         android:textStyle="bold"
-        android:textColor="#FE9A2E"/>
+        android:textColor="#A0522D"/>
 
     <LinearLayout
         android:layout_width="90dp"
