@@ -11,14 +11,12 @@
         <activity android:name=".Kaga2Test">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity android:name=".Kaga2ActivityHazure"
             android:label="Kaga2ActivityHazure"></activity>
         <activity android:name=".Kaga2Activity"
-            android:label="Kaga2Test"></activity>
-    </application>
+            android:label="Kaga2Test"></activity></application>
 
 </manifest>
