@@ -26,6 +26,8 @@
             android:name=".Zukan.WashiZukanActivity"
             android:label="@string/app_name">
         </activity>
+        <!--<activity android:name=".MapActivity">-->
+        <!--</activity>-->
     </application>
 
 </manifest>
