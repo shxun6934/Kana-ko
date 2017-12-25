@@ -1,25 +1,61 @@
 package smartphoneapp_project.kanazawaapp_2017;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
 public class MapActivity extends AppCompatActivity {
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
+        /*Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);*/
 
         View.OnClickListener a = new View.OnClickListener() {
             @Override
-            public void onClick(View v) {//押下時の処理
-                Intent map1_change = new Intent(MapActivity.this, map1Activity.class);
-                startActivity(map1_change);//画面遷移を行う
-            }
-        };
+            public void onClick(final View v) {//押下時の処理
+                //確認ダイアログの作成
+                AlertDialog.Builder alertDialog = new AlertDialog.Builder(MapActivity.this);
+                alertDialog.setTitle("間違い探し(仮)");
+                alertDialog.setMessage("このあそびをやってみる？？");
+                alertDialog.setPositiveButton("すすむ", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        //Yesボタンが押されたときの処理
+                            Intent map1_change = new Intent(MapActivity.this, map1Activity.class);
+                            startActivity(map1_change);//画面遷移を行う
+                        }
+                });
+                alertDialog.setNegativeButton("もどる",new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+
+
+                    //Noボタンが押されたときの処理
+
+
+                }
+                });
+
+
+
+
+
+
+                alertDialog.create().show();
+                    }
+
+
+            };
 
         View.OnClickListener b = new View.OnClickListener() {
             @Override
