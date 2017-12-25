@@ -22,8 +22,8 @@
         <activity android:name=".map5Activity" />
         <activity android:name=".map6Activity" />
         <activity android:name=".map7Activity" />
-        <activity android:name=".zukannActivity"/>
-        
+        <activity android:name=".zukanActivity"/>
+
 
     </application>
 
