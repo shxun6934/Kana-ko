@@ -14,9 +14,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Kaga2ActivityHazure"
+        <activity
+            android:name=".Kaga2ActivityHazure"
             android:label="Kaga2ActivityHazure"></activity>
-        <activity android:name=".Kaga2Activity"
-            android:label="Kaga2Test"></activity></application>
+        <activity
+            android:name=".Kaga2Activity"
+            android:label="Kaga2Test"></activity>
+        <activity
+            android:name=".Kaga2ActivityCongrats"
+            android:label="Kaga2ActivityCongrats"></activity>
+    </application>
 
 </manifest>

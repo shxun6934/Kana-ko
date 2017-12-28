@@ -18,7 +18,7 @@ import java.util.Collections;
 public class Kaga2Test extends Activity{
 
     ArrayList<String> yasai = new ArrayList<String>();
-    ArrayList<String> mondai = new ArrayList<String>();
+    static ArrayList<String> mondai = new ArrayList<String>();
     int i =0;
     static int a;
     String nanmonme;
@@ -35,6 +35,7 @@ public class Kaga2Test extends Activity{
         Button button4 = (Button)findViewById(R.id.button4);
         TextView textView = (TextView)findViewById(R.id.yasai_text);
 
+        //ArrayListに文字を入れる
         yasai.add(getString(R.string.hutokyuuri));
         yasai.add(getString(R.string.hutonegi));
         yasai.add(getString(R.string.kinnzisou));
@@ -46,7 +47,7 @@ public class Kaga2Test extends Activity{
         mondai.add(getString(R.string.rennkonn));
 
 
-
+        //ArrayListをシャッフル
         Collections.shuffle(yasai);
         Collections.shuffle(mondai);
 
@@ -67,22 +68,25 @@ public class Kaga2Test extends Activity{
         @Override
         public void onClick(View view) {
 
+            // ボタンの文字と問題文の文字が同じかどうかで正解不正解を判定
             switch (view.getId()){
-                case R.id.button1:
+                case R.id.button1: //ボタン1を押したときの処理
                     Button button1 = (Button)findViewById(R.id.button1);
                     CharSequence aiueo = button1.getText();
                     if (aiueo == mondai.get(i)){
                         Intent intent=new Intent(Kaga2Test.this,Kaga2Activity.class);
                         intent.putExtra("kotae",mondai.get(i));
                         startActivityForResult(intent,0);
+                        //kotaeに問題文をいれて正解画面にとぶ
                     }else{
                         Intent intent=new Intent(Kaga2Test.this,Kaga2ActivityHazure.class);
                         intent.putExtra("kotae",mondai.get(i));
                         startActivity(intent);
+                        //kotaeに問題文をいれて不正解画面にとぶ
                     }
                     break;
 
-                case R.id.button2:
+                case R.id.button2://ボタン2を押したときの処理
                     Button button2=(Button)findViewById(R.id.button2);
                     CharSequence kakiku=button2.getText();
                     if (kakiku==mondai.get(i)){
@@ -95,7 +99,7 @@ public class Kaga2Test extends Activity{
                         startActivity(intent);
                     }
                     break;
-                case R.id.button3:
+                case R.id.button3://ボタン3を押したときの処理
                     Button button3=(Button)findViewById(R.id.button3);
                     CharSequence sasisu=button3.getText();
                     if (sasisu==mondai.get(i)){
@@ -108,7 +112,7 @@ public class Kaga2Test extends Activity{
                         startActivity(intent);
                     }
                     break;
-                case R.id.button4:
+                case R.id.button4://ボタン4を押したときの処理
                     Button button4=(Button)findViewById(R.id.button4);
                     CharSequence tatitu=button4.getText();
                     if (tatitu==mondai.get(i)){
@@ -132,6 +136,9 @@ public class Kaga2Test extends Activity{
         switch (requestCode){
             case(0):
                 if (resultCode==RESULT_OK){
+
+                    //画面が戻ってきたときの処理
+
                     TextView textView=(TextView)findViewById(R.id.yasai_text);
 
                     i=data.getIntExtra("nextQ",0);
@@ -152,3 +159,5 @@ public class Kaga2Test extends Activity{
         }
     }
 }
+
+
