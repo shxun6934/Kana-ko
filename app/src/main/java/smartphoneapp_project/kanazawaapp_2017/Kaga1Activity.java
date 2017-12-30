@@ -12,78 +12,78 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.Collections;
 
-//public class MainActivity extends Activity {
+public class MainActivity extends Activity {
 
-//    ArrayList<String> yasainame = new ArrayList<String>();
-//    ArrayList<String> question = new ArrayList<String>();
-//    ImageView imageView;
-//
-//    int i = 0;
-//    static int b;
-//
-//    @Override
-//    protected void onCreate(final Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_kaga1);
-//
-//        Button questionbutton1 =
-//                (Button)findViewById(R.id.button1);
-//        Button questionbutton2 =
-//                (Button)findViewById(R.id.button2);
-//        Button questionbutton3 =
-//                (Button)findViewById(R.id.button3);
-//        Button questionbutton4 =
-//                (Button)findViewById(R.id.button4);
-//
-//        question.add("きゅうり");
-//        question.add("きんじそう");
-//        question.add("ねぎ");
-//        question.add("れんこん");
-//
-//        yasainame.add("きゅうり");
-//        yasainame.add("きんじそう");
-//        yasainame.add("ねぎ");
-//        yasainame.add("れんこん");
-//
-//        Collections.shuffle(yasainame);
-//        questionbutton1.setText(yasainame.get(0));
-//        questionbutton2.setText(yasainame.get(1));
-//        questionbutton3.setText(yasainame.get(2));
-//        questionbutton4.setText(yasainame.get(3));
-//
-//        imageView =
-//                (ImageView) findViewById(R.id.vegetableimageView);
-//
-//        Collections.shuffle(question);
-//        setVegetable();
-//
-//
-////        questionbutton1.setOnClickListener(button1Click);
-////        questionbutton2.setOnClickListener(button1Click);
-////        questionbutton3.setOnClickListener(button1Click);
-////        questionbutton4.setOnClickListener(button1Click);
-//    }
-//
-//    private void setVegetable(){
-//        switch (question.get(i)) {
-//            case "きんじそう":
-//                imageView.setImageResource(R.drawable.kinnzisou);
-//                break;
-//
-//            case "ねぎ":
-//                imageView.setImageResource(R.drawable.negi);
-//                break;
-//
-//            case "れんこん":
-//                //imageView.setImageResource(R.drawable.negi);
-//                break;
-//
-//            case "きゅうり":
-//                imageView.setImageResource(R.drawable.cucumber);
-//                break;
+    ArrayList<String> yasainame = new ArrayList<String>();
+    ArrayList<String> question = new ArrayList<String>();
+    ImageView imageView;
 
-//        }
-//    }
+    int i = 0;
+    static int b;
+
+    @Override
+    protected void onCreate(final Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_kaga1);
+
+        Button questionbutton1 =
+                (Button)findViewById(R.id.button1);
+        Button questionbutton2 =
+                (Button)findViewById(R.id.button2);
+        Button questionbutton3 =
+                (Button)findViewById(R.id.button3);
+        Button questionbutton4 =
+                (Button)findViewById(R.id.button4);
+
+        question.add("きゅうり");
+        question.add("きんじそう");
+        question.add("ねぎ");
+        question.add("れんこん");
+
+        yasainame.add("きゅうり");
+        yasainame.add("きんじそう");
+        yasainame.add("ねぎ");
+        yasainame.add("れんこん");
+
+        Collections.shuffle(yasainame);
+        questionbutton1.setText(yasainame.get(0));
+        questionbutton2.setText(yasainame.get(1));
+        questionbutton3.setText(yasainame.get(2));
+        questionbutton4.setText(yasainame.get(3));
+
+        imageView =
+                (ImageView) findViewById(R.id.vegetableimageView);
+
+        Collections.shuffle(question);
+        setVegetable();
+
+
+//        questionbutton1.setOnClickListener(button1Click);
+//        questionbutton2.setOnClickListener(button1Click);
+//        questionbutton3.setOnClickListener(button1Click);
+//        questionbutton4.setOnClickListener(button1Click);
+    }
+
+    private void setVegetable(){
+        switch (question.get(i)) {
+            case "きんじそう":
+                imageView.setImageResource(R.drawable.kinnzisou);
+                break;
+
+            case "ねぎ":
+                imageView.setImageResource(R.drawable.negi);
+                break;
+
+            case "れんこん":
+                //imageView.setImageResource(R.drawable.negi);
+                break;
+
+            case "きゅうり":
+                imageView.setImageResource(R.drawable.cucumber);
+                break;
+
+        }
+    }
 
 //    public View.OnClickListener button1Click = new View.OnClickListener() {
 //        @Override
@@ -147,28 +147,28 @@ import java.util.Collections;
 //            }
 //        }
 //    };
-//
-//    @Override
-//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-//        super.onActivityResult(requestCode, resultCode, data);
-//
-//        switch ( (requestCode)){
-//            case (0):
-//                if (resultCode == RESULT_OK) {
-//
-//                    i = data.getIntExtra("question2",0);
-//
-//                    setVegetable();
-//                    Button button1 = (Button)findViewById(R.id.button1);
-//                    Button button2 = (Button)findViewById(R.id.button2);
-//                    Button button3 = (Button)findViewById(R.id.button3);
-//                    Button button4 = (Button)findViewById(R.id.button4);
-//
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        switch ( (requestCode)){
+            case (0):
+                if (resultCode == RESULT_OK) {
+
+                    i = data.getIntExtra("question2",0);
+
+                    setVegetable();
+                    Button button1 = (Button)findViewById(R.id.button1);
+                    Button button2 = (Button)findViewById(R.id.button2);
+                    Button button3 = (Button)findViewById(R.id.button3);
+                    Button button4 = (Button)findViewById(R.id.button4);
+
 //                    button1.setOnClickListener(button1Click);
 //                    button2.setOnClickListener(button1Click);
 //                    button3.setOnClickListener(button1Click);
 //                    button4.setOnClickListener(button1Click);
-//                }
-//        }
-//    }
-//}
+                }
+        }
+    }
+}
