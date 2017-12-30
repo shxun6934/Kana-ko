@@ -6,100 +6,169 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class Kaga1Activity extends Activity {
+//public class MainActivity extends Activity {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        requestWindowFeature(getWindow().FEATURE_NO_TITLE);
-        setContentView(R.layout.activity_kaga1);
-
-        Button btnNext1 = (Button) findViewById(R.id.button1);
-        Button btnNext2 = (Button) findViewById(R.id.button2);
-        Button btnNext3 = (Button) findViewById(R.id.button3);
-        Button btnNext4 = (Button) findViewById(R.id.button4);
-
-        ArrayList<String> yasainame = new ArrayList<String>();
-
-        yasainame.add("きゅうり");
-        yasainame.add("うり");
-        yasainame.add("とまと");
-        yasainame.add("なす");
-
-        Collections.shuffle(yasainame);
-        btnNext1.setText(yasainame.get(0));
-        btnNext2.setText(yasainame.get(1));
-        btnNext3.setText(yasainame.get(2));
-        btnNext4.setText(yasainame.get(3));
-
-//        btnNext1.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                switch (v.getId()){
-//                    case R.id.button1:
-//                        Button button1 = (Button)findViewById(R.id.button1);
-//                        CharSequence yasai1 = button1.getText();
-//                        if(yasai1=="きゅうり"){
-//                            Intent intent = new Intent(MainActivity.this,KyuuriActivity.class);
-//                            startActivity(intent);
-//                        }else {
-//                            Intent intent = new Intent(MainActivity.this,kyuuri_hazureActivity.class);
-//                            startActivity(intent);
-//                        }
-//                }
-//            }
-//        });
+//    ArrayList<String> yasainame = new ArrayList<String>();
+//    ArrayList<String> question = new ArrayList<String>();
+//    ImageView imageView;
 //
-//        btnNext2.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Button button2 = (Button)findViewById(R.id.button2);
-//                CharSequence yasai1 = button2.getText();
-//                if(yasai1=="きゅうり"){
-//                    Intent intent = new Intent(MainActivity.this,KyuuriActivity.class);
-//                    startActivity(intent);
-//                }else{
-//                    Intent intent = new Intent(MainActivity.this,kyuuri_hazureActivity.class);
-//                    startActivity(intent);
-//                }
-//            }
-//        });
+//    int i = 0;
+//    static int b;
 //
-//        btnNext3.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Button button3 = (Button)findViewById(R.id.button3);
-//                CharSequence yasai1 = button3.getText();
-//                if(yasai1=="きゅうり"){
-//                    Intent intent = new Intent(MainActivity.this,KyuuriActivity.class);
-//                    startActivity(intent);
-//                }else{
-//                    Intent intent = new Intent(MainActivity.this,kyuuri_hazureActivity.class);
-//                    startActivity(intent);
-//                }
-//            }
-//        });
+//    @Override
+//    protected void onCreate(final Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        setContentView(R.layout.activity_kaga1);
 //
-//        btnNext4.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Button button4 = (Button)findViewById(R.id.button4);
-//                CharSequence yasai1 = button4.getText();
-//                if(yasai1=="きゅうり"){
-//                    Intent intent = new Intent(MainActivity.this,KyuuriActivity.class);
-//                    startActivity(intent);
-//                }else{
-//                    Intent intent = new Intent(MainActivity.this,kyuuri_hazureActivity.class);
-//                    startActivity(intent);
-//                }
-//            }
-//        });
+//        Button questionbutton1 =
+//                (Button)findViewById(R.id.button1);
+//        Button questionbutton2 =
+//                (Button)findViewById(R.id.button2);
+//        Button questionbutton3 =
+//                (Button)findViewById(R.id.button3);
+//        Button questionbutton4 =
+//                (Button)findViewById(R.id.button4);
 //
-    }
+//        question.add("きゅうり");
+//        question.add("きんじそう");
+//        question.add("ねぎ");
+//        question.add("れんこん");
+//
+//        yasainame.add("きゅうり");
+//        yasainame.add("きんじそう");
+//        yasainame.add("ねぎ");
+//        yasainame.add("れんこん");
+//
+//        Collections.shuffle(yasainame);
+//        questionbutton1.setText(yasainame.get(0));
+//        questionbutton2.setText(yasainame.get(1));
+//        questionbutton3.setText(yasainame.get(2));
+//        questionbutton4.setText(yasainame.get(3));
+//
+//        imageView =
+//                (ImageView) findViewById(R.id.vegetableimageView);
+//
+//        Collections.shuffle(question);
+//        setVegetable();
+//
+//
+////        questionbutton1.setOnClickListener(button1Click);
+////        questionbutton2.setOnClickListener(button1Click);
+////        questionbutton3.setOnClickListener(button1Click);
+////        questionbutton4.setOnClickListener(button1Click);
+//    }
+//
+//    private void setVegetable(){
+//        switch (question.get(i)) {
+//            case "きんじそう":
+//                imageView.setImageResource(R.drawable.kinnzisou);
+//                break;
+//
+//            case "ねぎ":
+//                imageView.setImageResource(R.drawable.negi);
+//                break;
+//
+//            case "れんこん":
+//                //imageView.setImageResource(R.drawable.negi);
+//                break;
+//
+//            case "きゅうり":
+//                imageView.setImageResource(R.drawable.cucumber);
+//                break;
 
+//        }
+//    }
 
-}
+//    public View.OnClickListener button1Click = new View.OnClickListener() {
+//        @Override
+//        public void onClick(View v) {
+//            switch (v.getId()) {
+//                case R.id.button1:
+//                    Button button1 = (Button) findViewById(R.id.button1);
+//                    CharSequence yasai1 = button1.getText();
+//                    if (yasai1 == question.get(i)) {
+//                        Intent intent = new Intent(MainActivity.this, intentActivity.class);
+//                        intent.putExtra("answer", yasainame.get(i));
+//                        startActivityForResult(intent,0);
+//                    } else {
+//                        Intent intent = new Intent(MainActivity.this, intent2Activity.class);
+//                        startActivity(intent);
+//                    }
+//                    break;
+//
+//                case R.id.button2:
+//                    Button button2 = (Button) findViewById(R.id.button2);
+//                    CharSequence yasai2 = button2.getText();
+//                    if (yasai2 == question.get(i)) {
+//
+//                        Intent intent = new Intent(MainActivity.this, intentActivity.class);
+//                        intent.putExtra("answer", yasainame.get(i));
+//                        startActivityForResult(intent,0);
+//                    } else {
+//                        Intent intent = new Intent(MainActivity.this, intent2Activity.class);
+//                        startActivity(intent);
+//                    }
+//                    break;
+//
+//                case R.id.button3:
+//                    Button button3 = (Button) findViewById(R.id.button3);
+//                    CharSequence yasai3 = button3.getText();
+//                    if (yasai3 == question.get(i)) {
+//
+//                        Intent intent = new Intent(MainActivity.this, intentActivity.class);
+//                        intent.putExtra("answer", yasainame.get(i));
+//                        startActivityForResult(intent,0);
+//                    } else {
+//                        Intent intent = new Intent(MainActivity.this, intent2Activity.class);
+//                        startActivity(intent);
+//                    }
+//                    break;
+//
+//                case R.id.button4:
+//                    Button button4 = (Button) findViewById(R.id.button4);
+//                    CharSequence yasai4 = button4.getText();
+//                    if (yasai4 == question.get(i)) {
+//
+//                        Intent intent = new Intent(MainActivity.this, intentActivity.class);
+//                        intent.putExtra("answer", yasainame.get(i));
+//                        startActivityForResult(intent,0);
+//                    } else {
+//                        Intent intent = new Intent(MainActivity.this, intent2Activity.class);
+//                        startActivity(intent);
+//                    }
+//                    break;
+//
+//            }
+//        }
+//    };
+//
+//    @Override
+//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+//
+//        switch ( (requestCode)){
+//            case (0):
+//                if (resultCode == RESULT_OK) {
+//
+//                    i = data.getIntExtra("question2",0);
+//
+//                    setVegetable();
+//                    Button button1 = (Button)findViewById(R.id.button1);
+//                    Button button2 = (Button)findViewById(R.id.button2);
+//                    Button button3 = (Button)findViewById(R.id.button3);
+//                    Button button4 = (Button)findViewById(R.id.button4);
+//
+//                    button1.setOnClickListener(button1Click);
+//                    button2.setOnClickListener(button1Click);
+//                    button3.setOnClickListener(button1Click);
+//                    button4.setOnClickListener(button1Click);
+//                }
+//        }
+//    }
+//}

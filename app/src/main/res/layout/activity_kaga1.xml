@@ -33,33 +33,29 @@
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:id="@+id/imageView6"
+                        android:id="@+id/imageView_rump1"
                         android:layout_width="66dp"
                         android:layout_height="58dp"
-                        android:layout_weight="1"
-                        android:src="@drawable/rump2" />
+                        android:layout_weight="1" />
 
                     <ImageView
-                        android:id="@+id/imageView7"
+                        android:id="@+id/imageView_rump2"
                         android:layout_width="66dp"
                         android:layout_height="58dp"
-                        android:layout_weight="1"
-                        android:src="@drawable/rump2" />
+                        android:layout_weight="1" />
 
                     <ImageView
-                        android:id="@+id/imageView8"
+                        android:id="@+id/imageView_rump3"
                         android:layout_width="66dp"
                         android:layout_height="58dp"
-                        android:layout_weight="1"
-                        android:src="@drawable/rump2" />
+                        android:layout_weight="1" />
 
                 </LinearLayout>
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/vegetableimageView"
                     android:layout_width="352dp"
                     android:layout_height="match_parent"
-                    android:src="@drawable/cucumber"
                     />
 
             </LinearLayout>
