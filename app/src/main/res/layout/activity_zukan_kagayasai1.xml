@@ -38,7 +38,7 @@
             android:id="@+id/negi_image"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/negi"/>
+            android:src="@drawable/negi1"/>
     </LinearLayout>
 
     <LinearLayout
@@ -50,7 +50,7 @@
             android:id="@+id/kyuri_image"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/kyuri"/>
+            android:src="@drawable/kyuri1"/>
     </LinearLayout>
 
     <LinearLayout
@@ -63,7 +63,7 @@
             android:id="@+id/kinjisou_image"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/kinjisou"/>
+            android:src="@drawable/kinjisou1"/>
     </LinearLayout>
 
     <LinearLayout

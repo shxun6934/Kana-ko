@@ -12,14 +12,14 @@ import smartphoneapp_project.kanazawaapp_2017.R;
 
 public class DetailsZukanActivity extends Activity implements View.OnClickListener{
 
-    String[] kagayasainame = {"かなざわ","いっぽんふとねぎ", "かがふときゅうり", "きんじそう", "かがれんこん"};
+    String[] kagayasainame = {null,"いっぽんふとねぎ", "かがふときゅうり", "きんじそう", "かがれんこん"};
     String[] kagayasaidescription = {null,
-            "かなざわいっぽんねぎはふつうのねぎよりもやわらかい。\nふゆになるほどあまくなり、すきやきやなべにいれる。",
-            "かがふときゅうりはおもさがふつうのきゅうりよりおもい。やわらかくあまい。かわをむいてあんかけにするなどしてたべる",
-            "きんじそうは、はのうらがきんときいものいろににているからきんじそうとよばれている。そのははすこしあまい。",
-            "かがれんこんはふつうのれんこんよりねばりがつよい。れんこんをむしたり、もちにしてたべるのがおすすめ。"};
+            "かなざわいっぽんねぎは、ふつうのねぎよりもやわらかい。\nふゆになるほどあまくなり、\nすきやきやなべにいれる。",
+            "かがふときゅうりは、おもさがふつうのきゅうりよりおもい。\nやわらかくあまい。\nかわをむいてあんかけにするなどしてたべる。",
+            "きんじそうは、はのうらがきんときいものいろににているからきんじそうとよばれている。\nそのははすこしあまい。",
+            "かがれんこんは、ふつうのれんこんよりねばりがつよい。\nれんこんをむしたり、もちにしてたべるのがおすすめ。"};
 
-    String[] washiname = {"わ"};
+    String[] washiname = {"わし"};
     String[] washidescription = {".........."};
 
     private static int key;
@@ -39,19 +39,19 @@ public class DetailsZukanActivity extends Activity implements View.OnClickListen
 
         switch (key){
             case 1:
-                imageview.setImageResource(R.drawable.negi);
-                nametext.setText(kagayasainame[0] + "\n" + kagayasainame[1]);
+                imageview.setImageResource(R.drawable.negi2);
+                nametext.setText(kagayasainame[1]);
                 descriptiontext.setText(kagayasaidescription[1]);
                 break;
 
             case 2:
-                imageview.setImageResource(R.drawable.kyuri);
+                imageview.setImageResource(R.drawable.kyuri2);
                 nametext.setText(kagayasainame[2]);
                 descriptiontext.setText(kagayasaidescription[2]);
                 break;
 
             case 3:
-                imageview.setImageResource(R.drawable.kinjisou);
+                imageview.setImageResource(R.drawable.kinjisou2);
                 nametext.setText(kagayasainame[3]);
                 descriptiontext.setText(kagayasaidescription[3]);
                 break;
