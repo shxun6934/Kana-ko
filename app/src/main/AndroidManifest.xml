@@ -10,7 +10,7 @@
         android:theme ="@android:style/Theme.NoTitleBar">
         <activity android:name=".Washi3Activity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -18,6 +18,3 @@
         <!--</activity>-->
     </application>
 </manifest>
-
-
-
