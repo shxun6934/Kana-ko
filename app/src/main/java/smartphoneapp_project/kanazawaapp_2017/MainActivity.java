@@ -3,11 +3,8 @@ package smartphoneapp_project.kanazawaapp_2017;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -67,11 +64,11 @@ public class MainActivity extends Activity {
     private void setVegetable(){
         switch (question.get(i)) {
             case "きんじそう":
-                imageView.setImageResource(R.drawable.kinnzisou);
+                imageView.setImageResource(R.drawable.kaga1_kinnzisou);
                 break;
 
             case "ねぎ":
-                imageView.setImageResource(R.drawable.negi);
+                imageView.setImageResource(R.drawable.kaga1_negi);
                 break;
 
             case "れんこん":
@@ -79,7 +76,7 @@ public class MainActivity extends Activity {
                 break;
 
             case "きゅうり":
-                imageView.setImageResource(R.drawable.cucumber);
+                imageView.setImageResource(R.drawable.kaga1_cucumber);
                 break;
 
         }
