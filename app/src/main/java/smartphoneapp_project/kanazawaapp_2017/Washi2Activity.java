@@ -59,7 +59,7 @@ public class Washi2Activity extends Activity  implements View.OnTouchListener {
         startmarginkuroba = (ViewGroup.MarginLayoutParams) kurobaView.getLayoutParams();
         startmarginmomiji = (ViewGroup.MarginLayoutParams) momijiView.getLayoutParams();
         startmarginotiba = (ViewGroup.MarginLayoutParams) otibaView.getLayoutParams();
-        button = (Button) findViewById(R.id.button2);
+        button = (Button) findViewById(R.id.nextbutton);
     }
 
     @Override
