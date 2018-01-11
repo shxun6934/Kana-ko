@@ -10,12 +10,10 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
-import android.os.Handler;
-import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.ImageView;
+import android.widget.FrameLayout;
 
 import java.util.List;
 
@@ -26,15 +24,15 @@ public class Washi1Activity extends Activity implements SensorEventListener {
     private SensorView sensorView;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+
+        setContentView(R.layout.activity_washi1);
+
         sensorView = new SensorView(this);
 //        setContentView(sensorView);
-        setContentView(R.layout.activity_washi1);
 
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
@@ -47,6 +45,9 @@ public class Washi1Activity extends Activity implements SensorEventListener {
             sensorManager.registerListener(this, sensors.get(0),
                     SensorManager.SENSOR_DELAY_GAME);
         }
+
+        FrameLayout frameLayout = (FrameLayout)findViewById(R.id.kami_container);
+        frameLayout.addView(sensorView);
     }
 
     @Override
@@ -86,11 +87,9 @@ public class Washi1Activity extends Activity implements SensorEventListener {
 
         public SensorView(Context context) {
             super(context);
-            requestWindowFeature(Window.FEATURE_NO_TITLE);
             washi1 = BitmapFactory.decodeResource(context.getResources(),
                     R.drawable.kami2);
         }
-
 
         public void move(float mx, float my) {
             this.x -= (mx * 4f);
