@@ -9,7 +9,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Washi1Activity"
-                android:screenOrientation="landscape">
+                android:screenOrientation="landscape"
+                >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

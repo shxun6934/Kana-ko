@@ -4,9 +4,6 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:weightSum="1"
-
-
     >
 
 
@@ -32,8 +29,8 @@
         android:id="@+id/imageView7"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:srcCompat="@drawable/frame_00023"
-        android:scaleType="fitXY"/>
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/frame_00023" />
 
 
 </FrameLayout>
