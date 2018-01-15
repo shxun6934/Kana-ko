@@ -6,7 +6,6 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -51,34 +50,22 @@ public class EventActivity extends Activity implements View.OnClickListener{
     class estAsycTask extends AsyncTask<URL, Void, String> {
         @Override
         protected String doInBackground(URL... urls) {
-            // 取得したテキストを格納する変数
             final StringBuilder result = new StringBuilder();
-            // アクセス先URL
             final URL url = urls[0];
 
             HttpURLConnection con = null;
             try {
-                // ローカル処理
-                // コネクション取得
                 con = (HttpURLConnection) url.openConnection();
                 con.setDoInput(true);
                 con.connect();
 
-                // HTTPレスポンスコード
                 final int status = con.getResponseCode();
-                Log.d("debug", Integer.toString(status));
                 if (status == HttpURLConnection.HTTP_OK) {
-
-                    Log.d("debug", result.toString());
-
-                    // 通信に成功した
-                    // テキストを取得する
                     final InputStream in = con.getInputStream();
                     final String encoding = "UTF8";
                     final InputStreamReader inReader = new InputStreamReader(in, encoding);
                     final BufferedReader bufReader = new BufferedReader(inReader);
                     String line = null;
-                    // 1行ずつテキストを読み込む
                     while ((line = bufReader.readLine()) != null) {
                         result.append(line);
                     }
@@ -86,14 +73,7 @@ public class EventActivity extends Activity implements View.OnClickListener{
                     inReader.close();
                     in.close();
                 }
-                String fileText = result.toString();
-                JSONObject rootObject = new JSONObject(fileText);
-                JSONArray eventArray = rootObject.getJSONArray("items");
-                for (int i = 0; i < eventArray.length(); i++) {
-                    JSONObject jsonobject = eventArray.getJSONObject(i);
 
-                    Log.d("debug", jsonobject.getString("date_from"));
-                }
 
             } catch (MalformedURLException e1) {
                 e1.printStackTrace();
@@ -101,8 +81,6 @@ public class EventActivity extends Activity implements View.OnClickListener{
                 e1.printStackTrace();
             } catch (IOException e1) {
                 e1.printStackTrace();
-            } catch (JSONException e) {
-                e.printStackTrace();
             } finally {
                 if (con != null) {
                     // コネクションを切断
