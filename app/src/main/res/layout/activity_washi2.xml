@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -86,11 +87,13 @@
 
     <Button
         android:id="@+id/nextbutton"
-        android:layout_width="491dp"
-        android:layout_height="286dp"
+        android:layout_width="490dp"
+        android:layout_height="134dp"
         android:layout_gravity="center"
         android:background="@drawable/nextbutton"
         android:onClick="returnClick"
+        android:textSize="70dp"
+        android:textStyle="italic"
         android:visibility="invisible" />
 
 </FrameLayout>
