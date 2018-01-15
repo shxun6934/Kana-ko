@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.ImageView;
+
+import smartphoneapp_project.kanazawaapp_2017.Event.EventActivity;
 import smartphoneapp_project.kanazawaapp_2017.R;
 
 public class KagayasaiZukan1Activity extends Activity implements View.OnClickListener {
@@ -20,18 +22,21 @@ public class KagayasaiZukan1Activity extends Activity implements View.OnClickLis
         ImageView renkonbutton = (ImageView) findViewById(R.id.renkon_image);
         ImageView hidariyajirusibutton = (ImageView) findViewById(R.id.yajirusi_hidari_image);
         ImageView migiyajirusibutton = (ImageView) findViewById(R.id.yajirusi_migi_image);
+        ImageView backbutton = (ImageView) findViewById(R.id.back);
         negibutton.setOnClickListener(this);
         kyuributton.setOnClickListener(this);
         kinjisoubutton.setOnClickListener(this);
         renkonbutton.setOnClickListener(this);
         hidariyajirusibutton.setOnClickListener(this);
         migiyajirusibutton.setOnClickListener(this);
+        backbutton.setOnClickListener(this);
     }
 
     public void onClick(View v) {
         Intent detailszukan = new Intent(KagayasaiZukan1Activity.this, DetailsZukanActivity.class);
         Intent washizukan = new Intent(KagayasaiZukan1Activity.this, WashiZukanActivity.class);
         Intent kagayasaizukan2 = new Intent(KagayasaiZukan1Activity.this, KagayasaiZukan2Activity.class);
+        Intent map = new Intent(KagayasaiZukan1Activity.this, EventActivity.class);
         switch (v.getId()){
             case R.id.negi_image:
                 detailszukan.putExtra("key",1);
@@ -61,6 +66,10 @@ public class KagayasaiZukan1Activity extends Activity implements View.OnClickLis
             case R.id.yajirusi_migi_image:
                 startActivity(kagayasaizukan2);
                 overridePendingTransition(R.animator.slide_in_right, R.animator.slide_out_left);
+                break;
+
+            case R.id.back:
+                startActivity(map);
                 break;
         }
     }
