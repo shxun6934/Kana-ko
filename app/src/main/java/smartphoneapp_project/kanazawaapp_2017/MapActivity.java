@@ -23,7 +23,7 @@ public class MapActivity extends AppCompatActivity {
             @Override
             public void onClick(final View v) {//押下時の処理
                 //確認ダイアログの作成
-                AlertDialog.Builder alertDialog = new AlertDialog.Builder(MapActivity.this);
+                AlertDialog.Builder alertDialog = new AlertDialog.Builder(MapActivity.this,R.style.MyAlertDialogStyle);
                 alertDialog.setTitle("間違い探し(仮)");
                 alertDialog.setMessage("このあそびをやってみる？？");
                 alertDialog.setPositiveButton("すすむ", new DialogInterface.OnClickListener() {
@@ -39,18 +39,9 @@ public class MapActivity extends AppCompatActivity {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
 
-
-                    //Noボタンが押されたときの処理
-
-
+                    // TODO:Noボタンが押されたときの処理
                 }
                 });
-
-
-
-
-
-
                 alertDialog.create().show();
                     }
 
