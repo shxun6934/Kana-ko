@@ -9,6 +9,8 @@
         android:supportsRtl="true"
         android:theme ="@android:style/Theme.NoTitleBar">
         <activity android:name=".Washi3Activity">
+        android:theme="@android:style/Theme.NoTitleBar">
+        <activity android:name=".Washi2Activity" android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
