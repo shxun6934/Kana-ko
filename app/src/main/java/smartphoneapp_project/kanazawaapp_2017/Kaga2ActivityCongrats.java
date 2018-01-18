@@ -1,9 +1,12 @@
 package smartphoneapp_project.kanazawaapp_2017;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.MotionEvent;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import static smartphoneapp_project.kanazawaapp_2017.Kaga2Test.mondai;
@@ -20,6 +23,9 @@ public class Kaga2ActivityCongrats extends Activity {
         ImageView seikaigazou0 = (ImageView) findViewById(R.id.seikai_gazou0);
         ImageView seikaigazou1 = (ImageView) findViewById(R.id.seikai_gazou1);
         ImageView seikaigazou2 = (ImageView) findViewById(R.id.seikai_gazou2);
+
+        Button tap=(Button)findViewById(R.id.tap);
+
 
         switch (mondai.get(0)) {
             case "きんじそう":
@@ -65,6 +71,13 @@ public class Kaga2ActivityCongrats extends Activity {
                 seikaigazou2.setImageResource(R.drawable.rennkonn_ira);
                 break;
         }
+        tap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1=new Intent(Kaga2ActivityCongrats.this,Kaga2Test.class);
+                startActivity(intent1);
+            }
+        });
 
     }
 
