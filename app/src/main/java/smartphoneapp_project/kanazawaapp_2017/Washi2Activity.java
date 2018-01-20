@@ -21,13 +21,14 @@ public class Washi2Activity extends Activity  implements View.OnTouchListener {
     private ImageView momijiView;
     private ImageView otibaView;
     private Rect rect = new Rect();
+    private Rect rect2 = new Rect();
     private ImageView momijishadow;
     private ImageView otibashadow;
     private int oldX;
     private int oldY;
+    int count = 0;
     int x;
     int y;
-    int count = 0;
     Button button;
     ViewGroup.MarginLayoutParams startmarginkuroba;
     ViewGroup.MarginLayoutParams startmarginmomiji;
@@ -40,8 +41,8 @@ public class Washi2Activity extends Activity  implements View.OnTouchListener {
         Bitmap kurobaBmp = BitmapFactory.decodeResource(r, kuroba);
         Bitmap momijiBmp = BitmapFactory.decodeResource(r, R.drawable.momiji1);
         Bitmap otibaBmp = BitmapFactory.decodeResource(r, R.drawable.momiji2);
-        Bitmap momijikage = BitmapFactory.decodeResource(r, R.drawable.momiji1kage);
-        Bitmap otibakage = BitmapFactory.decodeResource(r, R.drawable.momiji2kage);
+        Bitmap momijikage = BitmapFactory.decodeResource(r, R.drawable.momiji2kage);
+        Bitmap otibakage = BitmapFactory.decodeResource(r, R.drawable.momiji1kage);
         Button returnButton = (Button) findViewById(R.id.button);
         kurobaView = (ImageView) findViewById(R.id.ImageView1);
         momijiView = (ImageView) findViewById(R.id.ImageView2);
@@ -67,8 +68,8 @@ public class Washi2Activity extends Activity  implements View.OnTouchListener {
         switch (view.getId()) {
             case R.id.ImageView1://黄色のクローバーのドラッグアンドドロップの動作
                 // タッチした時の位置を取得
-                x = (int) event.getRawX();
-                y = (int) event.getRawY();
+                 x = (int) event.getRawX();
+                 y = (int) event.getRawY();
                 if (event.getAction() == MotionEvent.ACTION_MOVE) {
                     //viewの位置を計算
                     int diffX = kurobaView.getLeft() + (x - oldX);
@@ -168,8 +169,8 @@ public class Washi2Activity extends Activity  implements View.OnTouchListener {
         startActivity(intent);
     }
     //ゲームクリア時に出てくるボタンの処理(結果画面に進む)
-    /*public void onClick(View view) {
-      Intent intent = new Intent(this, Wasi3.Activity.class);
+    public void onClick(View view) {
+      Intent intent = new Intent(this, Washi3Activity.class);
        startActivity(intent);
-    }*/
+    }
 }

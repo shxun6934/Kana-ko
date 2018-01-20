@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="matrix"
-        android:src="@drawable/wasi2_haikei" />
+        android:src="@drawable/wasihaikei" />
 
     <ImageView
         android:id="@+id/imageViewWasi"
@@ -71,8 +71,8 @@
         app:srcCompat="@drawable/kuroba" />
     <ImageView
         android:id="@+id/ImageView2"
-        android:layout_width="100dp"
-        android:layout_height="82dp"
+        android:layout_width="87dp"
+        android:layout_height="70dp"
         android:layout_marginTop="125dp"
         android:layout_marginLeft="40dp"
         android:src="@drawable/momiji1"
@@ -91,7 +91,7 @@
         android:layout_height="134dp"
         android:layout_gravity="center"
         android:background="@drawable/nextbutton"
-        android:onClick="returnClick"
+        android:onClick="onClick"
         android:textSize="70dp"
         android:textStyle="italic"
         android:visibility="invisible" />
