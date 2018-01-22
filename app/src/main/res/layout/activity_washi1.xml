@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent">
 
     <ImageView
         android:id="@+id/imageView"
@@ -11,31 +10,28 @@
         android:scaleType="fitXY"
         android:src="@drawable/sudare01_01" />
 
-    <!--<ImageView-->
-        <!--android:id="@+id/imageView6"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:scaleType="fitXY"-->
-        <!--android:src="@drawable/kami2" />-->
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/kami2" />
 
-    <FrameLayout
-        android:id="@+id/kami_container"
+    <smartphoneapp_project.kanazawaapp_2017.JayroMovableLayout
+        android:id="@+id/jayro_movable_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
-    <!--<ImageView-->
-        <!--android:id="@+id/imageView7"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:scaleType="fitXY"-->
-        <!--android:src="@drawable/frame_00023" />-->
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/frame_00023" />
 
     <Button
         android:id="@+id/test"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="もどる"/>
-
-
-
 </FrameLayout>
