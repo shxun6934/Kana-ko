@@ -30,6 +30,12 @@
         android:scaleType="fitXY"
         android:src="@drawable/frame_00023" />
 
+    <Button
+        android:id="@+id/test"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="もどる"/>
+
 
 
 </FrameLayout>
