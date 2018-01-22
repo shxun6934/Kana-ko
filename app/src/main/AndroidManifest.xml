@@ -10,6 +10,22 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        
+        <activity
+            android:name=".TitleActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        
+        <activity
+            android:name=".Washi2Activity"
+            android:screenOrientation="landscape">
+        </activity>
+
+        <activity
+            android:name=".Washi3Activity"
+            android:screenOrientation="landscape">
+        </activity>
+        
         <activity android:name=".Zukan.KagayasaiZukan1Activity">
             <intent-filter>
                 <action
@@ -18,22 +34,27 @@
                     android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
         <activity
             android:name=".Zukan.DetailsZukanActivity"
             android:label="@string/app_name">
         </activity>
+        
         <activity
             android:name=".Zukan.KagayasaiZukan2Activity"
             android:label="@string/app_name">
         </activity>
+        
         <activity
             android:name=".Zukan.WashiZukanActivity"
             android:label="@string/app_name">
         </activity>
+        
         <activity
             android:name=".Event.EventActivity"
             android:label="@string/app_name">
         </activity>
+        
     </application>
   
 </manifest>
