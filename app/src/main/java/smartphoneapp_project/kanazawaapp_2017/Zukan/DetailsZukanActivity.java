@@ -57,7 +57,7 @@ public class DetailsZukanActivity extends Activity implements View.OnClickListen
                 break;
 
             case 4:
-                imageview.setImageResource(R.drawable.renkon);
+                imageview.setImageResource(R.drawable.renkon2);
                 nametext.setText(kagayasainame[4]);
                 descriptiontext.setText(kagayasaidescription[4]);
                 break;
