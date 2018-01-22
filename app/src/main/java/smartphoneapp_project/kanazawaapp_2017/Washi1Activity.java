@@ -7,8 +7,44 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
+import android.content.Context;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Point;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
+import android.os.Bundle;
+import android.view.Display;
+import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
 
-public class Washi1Activity extends Activity {
+import java.util.List;
+
+
+
+public class Washi1Activity extends Activity  {
+
+    private Button button_segue;
+
+/*
+    public  void  onClick(View v){
+
+        Intent intent = new Intent(Washi1Activity.this,Washi.class);
+        startActivity(intent);
+    }
+  */
+
+
+
+
+    private static final String LOG_TAG = "WASHI1";
 
     private JayroMovableLayout jayroMovableLayout;
     private SensorManager sensorManager;
@@ -20,6 +56,19 @@ public class Washi1Activity extends Activity {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_washi1);
+        Button button = (Button)findViewById(R.id.test);
+
+        button.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Washi1Activity.this, Washi.class);
+                startActivity(intent);
+            }
+        });
+
+
+
+
 
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
