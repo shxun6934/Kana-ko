@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 import smartphoneapp_project.kanazawaapp_2017.Event.EventActivity;
+import smartphoneapp_project.kanazawaapp_2017.MapActivity;
 import smartphoneapp_project.kanazawaapp_2017.R;
 
 public class WashiZukanActivity extends Activity implements View.OnClickListener{
@@ -31,7 +32,7 @@ public class WashiZukanActivity extends Activity implements View.OnClickListener
         Intent detailszukan = new Intent(WashiZukanActivity.this, DetailsZukanActivity.class);
         Intent kagayasaizukan2 = new Intent(WashiZukanActivity.this, KagayasaiZukan2Activity.class);
         Intent kagayasaizukan1 = new Intent(WashiZukanActivity.this, KagayasaiZukan1Activity.class);
-        Intent map = new Intent(WashiZukanActivity.this, EventActivity.class);
+        Intent map = new Intent(WashiZukanActivity.this, MapActivity.class);
         switch (v.getId()){
             case R.id.washi_image:
                 detailszukan.putExtra("key",19);
