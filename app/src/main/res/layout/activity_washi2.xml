@@ -1,7 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/ImageViewHaikei"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="matrix"
+        android:src="@drawable/wasi2_haikei" />
 
-</LinearLayout>
+    <ImageView
+        android:id="@+id/imageViewWasi"
+        android:layout_width="398dp"
+        android:layout_height="340dp"
+        android:layout_marginLeft="185dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/wasiwhite" />
+    <ImageView
+        android:id="@+id/imageView2S"
+        android:layout_width="93dp"
+        android:layout_height="91dp"
+        android:layout_marginLeft="400dp"
+        android:layout_marginTop="130dp"
+        android:src="@drawable/momiji1kage"
+         />
+    <ImageView
+        android:id="@+id/ImageView3S"
+        android:layout_width="80dp"
+        android:layout_height="90dp"
+        android:layout_marginLeft="220dp"
+        android:layout_marginTop="230dp"
+        android:src="@drawable/momiji2kage" />
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="150dp"
+        android:layout_height="250dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:background="#8b4513"
+        >
+        <FrameLayout
+            android:layout_width="140dp"
+            android:layout_height="240dp"
+            android:layout_gravity="center"
+            android:background="@android:color/white"
+            >
+        </FrameLayout>
+    </FrameLayout>
+    <Button
+
+        android:id="@+id/button"
+        android:layout_width="88dp"
+        android:layout_height="47dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="295dp"
+        android:background="@drawable/shape_sample"
+        android:onClick="returnClick"
+        android:text="もどる"
+        android:visibility="visible" />
+    <ImageView
+        android:id="@+id/ImageView1"
+        android:layout_width="100dp"
+        android:layout_height="69dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="50dp"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/kuroba" />
+    <ImageView
+        android:id="@+id/ImageView2"
+        android:layout_width="100dp"
+        android:layout_height="82dp"
+        android:layout_marginTop="125dp"
+        android:layout_marginLeft="40dp"
+        android:src="@drawable/momiji1"
+        />
+    <ImageView
+        android:id="@+id/ImageView3"
+        android:layout_width="80dp"
+        android:layout_height="90dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="190dp"
+        app:srcCompat="@drawable/momiji2" />
+
+    <Button
+        android:id="@+id/nextbutton"
+        android:layout_width="490dp"
+        android:layout_height="134dp"
+        android:layout_gravity="center"
+        android:background="@drawable/nextbutton"
+        android:onClick="returnClick"
+        android:textSize="70dp"
+        android:textStyle="italic"
+        android:visibility="invisible" />
+
+</FrameLayout>
