@@ -5,18 +5,19 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
+import android.graphics.Point;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
+import android.view.Display;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.FrameLayout;
-import android.view.View.OnClickListener;
+import android.widget.ImageView;
 
 import java.util.List;
 
@@ -42,14 +43,13 @@ public class Washi1Activity extends Activity implements SensorEventListener  {
     private SensorManager sensorManager;
     private SensorView sensorView;
 
+    private static int screenWidth;
+    private static int screenHeight;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-
-
-
         setContentView(R.layout.activity_washi1);
         Button button = (Button)findViewById(R.id.test);
 
@@ -65,8 +65,16 @@ public class Washi1Activity extends Activity implements SensorEventListener  {
 
 
 
+        WindowManager wm = (WindowManager) getSystemService(WINDOW_SERVICE);
+        Display disp = wm.getDefaultDisplay();
+
+        Point realSize = new Point();
+        disp.getRealSize(realSize);
+
+        screenWidth = realSize.x;
+        screenHeight = realSize.y;
+
         sensorView = new SensorView(this);
-//        setContentView(sensorView);
 
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
@@ -80,7 +88,7 @@ public class Washi1Activity extends Activity implements SensorEventListener  {
                     SensorManager.SENSOR_DELAY_GAME);
         }
 
-        FrameLayout frameLayout = (FrameLayout)findViewById(R.id.kami_container);
+        final FrameLayout frameLayout = (FrameLayout) findViewById(R.id.kami_container);
         frameLayout.addView(sensorView);
     }
 
@@ -100,8 +108,8 @@ public class Washi1Activity extends Activity implements SensorEventListener  {
         Sensor sensor = event.sensor;
         switch (sensor.getType()) {
             case Sensor.TYPE_ACCELEROMETER:
-                // Log.d(LOG_TAG, "ACCELEROMETER : " + event.values[0] + ","
-                // + event.values[1] + "," + event.values[2]);
+//                 Log.d(LOG_TAG, "ACCELEROMETER : " + event.values[0] + ","
+//                 + event.values[1] + "," + event.values[2]);
                 sensorView.move(event.values[0], event.values[1]);
 
                 break;
@@ -110,52 +118,39 @@ public class Washi1Activity extends Activity implements SensorEventListener  {
         }
     }
 
-
-    class SensorView extends View {
+    class SensorView extends ImageView {
         private static final int WASHI_SIZE = 50;
-        private Bitmap washi1;
-        private int w;
-        private int h;
         private float x;
         private float y;
 
+        private int parentWidth;
+        private int parentHeight;
+
         public SensorView(Context context) {
             super(context);
-            washi1 = BitmapFactory.decodeResource(context.getResources(),
+            Bitmap washi1 = BitmapFactory.decodeResource(context.getResources(),
                     R.drawable.kami2);
+            setImageBitmap(washi1);
         }
 
         public void move(float mx, float my) {
-            this.x -= (mx * 4f);
-            this.y += (my * 4f);
-
-            if (this.x < 0) {
-                this.x = 0;
-            } else if ((this.x + WASHI_SIZE) > this.w) {
-                this.x = this.w - WASHI_SIZE;
+            if (parentWidth == 0 || parentHeight == 0) {
+                return;
             }
+            this.x -= (mx * 4);
+            this.y += (my * 4);
 
-            if (this.y < 0) {
-                this.y = 0;
-            } else if ((this.y + WASHI_SIZE) > this.h) {
-                this.y = this.h - WASHI_SIZE;
-            }
+            setLeft((int) x);
+            setTop((int) y);
 
             invalidate();
         }
 
         @Override
-        protected void onSizeChanged(int w, int h, int oldw, int oldh) {
-            this.w = w;
-            this.h = h;
-            this.x = (w - WASHI_SIZE) / 2f;
-            this.y = (h - WASHI_SIZE) / 2f;
+        protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
+            super.onLayout(changed, left, top, right, bottom);
+            parentWidth = right;
+            parentHeight = bottom;
         }
-
-        @Override
-        protected void onDraw(Canvas canvas) {
-            canvas.drawBitmap(washi1, x, y, null);
-        }
-
     }
 }
