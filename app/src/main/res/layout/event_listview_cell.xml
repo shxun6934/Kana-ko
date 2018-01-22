@@ -41,8 +41,5 @@
             android:textSize="15dp"
             android:gravity="start"
             />
-
     </LinearLayout>
-
-
 </LinearLayout>

@@ -22,7 +22,6 @@
             android:textSize="23dp"
             />
 
-
         <TextView
             android:id="@+id/back"
             android:layout_width="100dp"

@@ -20,6 +20,7 @@ public class WashiZukanActivity extends Activity implements View.OnClickListener
         ImageView hidariyajirusibutton = (ImageView) findViewById(R.id.yajirusi_hidari_image);
         ImageView migiyajirusibutton = (ImageView) findViewById(R.id.yajirusi_migi_image);
         ImageView backbutton = (ImageView) findViewById(R.id.back);
+
         washibutton.setOnClickListener(this);
         hidariyajirusibutton.setOnClickListener(this);
         migiyajirusibutton.setOnClickListener(this);

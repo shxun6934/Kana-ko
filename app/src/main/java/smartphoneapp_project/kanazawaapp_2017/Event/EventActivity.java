@@ -83,7 +83,6 @@ public class EventActivity extends Activity implements View.OnClickListener{
                 e1.printStackTrace();
             } finally {
                 if (con != null) {
-                    // コネクションを切断
                     con.disconnect();
                 }
             }

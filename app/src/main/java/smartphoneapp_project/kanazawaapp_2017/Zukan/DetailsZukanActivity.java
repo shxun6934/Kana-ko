@@ -77,7 +77,7 @@ public class DetailsZukanActivity extends Activity implements View.OnClickListen
         Intent intent = getIntent();
         int i = intent.getIntExtra("key",0);
 
-        if(0 <= i && i <= 8){
+        if(1 <= i && i <= 9){
             startActivity(kagayasaizukan1);
         }else if(10 <= i && i <= 18){
             startActivity(kagayasaizukan2);

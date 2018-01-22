@@ -23,6 +23,7 @@ public class KagayasaiZukan1Activity extends Activity implements View.OnClickLis
         ImageView hidariyajirusibutton = (ImageView) findViewById(R.id.yajirusi_hidari_image);
         ImageView migiyajirusibutton = (ImageView) findViewById(R.id.yajirusi_migi_image);
         ImageView backbutton = (ImageView) findViewById(R.id.back);
+
         negibutton.setOnClickListener(this);
         kyuributton.setOnClickListener(this);
         kinjisoubutton.setOnClickListener(this);
