@@ -23,11 +23,11 @@ public class Washi2Activity extends Activity  implements View.OnTouchListener {
     private Rect rect = new Rect();
     private ImageView momijishadow;
     private ImageView otibashadow;
-    private int oldX;
-    private int oldY;
+    private int oldX = 0;
+    private int oldY = 0;
     int count = 0;
-    int x;
-    int y;
+    int x = 0;
+    int y = 0;
     Button button;
     ViewGroup.MarginLayoutParams startmarginkuroba;
     ViewGroup.MarginLayoutParams startmarginmomiji;
