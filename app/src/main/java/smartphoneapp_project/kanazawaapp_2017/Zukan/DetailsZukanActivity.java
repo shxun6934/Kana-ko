@@ -39,31 +39,31 @@ public class DetailsZukanActivity extends Activity implements View.OnClickListen
 
         switch (key){
             case 1:
-                imageview.setImageResource(R.drawable.negi2);
+                imageview.setImageResource(R.drawable.zukan_negi2);
                 nametext.setText(kagayasainame[1]);
                 descriptiontext.setText(kagayasaidescription[1]);
                 break;
 
             case 2:
-                imageview.setImageResource(R.drawable.kyuri2);
+                imageview.setImageResource(R.drawable.zukan_kyuri2);
                 nametext.setText(kagayasainame[2]);
                 descriptiontext.setText(kagayasaidescription[2]);
                 break;
 
             case 3:
-                imageview.setImageResource(R.drawable.kinjisou2);
+                imageview.setImageResource(R.drawable.zukan_kinjisou2);
                 nametext.setText(kagayasainame[3]);
                 descriptiontext.setText(kagayasaidescription[3]);
                 break;
 
             case 4:
-                imageview.setImageResource(R.drawable.renkon2);
+                imageview.setImageResource(R.drawable.zukan_renkon2);
                 nametext.setText(kagayasainame[4]);
                 descriptiontext.setText(kagayasaidescription[4]);
                 break;
 
             case 19:
-                imageview.setImageResource(R.drawable.washi);
+                imageview.setImageResource(R.drawable.zukan_washi1);
                 nametext.setText(washiname[0]);
                 descriptiontext.setText(washidescription[0]);
                 break;
