@@ -3,9 +3,11 @@ package smartphoneapp_project.kanazawaapp_2017;
 import android.app.Activity;
 import android.graphics.Rect;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -28,6 +30,8 @@ public class MizuameActivity  extends Activity implements View.OnTouchListener {
     ViewGroup.MarginLayoutParams startmarginkome;
     ViewGroup.MarginLayoutParams startmerginmugi;
 
+    RotationGestureDetector detector;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +52,17 @@ public class MizuameActivity  extends Activity implements View.OnTouchListener {
 
         nabe_afterView.setVisibility(nabe_afterView.INVISIBLE);     //材料を入れた後の鍋の画像を非表示
 
+        detector = new RotationGestureDetector(this);
+
+        ViewTreeObserver.OnGlobalLayoutListener listener = new ViewTreeObserver.OnGlobalLayoutListener() {
+            @Override
+            public void onGlobalLayout() {
+                detector.setCenterX(nabe_afterView.getPivotX() + nabeView.getLeft());
+                detector.setCenterY(nabe_afterView.getPivotY() + nabeView.getTop());
+                nabe_afterView.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+            }
+        };
+        nabe_afterView.getViewTreeObserver().addOnGlobalLayoutListener(listener);
     }
 
     @Override
@@ -117,3 +132,7 @@ public class MizuameActivity  extends Activity implements View.OnTouchListener {
         return true;
     }
 }
+
+import android.support.annotation.NonNull;
+import android.view.MotionEvent;
+
