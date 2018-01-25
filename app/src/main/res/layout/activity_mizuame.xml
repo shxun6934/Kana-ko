@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/mizuame_background"
+        android:scaleType="fitXY"/>
+
+    <TextView
+        android:id="@+id/mizuame_title_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="ざいりょうをいれよう！！"
+        android:textColor="#000"
+        android:textSize="28dp" />
+
+    <ImageView
+        android:id="@+id/mizuame_nabe_after_imageview"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:layout_marginTop="60dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/mizuame_pot_after"/>
+
+    <ImageView
+        android:id="@+id/mizuame_nabe_imageview"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:layout_marginTop="60dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/mizuame_pot" />
+
+    <Button
+        android:id="@+id/mizuame_cancel_button"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_gravity="bottom"
+        android:background="@drawable/shape_rounded_corners_100dp"
+        android:text="やめる" />
+
+    <TextView
+        android:id="@+id/mizuame_material_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="400dp"
+        android:layout_marginRight="30dp"
+        android:layout_gravity="right"
+        android:text="ざいりょう"
+        android:textColor="#000"
+        android:textSize="30dp"
+        android:gravity="center"/>
+
+    <ImageView
+        android:id="@+id/mizuame_kome_imageview"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:scaleType="fitXY"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="140dp"
+        android:layout_gravity="bottom"
+        android:background="#0000"
+        android:src="@drawable/mizuame_rice"/>
+
+    <ImageView
+        android:id="@+id/mizuame_mugi_imageview"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="260dp"
+        android:layout_gravity="bottom"
+        android:background="#0000"
+        android:scaleType="fitXY"
+        android:src="@drawable/mizuame_wheat"/>
+
+</FrameLayout>
