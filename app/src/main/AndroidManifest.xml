@@ -10,8 +10,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".Washi1Activity"
-            android:screenOrientation="landscape"
-        >
+            android:screenOrientation="portrait">
             <intent-filter>
 
                 <action android:name="android.intent.action.MAIN" />
@@ -19,14 +18,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Washi2Activity"
-            android:label="@string/app_name"></activity>
-
         <activity android:name=".Washi"
             android:label="test"
-            >
-
-        </activity>
+            ></activity>
 
     </application>
 
