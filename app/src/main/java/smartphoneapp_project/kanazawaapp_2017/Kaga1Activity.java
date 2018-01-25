@@ -1,16 +1,15 @@
 package smartphoneapp_project.kanazawaapp_2017;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class Kaga1Activity extends AppCompatActivity {
+public class Kaga1Activity extends Activity {
 
     ArrayList<String> yasainame = new ArrayList<String>();
     ArrayList<String> question = new ArrayList<String>();
