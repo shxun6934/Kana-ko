@@ -53,12 +53,26 @@
 
                 </LinearLayout>
 
-                <!--android:src="@drawable/cucumber"-->
-                <ImageView
-                    android:id="@+id/vegetableimageView"
-                    android:layout_width="352dp"
-                    android:layout_height="match_parent"
-                    />
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="5dp"
+                        android:src="@drawable/kaga1_vegetablebackground"
+                        />
+
+                    <ImageView
+                        android:id="@+id/vegetableimageView"
+                        android:layout_width="352dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="15dp"
+                        />
+                </FrameLayout>
+
+
 
             </LinearLayout>
 
@@ -66,7 +80,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:background="#E6D7D7">
+                android:background="#DCDCDC">
 
                 <TextView
                     android:id="@+id/textView2"
@@ -76,7 +90,7 @@
                     android:background="@drawable/kaga1_frame"
                     android:gravity="center"
                     android:text="これは な〜んだ？"
-                    android:textColor="#424242"
+                    android:textColor="#000"
                     android:textSize="30dp" />
             </LinearLayout>
 
@@ -92,7 +106,7 @@
                     android:layout_height="70dp"
                     android:layout_margin="5dp"
                     android:background="@drawable/kaga1_button"
-                    android:textColor="#D3D3D5"
+                    android:textColor="#FFFFF0"
                     android:textSize="23dp" />
 
                 <Button
@@ -101,7 +115,7 @@
                     android:layout_height="70dp"
                     android:layout_margin="5dp"
                     android:background="@drawable/kaga1_button"
-                    android:textColor="#D3D3D5"
+                    android:textColor="#FFFFF0"
                     android:textSize="23dp" />
 
             </LinearLayout>
@@ -118,7 +132,7 @@
                     android:layout_height="70dp"
                     android:layout_margin="5dp"
                     android:background="@drawable/kaga1_button"
-                    android:textColor="#D3D3D5"
+                    android:textColor="#FFFFF0"
                     android:textSize="23dp" />
 
                 <Button
@@ -127,13 +141,12 @@
                     android:layout_height="70dp"
                     android:layout_margin="5dp"
                     android:background="@drawable/kaga1_button"
-                    android:textColor="#D3D3D5"
+                    android:textColor="#FFFFF0"
                     android:textSize="23dp" />
 
             </LinearLayout>
         </LinearLayout>
 
     </FrameLayout>
-
 
 </LinearLayout>
