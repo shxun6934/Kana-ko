@@ -81,7 +81,7 @@ public class Kaga1Activity extends AppCompatActivity {
                 break;
 
             case "れんこん":
-//                imageView.setImageResource(R.drawable.);
+                imageView.setImageResource(R.drawable.kaga1_renkon);
                 break;
 
             case "きゅうり":
