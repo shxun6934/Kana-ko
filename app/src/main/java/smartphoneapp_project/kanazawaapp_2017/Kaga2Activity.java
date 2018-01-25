@@ -1,7 +1,7 @@
 package smartphoneapp_project.kanazawaapp_2017;
 
-import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
 
-public class Kaga2Activity extends AppCompatActivity {
+public class Kaga2Activity extends Activity {
 
 }
