@@ -17,9 +17,7 @@ public class Kaga1Activity extends Activity {
 
     ImageView imageView;
 
-    int i = 0;
-    int a = 0;
-    static int b;
+    int vegetable = 0;
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
@@ -70,7 +68,7 @@ public class Kaga1Activity extends Activity {
     }
 
     private void setVegetable(){
-        switch (question.get(i)) {
+        switch (question.get(vegetable)) {
             case "きんじそう":
                 imageView.setImageResource(R.drawable.kaga1_kinnzisou);
                 break;
@@ -97,9 +95,9 @@ public class Kaga1Activity extends Activity {
                 case R.id.button1:
                     Button button1 = (Button) findViewById(R.id.button1);
                     CharSequence yasai1 = button1.getText();
-                    if (yasai1 == question.get(i)) {
+                    if (yasai1 == question.get(vegetable)) {
                         Intent intent = new Intent(Kaga1Activity.this, Kaga2Activity.class);
-                        intent.putExtra("answer", yasainame.get(i));
+                        intent.putExtra("answer", yasainame.get(vegetable));
                         startActivityForResult(intent,0);
                     } else {
                         Intent intent = new Intent(Kaga1Activity.this, Kaga2Activity.class);
@@ -110,10 +108,10 @@ public class Kaga1Activity extends Activity {
                 case R.id.button2:
                     Button button2 = (Button) findViewById(R.id.button2);
                     CharSequence yasai2 = button2.getText();
-                    if (yasai2 == question.get(i)) {
+                    if (yasai2 == question.get(vegetable)) {
 
                         Intent intent = new Intent(Kaga1Activity.this, Kaga2Activity.class);
-                        intent.putExtra("answer", yasainame.get(i));
+                        intent.putExtra("answer", yasainame.get(vegetable));
                         startActivityForResult(intent,0);
                     } else {
                         Intent intent = new Intent(Kaga1Activity.this, Kaga2Activity.class);
@@ -124,10 +122,10 @@ public class Kaga1Activity extends Activity {
                 case R.id.button3:
                     Button button3 = (Button) findViewById(R.id.button3);
                     CharSequence yasai3 = button3.getText();
-                    if (yasai3 == question.get(i)) {
+                    if (yasai3 == question.get(vegetable)) {
 
                         Intent intent = new Intent(Kaga1Activity.this, Kaga2Activity.class);
-                        intent.putExtra("answer", yasainame.get(i));
+                        intent.putExtra("answer", yasainame.get(vegetable));
                         startActivityForResult(intent,0);
                     } else {
                         Intent intent = new Intent(Kaga1Activity.this, Kaga2Activity.class);
@@ -138,10 +136,10 @@ public class Kaga1Activity extends Activity {
                 case R.id.button4:
                     Button button4 = (Button) findViewById(R.id.button4);
                     CharSequence yasai4 = button4.getText();
-                    if (yasai4 == question.get(i)) {
+                    if (yasai4 == question.get(vegetable)) {
 
                         Intent intent = new Intent(Kaga1Activity.this, Kaga2Activity.class);
-                        intent.putExtra("answer", yasainame.get(i));
+                        intent.putExtra("answer", yasainame.get(vegetable));
                         startActivityForResult(intent,0);
                     } else {
                         Intent intent = new Intent(Kaga1Activity.this, Kaga2Activity.class);
@@ -160,7 +158,7 @@ public class Kaga1Activity extends Activity {
         switch ( (requestCode)){
             case (0):
                 if (resultCode == RESULT_OK) {
-                    i = data.getIntExtra("question2",0);
+                    vegetable = data.getIntExtra("question2",0);
 
                     setVegetable();
                     Button button1 = (Button)findViewById(R.id.button1);
@@ -174,7 +172,7 @@ public class Kaga1Activity extends Activity {
                     button4.setOnClickListener(button1Click);
                 }
         }
-        switch ((i)){
+        switch ((vegetable)){
 
             case (1):
                 ImageView imageView4 = (ImageView) findViewById(R.id.imageViewRump1);
