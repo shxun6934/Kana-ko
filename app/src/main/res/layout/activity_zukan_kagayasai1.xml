@@ -8,13 +8,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/washi1"> </ImageView>
+        android:src="@drawable/zukan_bg"> </ImageView>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:background="@drawable/greenframe"
+        android:background="@drawable/zukan_frame_green"
         android:layout_marginTop="15dp"
         android:text=" かがやさい１ "
         android:textSize="50dp"
@@ -31,7 +31,7 @@
             android:id="@+id/negi_image"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/negi1"/>
+            android:src="@drawable/zukan_negi1"/>
     </LinearLayout>
 
     <LinearLayout
@@ -44,7 +44,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center_horizontal"
-            android:src="@drawable/kyuri1"/>
+            android:src="@drawable/zukan_kyuri1"/>
     </LinearLayout>
 
     <LinearLayout
@@ -57,7 +57,7 @@
             android:id="@+id/kinjisou_image"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/kinjisou1"/>
+            android:src="@drawable/zukan_kinjisou1"/>
     </LinearLayout>
 
     <LinearLayout
@@ -70,7 +70,7 @@
             android:id="@+id/renkon_image"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/renkon1"/>
+            android:src="@drawable/zukan_renkon1"/>
     </LinearLayout>
 
     <LinearLayout
@@ -83,7 +83,7 @@
             android:id="@+id/yajirusi_hidari_image"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/yajirusi_hidari"/>
+            android:src="@drawable/zukan_left_arrow"/>
     </LinearLayout>
 
     <LinearLayout
@@ -95,7 +95,7 @@
             android:id="@+id/back"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/washi3"/>
+            android:src="@drawable/zukan_button"/>
     </LinearLayout>
 
     <TextView
@@ -118,7 +118,7 @@
             android:id="@+id/yajirusi_migi_image"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/yajirusi_migi"/>
+            android:src="@drawable/zukan_right_arrow"/>
     </LinearLayout>
 
 
