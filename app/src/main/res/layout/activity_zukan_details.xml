@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/washi1" />
+        android:src="@drawable/zukan_bg" />
 
     <LinearLayout
         android:layout_width="300dp"
@@ -19,7 +19,7 @@
             android:id="@+id/image"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/negi1"/>
+            android:src="@drawable/zukan_negi1"/>
     </LinearLayout>
 
     <LinearLayout
@@ -58,7 +58,7 @@
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:background="@drawable/sandybrown"
+        android:background="@drawable/zukan_frame_sandybrown"
         android:layout_marginTop="305dp">
 
         <TextView
@@ -80,7 +80,7 @@
             android:id="@+id/back"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/washi3"/>
+            android:src="@drawable/zukan_button"/>
     </LinearLayout>
 
     <TextView
