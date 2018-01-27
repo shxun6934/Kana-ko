@@ -4,11 +4,11 @@
     <string name="next_button_hazire">もういっかいチャレンジ</string>
 
     <string name="kinnzisou">きんじそう</string>
-    <string name="kinnzisou_description">きんじそうは、はのうらがきんときいものいろににているからきんじそうとよばれている。そのははすこしあまい。</string>
+    <string name="kinnzisou_description">きんじそうは、はのうらがきんときいものいろににているからきんじそうとよばれている。\nそのははすこしあまい。</string>
     <string name="hutokyuuri">かがふときゅうり</string>
-    <string name="hutokyuuri_description">かがふときゅうりはおもさがふつうのきゅうりよりおもい。やわらかくあまい。かわをむいてあんかけにするなどしてたべる</string>
-    <string name="hutonegi">かなざわいっぽんふとねぎ</string>
-    <string name="hutonegi_description">かなざわいっぽんねぎはふつうのねぎよりもやわらかい。ふゆになるほどあまくなり、すきやきやねべにいれる</string>
+    <string name="hutokyuuri_description">かがふときゅうりはおもさがふつうのきゅうりよりおもい。\nやわらかくあまい。\nかわをむいてあんかけにするなどしてたべる。</string>
+    <string name="hutonegi">かがいっぽんふとねぎ</string>
+    <string name="hutonegi_description">かがいっぽんねぎはふつうのねぎよりもやわらかい。\nふゆになるほどあまくなり、すきやきやねべにいれる。</string>
     <string name="rennkonn">かがれんこん</string>
-    <string name="rennkonn_description">かがれんこんはふつうのれんこんよりねばりがつよい。れんこんをむしたり、もちにしてたべるのがおすすめ。</string>
+    <string name="rennkonn_description">かがれんこんはふつうのれんこんよりねばりがつよい。\nれんこんをむしたり、もちにしてたべるのがおすすめ。</string>
 </resources>
