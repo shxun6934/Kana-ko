@@ -10,6 +10,7 @@
         import android.view.View;
         import android.widget.Button;
 
+        import smartphoneapp_project.kanazawaapp_2017.Event.EventActivity;
         import smartphoneapp_project.kanazawaapp_2017.Zukan.KagayasaiZukan1Activity;
 
 public class MapActivity extends AppCompatActivity {
@@ -225,6 +226,13 @@ public class MapActivity extends AppCompatActivity {
             }
         };
 
+        View.OnClickListener i = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {//押下時の処理
+                Intent event_change = new Intent(MapActivity.this, EventActivity.class);
+                startActivity(event_change);//画面遷移を行う
+            }
+        };
 
 /*map1へ画面遷移*/
         final Button map1_1 =(Button)findViewById(R.id.button1_1);
@@ -313,10 +321,15 @@ public class MapActivity extends AppCompatActivity {
         map7_3.setOnClickListener(g);
         map7_4.setOnClickListener(g);
 
-/*地図へ画面遷移*/
+/*図鑑へ画面遷移*/
         final Button zukan = (Button)findViewById(R.id.zukan);
 
         zukan.setOnClickListener(z);
+
+/*イベントへ画面遷移*/
+        final Button event = (Button)findViewById(R.id.event);
+
+        event.setOnClickListener(i);
 
     }
 
