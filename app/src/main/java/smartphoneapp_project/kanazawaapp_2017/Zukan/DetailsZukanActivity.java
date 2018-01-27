@@ -12,13 +12,6 @@ import smartphoneapp_project.kanazawaapp_2017.R;
 
 public class DetailsZukanActivity extends Activity implements View.OnClickListener{
 
-    String[] kagayasainame = {null,"いっぽんふとねぎ", "かがふときゅうり", "きんじそう", "かがれんこん"};
-    String[] kagayasaidescription = {null,
-            "かなざわいっぽんねぎは、ふつうのねぎよりもやわらかい。\nふゆになるほどあまくなり、\nすきやきやなべにいれる。",
-            "かがふときゅうりは、おもさがふつうのきゅうりよりおもい。\nやわらかくあまい。\nかわをむいてあんかけにするなどしてたべる。",
-            "きんじそうは、はのうらがきんときいものいろににているからきんじそうとよばれている。\nそのははすこしあまい。",
-            "かがれんこんは、ふつうのれんこんよりねばりがつよい。\nれんこんをむしたり、もちにしてたべるのがおすすめ。"};
-
     String[] washiname = {"わし"};
     String[] washidescription = {".........."};
 
@@ -39,27 +32,27 @@ public class DetailsZukanActivity extends Activity implements View.OnClickListen
 
         switch (key){
             case 1:
-                imageview.setImageResource(R.drawable.zukan_negi2);
-                nametext.setText(kagayasainame[1]);
-                descriptiontext.setText(kagayasaidescription[1]);
+                imageview.setImageResource(R.drawable.zukan_hutonegi2);
+                nametext.setText(R.string.hutonegi);
+                descriptiontext.setText(R.string.hutonegi_description);
                 break;
 
             case 2:
-                imageview.setImageResource(R.drawable.zukan_kyuri2);
-                nametext.setText(kagayasainame[2]);
-                descriptiontext.setText(kagayasaidescription[2]);
+                imageview.setImageResource(R.drawable.zukan_hutokyuuri2);
+                nametext.setText(R.string.hutokyuuri);
+                descriptiontext.setText(R.string.hutokyuuri_description);
                 break;
 
             case 3:
-                imageview.setImageResource(R.drawable.zukan_kinjisou2);
-                nametext.setText(kagayasainame[3]);
-                descriptiontext.setText(kagayasaidescription[3]);
+                imageview.setImageResource(R.drawable.zukan_kinnzisou2);
+                nametext.setText(R.string.kinnzisou);
+                descriptiontext.setText(R.string.kinnzisou_description);
                 break;
 
             case 4:
-                imageview.setImageResource(R.drawable.zukan_renkon2);
-                nametext.setText(kagayasainame[4]);
-                descriptiontext.setText(kagayasaidescription[4]);
+                imageview.setImageResource(R.drawable.zukan_rennkonn2);
+                nametext.setText(R.string.rennkonn);
+                descriptiontext.setText(R.string.rennkonn_description);
                 break;
 
             case 19:
