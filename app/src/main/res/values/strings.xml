@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">KanazawaApp_2017</string>
+    <string name="next_button_atari">つぎのもんだい</string>
+    <string name="next_button_hazire">もういっかいチャレンジ</string>
+
+    <string name="kinnzisou">きんじそう</string>
+    <string name="kinnzisou_description">きんじそうは、はのうらがきんときいものいろににているからきんじそうとよばれている。そのははすこしあまい。</string>
+    <string name="hutokyuuri">かがふときゅうり</string>
+    <string name="hutokyuuri_description">かがふときゅうりはおもさがふつうのきゅうりよりおもい。やわらかくあまい。かわをむいてあんかけにするなどしてたべる</string>
+    <string name="hutonegi">かなざわいっぽんふとねぎ</string>
+    <string name="hutonegi_description">かなざわいっぽんねぎはふつうのねぎよりもやわらかい。ふゆになるほどあまくなり、すきやきやねべにいれる</string>
+    <string name="rennkonn">かがれんこん</string>
+    <string name="rennkonn_description">かがれんこんはふつうのれんこんよりねばりがつよい。れんこんをむしたり、もちにしてたべるのがおすすめ。</string>
 </resources>
