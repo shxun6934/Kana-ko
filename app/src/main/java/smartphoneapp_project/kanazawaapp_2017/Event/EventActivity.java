@@ -24,8 +24,8 @@ import java.net.ProtocolException;
 import java.net.URL;
 import java.util.ArrayList;
 
+import smartphoneapp_project.kanazawaapp_2017.MapActivity;
 import smartphoneapp_project.kanazawaapp_2017.R;
-import smartphoneapp_project.kanazawaapp_2017.Zukan.KagayasaiZukan1Activity;
 
 public class EventActivity extends Activity implements View.OnClickListener{
 
@@ -117,7 +117,7 @@ public class EventActivity extends Activity implements View.OnClickListener{
     }
 
     public void onClick(View v) {
-        Intent map = new Intent(EventActivity.this, KagayasaiZukan1Activity.class);
+        Intent map = new Intent(EventActivity.this, MapActivity.class);
         Intent webpage = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.utatsu-kogei.gr.jp/event/"));
         switch (v.getId()){
             case R.id.back:
