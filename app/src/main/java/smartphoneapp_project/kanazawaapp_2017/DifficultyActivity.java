@@ -20,9 +20,16 @@ public class DifficultyActivity extends Activity {
         Button easyButton = (Button)findViewById(R.id.button_easy);
         Button normalButton = (Button)findViewById(R.id.button_normal);
         Button hardButton = (Button)findViewById(R.id.button_hard);
+        Button backButton = (Button)findViewById(R.id.button_back);
         easyButton.setOnClickListener(difficultyClick);
         normalButton.setOnClickListener(difficultyClick);
         hardButton.setOnClickListener(difficultyClick);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
     }
     public View.OnClickListener difficultyClick = new View.OnClickListener(){
@@ -57,4 +64,5 @@ public class DifficultyActivity extends Activity {
             }
         }
     };
+
 }
