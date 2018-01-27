@@ -1,4 +1,4 @@
-package smartphoneapp_project.kanazawaapp_2017;
+package smartphoneapp_project.kanazawaapp_2017.WashiGame;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -13,6 +13,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+
+import smartphoneapp_project.kanazawaapp_2017.R;
 
 import static smartphoneapp_project.kanazawaapp_2017.R.drawable.kuroba;
 
@@ -164,12 +166,12 @@ public class Washi2Activity extends Activity  implements View.OnTouchListener {
     }
     //戻るボタンで和紙1の画面に行く処理
     public void returnClick(View view){
-        Intent intent= new Intent(this,Washi1Activity.class);
+        Intent intent= new Intent(this, Washi1Activity.class);
         startActivity(intent);
     }
     //ゲームクリア時に出てくるボタンの処理(結果画面に進む)
-    /*public void onClick(View view) {
-      Intent intent = new Intent(this, Wasi3.Activity.class);
-       startActivity(intent);
-    }*/
+//    public void onClick(View view) {
+//      Intent intent = new Intent(this, Washi3Activity.class);
+//       startActivity(intent);
+//    }
 }

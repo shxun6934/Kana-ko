@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import smartphoneapp_project.kanazawaapp_2017.Map.MapActivity;
+
 public class TitleActivity extends Activity {
 
     @Override

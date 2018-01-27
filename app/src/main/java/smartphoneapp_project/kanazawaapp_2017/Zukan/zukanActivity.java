@@ -1,7 +1,9 @@
-package smartphoneapp_project.kanazawaapp_2017;
+package smartphoneapp_project.kanazawaapp_2017.Zukan;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import smartphoneapp_project.kanazawaapp_2017.R;
 
 public class zukanActivity extends AppCompatActivity {
 
