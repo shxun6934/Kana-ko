@@ -7,13 +7,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/washi1" />
+        android:src="@drawable/zukan_bg" />
 
     <LinearLayout
         android:layout_width="350dp"
         android:layout_height="70dp"
         android:layout_gravity="center_horizontal"
-        android:background="@drawable/greenframe"
+        android:background="@drawable/zukan_frame_green"
         android:layout_marginTop="12dp">
     </LinearLayout>
 
@@ -38,7 +38,7 @@
             android:id="@+id/yajirusi_hidari_image"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/yajirusi_hidari"/>
+            android:src="@drawable/zukan_left_arrow"/>
     </LinearLayout>
 
     <LinearLayout
@@ -50,7 +50,7 @@
             android:id="@+id/back"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/washi3"/>
+            android:src="@drawable/zukan_button"/>
     </LinearLayout>
 
     <TextView
@@ -73,7 +73,7 @@
             android:id="@+id/yajirusi_migi_image"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/yajirusi_migi"/>
+            android:src="@drawable/zukan_right_arrow"/>
     </LinearLayout>
 
 </FrameLayout>

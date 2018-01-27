@@ -24,7 +24,7 @@ public class Kaga2ActivityCongrats extends Activity {
         ImageView seikaigazou1 = (ImageView) findViewById(R.id.seikai_gazou1);
         ImageView seikaigazou2 = (ImageView) findViewById(R.id.seikai_gazou2);
 
-        Button tap=(Button)findViewById(R.id.tap);
+        Button tap = (Button) findViewById(R.id.tap);
 
 
         switch (mondai.get(0)) {
@@ -74,7 +74,7 @@ public class Kaga2ActivityCongrats extends Activity {
         tap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent1=new Intent(Kaga2ActivityCongrats.this,Kaga2Test.class);
+                Intent intent1 = new Intent(Kaga2ActivityCongrats.this, Kaga2Test.class);
                 startActivity(intent1);
             }
         });
