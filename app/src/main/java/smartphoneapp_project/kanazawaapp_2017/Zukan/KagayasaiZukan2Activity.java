@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 import smartphoneapp_project.kanazawaapp_2017.Event.EventActivity;
-import smartphoneapp_project.kanazawaapp_2017.MapActivity;
+import smartphoneapp_project.kanazawaapp_2017.Map.MapActivity;
 import smartphoneapp_project.kanazawaapp_2017.R;
 
 public class KagayasaiZukan2Activity extends Activity implements View.OnClickListener {
