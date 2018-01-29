@@ -14,6 +14,10 @@
         <activity
             android:name=".Washi1Activity"
             android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
 
         <activity
@@ -30,15 +34,11 @@
 
         <activity android:name=".Zukan.KagayasaiZukan1Activity" />
 
-        <activity android:name=".MapActivity" />
+        <activity android:name=".MapActivity" >
+
+        </activity>
 
         <activity android:name=".Kaga2Test">
-
-            <intent-filter>
-
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <activity android:name=".Washi"
