@@ -7,6 +7,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -29,6 +30,8 @@ import smartphoneapp_project.kanazawaapp_2017.R;
 
 public class EventActivity extends Activity implements View.OnClickListener{
 
+    JSONArray eventArray;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,7 +50,7 @@ public class EventActivity extends Activity implements View.OnClickListener{
 
     }
 
-    class estAsycTask extends AsyncTask<URL, Void, String> {
+    class estAsycTask extends AsyncTask<URL, Void, String> implements AdapterView.OnItemClickListener{
         @Override
         protected String doInBackground(URL... urls) {
             final StringBuilder result = new StringBuilder();
@@ -97,7 +100,7 @@ public class EventActivity extends Activity implements View.OnClickListener{
             String fileText = s.toString();
             try {
                 JSONObject rootObject = new JSONObject(fileText);
-                JSONArray eventArray = rootObject.getJSONArray("items");
+                eventArray = rootObject.getJSONArray("items");
 
                 ArrayList<Event> items = new ArrayList<>();
                 for (int i = 0; i < eventArray.length(); i++) {
@@ -110,22 +113,37 @@ public class EventActivity extends Activity implements View.OnClickListener{
 
                 listView.setAdapter(adapter);
 
+                listView.setOnItemClickListener(this);
+
             } catch (JSONException e) {
                 e.printStackTrace();
             }
         }
+        @Override
+        public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
+            try {
+                    JSONObject jsonobject = eventArray.getJSONObject(position);
+                    String url = "http://www.utatsu-kogei.gr.jp/" + jsonobject.getString("link");
+                    Intent eventpage = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                    startActivity(eventpage);
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+
     }
 
     public void onClick(View v) {
         Intent map = new Intent(EventActivity.this, MapActivity.class);
-        Intent webpage = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.utatsu-kogei.gr.jp/event/"));
+        Intent homepage = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.utatsu-kogei.gr.jp/"));
         switch (v.getId()){
             case R.id.back:
                 startActivity(map);
                 break;
 
             case R.id.web:
-                startActivity(webpage);
+                startActivity(homepage);
                 break;
         }
     }
