@@ -11,11 +11,8 @@ import android.widget.ImageView;
 
 import static smartphoneapp_project.kanazawaapp_2017.Kaga1Activity.question;
 
-/**
- * Created by Yuta on 2017/12/17.
- */
-
 public class Kaga2ActivityCongrats extends Activity {
+
 //    @Override
 //    protected void onCreate(@Nullable Bundle savedInstanceState) {
 //        super.onCreate(savedInstanceState);
@@ -80,6 +77,4 @@ public class Kaga2ActivityCongrats extends Activity {
 //        });
 //
 //    }
-
-
 }

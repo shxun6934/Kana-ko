@@ -9,10 +9,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-/**
- * Created by Yuta on 2017/12/07.
- */
-
 public class Kaga2ActivityHazure extends Activity {
     String kotae;
 
@@ -61,4 +57,3 @@ public class Kaga2ActivityHazure extends Activity {
 //        });
 //    }
 }
-
