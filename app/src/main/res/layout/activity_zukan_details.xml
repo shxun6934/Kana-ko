@@ -19,7 +19,7 @@
             android:id="@+id/image"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/zukan_negi1"/>
+            android:src="@drawable/zukan_hutonegi1"/>
     </LinearLayout>
 
     <LinearLayout
