@@ -52,6 +52,7 @@
         android:layout_marginTop="295dp"
         android:background="@drawable/shape_sample"
         android:onClick="returnClick"
+        android:textColor="#b22222"
         android:text="もどる"
         android:visibility="visible" />
     <ImageView
