@@ -9,7 +9,6 @@
         import android.support.v7.app.AppCompatActivity;
         import android.view.View;
         import android.widget.Button;
-
         import smartphoneapp_project.kanazawaapp_2017.Event.EventActivity;
         import smartphoneapp_project.kanazawaapp_2017.Zukan.KagayasaiZukan1Activity;
 
@@ -33,19 +32,13 @@ public class MapActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
-                        //Yesボタンが押されたときの処理
+                        // TODO:すすむボタンが押されたときの処理
                         Intent map1_change = new Intent(MapActivity.this, map1Activity.class);
                         map1_change.putExtra("kind_game",1);
                         startActivity(map1_change);//画面遷移を行う
                     }
                 });
-                alertDialog.setNegativeButton("　　　もどる　　 ",new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-
-                        // TODO:Noボタンが押されたときの処理
-                    }
-                });
+                alertDialog.setNegativeButton("　　　もどる　　 ", null);
                 alertDialog.create().show();
             }
         };
@@ -61,19 +54,13 @@ public class MapActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
-                        //Yesボタンが押されたときの処理
+                        // TODO:すすむボタンが押されたときの処理
                         Intent map2_change = new Intent(MapActivity.this, map2Activity.class);
                         map2_change.putExtra("kind_game",2);
                         startActivity(map2_change);//画面遷移を行う
                     }
                 });
-                alertDialog.setNegativeButton("　　　もどる　　 ",new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-
-                        // TODO:Noボタンが押されたときの処理
-                    }
-                });
+                alertDialog.setNegativeButton("　　　もどる　　 ", null);
                 alertDialog.create().show();
             }
         };
@@ -89,19 +76,13 @@ public class MapActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
-                        //Yesボタンが押されたときの処理
+                        // TODO:すすむボタンが押されたときの処理
                         Intent map3_change = new Intent(MapActivity.this, map3Activity.class);
                         map3_change.putExtra("kind_game",3);
                         startActivity(map3_change);//画面遷移を行う
                     }
                 });
-                alertDialog.setNegativeButton("　　　もどる　　 ",new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-
-                        // TODO:Noボタンが押されたときの処理
-                    }
-                });
+                alertDialog.setNegativeButton("　　　もどる　　 ", null);
                 alertDialog.create().show();
             }
         };
@@ -117,19 +98,13 @@ public class MapActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
-                        //Yesボタンが押されたときの処理
+                        // TODO:すすむボタンが押されたときの処理
                         Intent map4_change = new Intent(MapActivity.this, map4Activity.class);
                         map4_change.putExtra("kind_game",4);
                         startActivity(map4_change);//画面遷移を行う
                     }
                 });
-                alertDialog.setNegativeButton("　　　もどる　　 ",new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-
-                        // TODO:Noボタンが押されたときの処理
-                    }
-                });
+                alertDialog.setNegativeButton("　　　もどる　　 ", null);
                 alertDialog.create().show();
             }
         };
@@ -145,19 +120,13 @@ public class MapActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
-                        //Yesボタンが押されたときの処理
+                        // TODO:すすむボタンが押されたときの処理
                         Intent map5_change = new Intent(MapActivity.this, map5Activity.class);
                         map5_change.putExtra("kind_game",5);
                         startActivity(map5_change);//画面遷移を行う
                     }
                 });
-                alertDialog.setNegativeButton("　　　もどる　　 ",new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-
-                        // TODO:Noボタンが押されたときの処理
-                    }
-                });
+                alertDialog.setNegativeButton("　　　もどる　　 ", null);
                 alertDialog.create().show();
             }
         };
@@ -173,19 +142,13 @@ public class MapActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
-                        //Yesボタンが押されたときの処理
+                        // TODO:すすむボタンが押されたときの処理
                         Intent map6_change = new Intent(MapActivity.this, map6Activity.class);
                         map6_change.putExtra("kind_game",6);
                         startActivity(map6_change);//画面遷移を行う
                     }
                 });
-                alertDialog.setNegativeButton("　　　もどる　　 ",new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-
-                        // TODO:Noボタンが押されたときの処理
-                    }
-                });
+                alertDialog.setNegativeButton("　　　もどる　　 ", null);
                 alertDialog.create().show();
             }
         };
@@ -201,19 +164,13 @@ public class MapActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
-                        //Yesボタンが押されたときの処理
+                        // TODO:すすむボタンが押されたときの処理
                         Intent map7_change = new Intent(MapActivity.this, map7Activity.class);
                         map7_change.putExtra("kind_game",7);
                         startActivity(map7_change);//画面遷移を行う
                     }
                 });
-                alertDialog.setNegativeButton("　　　もどる　　 ",new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-
-                        // TODO:Noボタンが押されたときの処理
-                    }
-                });
+                alertDialog.setNegativeButton("　　　もどる　　 ", null);
                 alertDialog.create().show();
             }
         };
