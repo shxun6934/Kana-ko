@@ -80,6 +80,4 @@ public class Kaga2ActivityCongrats extends Activity {
 //        });
 //
 //    }
-
-
 }

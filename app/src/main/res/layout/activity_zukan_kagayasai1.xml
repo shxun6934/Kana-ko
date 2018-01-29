@@ -31,7 +31,7 @@
             android:id="@+id/negi_image"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/zukan_negi1"/>
+            android:src="@drawable/zukan_hutonegi1"/>
     </LinearLayout>
 
     <LinearLayout
@@ -44,7 +44,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center_horizontal"
-            android:src="@drawable/zukan_kyuri1"/>
+            android:src="@drawable/zukan_hutokyuuri1"/>
     </LinearLayout>
 
     <LinearLayout
@@ -57,7 +57,7 @@
             android:id="@+id/kinjisou_image"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/zukan_kinjisou1"/>
+            android:src="@drawable/zukan_kinnzisou1"/>
     </LinearLayout>
 
     <LinearLayout
@@ -70,7 +70,7 @@
             android:id="@+id/renkon_image"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/zukan_renkon1"/>
+            android:src="@drawable/zukan_rennkonn1"/>
     </LinearLayout>
 
     <LinearLayout
