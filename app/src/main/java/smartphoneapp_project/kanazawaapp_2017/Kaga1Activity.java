@@ -3,7 +3,6 @@ package smartphoneapp_project.kanazawaapp_2017;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -76,7 +75,7 @@ public class Kaga1Activity extends Activity {
     private void setVegetable() {
         switch (question.get(answer)) {
             case "きんじそう":
-                imageView.setImageResource(R.drawable.kaga1_kinnzisou);
+                imageView.setImageResource(R.drawable.kaga1_kinzisou);
                 break;
 
             case "ねぎ":
@@ -135,6 +134,7 @@ public class Kaga1Activity extends Activity {
                     button3.setOnClickListener(button1Click);
                     button4.setOnClickListener(button1Click);
                 }
+
         }
         switch ((answer)) {
 
@@ -157,6 +157,5 @@ public class Kaga1Activity extends Activity {
 
         }
     }
-
 
 }

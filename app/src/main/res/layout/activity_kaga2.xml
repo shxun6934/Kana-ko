@@ -4,11 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/kaga1_background"
     android:paddingBottom="0dp"
     android:paddingRight="16dp"
     android:paddingLeft="16dp"
-    android:paddingTop="0dp"
-    android:background="@drawable/kaga_background">
+    android:paddingTop="0dp">
     <FrameLayout
         android:id="@+id/image"
         android:layout_width="wrap_content"
@@ -19,7 +19,7 @@
             android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/maru_sironiki" />
+            android:src="@drawable/kaga2maru" />
 
         <ImageView
             android:id="@+id/yasai"
@@ -45,6 +45,7 @@
             android:layout_marginBottom="0dp"
             android:background="@drawable/kagayasai2_nameflam"
             android:text="@string/kinnzisou"
+            android:textColor="#0A2A29"
             android:textSize="25dp" />
     </LinearLayout>
 
@@ -52,7 +53,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/image"
-        android:layout_margin="10dp"
+        android:layout_margin="15dp"
         android:layout_weight="1"
         android:orientation="vertical">
 
@@ -67,6 +68,7 @@
 
         <Button
             android:id="@+id/next_button"
+            android:layout_marginTop="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
