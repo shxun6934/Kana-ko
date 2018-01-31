@@ -9,10 +9,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-/**
- * Created by Yuta on 2017/12/07.
- */
-
 public class Kaga2ActivityHazure extends Activity {
     String kotae;
 
@@ -27,7 +23,7 @@ public class Kaga2ActivityHazure extends Activity {
         Intent intent = getIntent();
 
 
-        kotae = intent.getStringExtra("kotae");
+        kotae = intent.getStringExtra("answer");
         textView.setText(kotae);
 
         switch (kotae) {
@@ -55,10 +51,9 @@ public class Kaga2ActivityHazure extends Activity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent1 = new Intent(Kaga2ActivityHazure.this, Kaga2Test.class);
+                Intent intent1 = new Intent(Kaga2ActivityHazure.this, Kaga1Activity.class);
                 startActivity(intent1);
             }
         });
     }
 }
-

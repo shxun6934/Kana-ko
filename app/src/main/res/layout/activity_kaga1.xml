@@ -4,4 +4,149 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/vegetable"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/kaga1_background"
+            android:scaleType="fitXY"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageViewRump1"
+                        android:layout_width="66dp"
+                        android:layout_height="58dp"
+                        android:layout_weight="1" />
+
+                    <ImageView
+                        android:id="@+id/imageViewRump2"
+                        android:layout_width="66dp"
+                        android:layout_height="58dp"
+                        android:layout_weight="1" />
+
+                    <ImageView
+                        android:id="@+id/imageViewRump3"
+                        android:layout_width="66dp"
+                        android:layout_height="58dp"
+                        android:layout_weight="1" />
+
+                </LinearLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="5dp"
+                        android:src="@drawable/kaga1_vegetablebackground"
+                        />
+
+                    <ImageView
+                        android:id="@+id/vegetableimageView"
+                        android:layout_width="352dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="15dp"
+                        />
+                </FrameLayout>
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="#DCDCDC">
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="335dp"
+                    android:layout_height="46dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/kaga1_frame"
+                    android:gravity="center"
+                    android:text="これは な〜んだ？"
+                    android:textColor="#000"
+                    android:textSize="30dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="5dp">
+
+                <Button
+                    android:id="@+id/button1"
+                    android:layout_width="168dp"
+                    android:layout_height="70dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/kaga1_button"
+                    android:textColor="#FFFFF0"
+                    android:textSize="23dp" />
+
+                <Button
+                    android:id="@+id/button2"
+                    android:layout_width="168dp"
+                    android:layout_height="70dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/kaga1_button"
+                    android:textColor="#FFFFF0"
+                    android:textSize="23dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="5dp">
+
+                <Button
+                    android:id="@+id/button3"
+                    android:layout_width="168dp"
+                    android:layout_height="70dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/kaga1_button"
+                    android:textColor="#FFFFF0"
+                    android:textSize="23dp" />
+
+                <Button
+                    android:id="@+id/button4"
+                    android:layout_width="168dp"
+                    android:layout_height="70dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/kaga1_button"
+                    android:textColor="#FFFFF0"
+                    android:textSize="23dp" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </FrameLayout>
+
 </LinearLayout>
