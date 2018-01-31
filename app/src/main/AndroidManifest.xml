@@ -25,9 +25,6 @@
 
         <activity android:name=".Zukan.KagayasaiZukan1Activity" />
 
-        <activity android:name=".MapActivity" >
-        </activity>
-
         <activity android:name=".Zukan.DetailsZukanActivity" />
         <activity android:name=".Zukan.KagayasaiZukan2Activity" />
         <activity android:name=".Zukan.WashiZukanActivity" />

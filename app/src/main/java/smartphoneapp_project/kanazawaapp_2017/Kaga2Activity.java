@@ -4,13 +4,10 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.util.Log;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import static smartphoneapp_project.kanazawaapp_2017.Kaga1Activity.answer;
 
 //正解画面
@@ -23,6 +20,7 @@ public class Kaga2Activity extends Activity {
         setContentView(R.layout.activity_kaga2);
 
         ImageView yasai_syasinn = (ImageView) findViewById(R.id.yasai);
+
         TextView textView = (TextView) findViewById(R.id.yasai_name);
         TextView textView_description = (TextView) findViewById(R.id.description);
         Button button = (Button) findViewById(R.id.next_button);
@@ -30,7 +28,6 @@ public class Kaga2Activity extends Activity {
         final Intent intent = getIntent();
         kotae = intent.getStringExtra("answer");
         //送られてきたkotaeでどの画像を表示するか判定
-
         switch (kotae) {
             case "きゅうり":
                 textView_description.setText(R.string.hutokyuuri_description);
@@ -57,6 +54,7 @@ public class Kaga2Activity extends Activity {
                 break;
         }
 
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -77,3 +75,4 @@ public class Kaga2Activity extends Activity {
         });
     }
 }
+

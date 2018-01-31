@@ -9,10 +9,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-/**
- * Created by Yuta on 2017/12/07.
- */
-
 public class Kaga2ActivityHazure extends Activity {
     String kotae;
 
@@ -26,10 +22,12 @@ public class Kaga2ActivityHazure extends Activity {
         Button button = (Button) findViewById(R.id.next_button);
         Intent intent = getIntent();
 
+
         kotae = intent.getStringExtra("answer");
         textView.setText(kotae);
 
         switch (kotae) {
+
             case "きゅうり":
                 textView_description.setText(R.string.hutokyuuri_description);
                 yasai_syasinn.setImageResource(R.drawable.kyuuri800_sironuki);
@@ -64,4 +62,3 @@ public class Kaga2ActivityHazure extends Activity {
         });
     }
 }
-
