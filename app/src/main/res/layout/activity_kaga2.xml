@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+<<<<<<< HEAD
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -9,6 +10,17 @@
     android:paddingLeft="16dp"
     android:paddingTop="0dp"
     android:background="@drawable/kaga_background">
+=======
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/kaga_background"
+    android:paddingBottom="0dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="0dp">
+
+>>>>>>> 638e75bcbb3487d8647ec458d2ac98e258a59658
     <FrameLayout
         android:id="@+id/image"
         android:layout_width="wrap_content"
@@ -16,9 +28,15 @@
 
         <ImageView
             android:id="@+id/zukei"
+<<<<<<< HEAD
             android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+=======
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+>>>>>>> 638e75bcbb3487d8647ec458d2ac98e258a59658
             android:src="@drawable/maru_sironiki" />
 
         <ImageView
@@ -35,7 +53,6 @@
         android:layout_gravity="center"
         android:background="#e6d7d7"
         android:gravity="center">
-
 
         <TextView
             android:id="@+id/yasai_name"
