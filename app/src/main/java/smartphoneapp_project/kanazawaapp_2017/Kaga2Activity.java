@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import static smartphoneapp_project.kanazawaapp_2017.Kaga1Activity.answer;
 
 //正解画面
@@ -20,7 +19,7 @@ public class Kaga2Activity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kaga2);
 
-        658        ImageView yasai_syasinn = (ImageView) findViewById(R.id.yasai);
+             ImageView yasai_syasinn = (ImageView) findViewById(R.id.yasai);
         TextView textView = (TextView) findViewById(R.id.yasai_name);
         TextView textView_description = (TextView) findViewById(R.id.description);
         Button button = (Button) findViewById(R.id.next_button);
