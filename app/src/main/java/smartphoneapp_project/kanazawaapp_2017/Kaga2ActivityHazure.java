@@ -24,26 +24,30 @@ public class Kaga2ActivityHazure extends Activity {
 
 
         kotae = intent.getStringExtra("answer");
-        textView.setText(kotae);
 
         switch (kotae) {
-            case "かがふときゅうり":
+            case "きゅうり":
                 textView_description.setText(R.string.hutokyuuri_description);
                 yasai_syasinn.setImageResource(R.drawable.kyuuri800_sironuki);
+                textView.setText("かがふときゅうり");
                 break;
 
-            case "かなざわいっぽんふとねぎ":
+            case "ねぎ":
                 textView_description.setText(R.string.hutonegi_description);
                 yasai_syasinn.setImageResource(R.drawable.negi);
+                textView.setText("かなざわいっぽんふとねぎ");
                 break;
 
-            case "かがれんこん":
+            case "れんこん":
                 textView_description.setText(R.string.rennkonn_description);
+                yasai_syasinn.setImageResource(R.drawable.kaga1_renkon);
+                textView.setText("かがれんこん");
                 break;
 
             case "きんじそう":
                 textView_description.setText(R.string.kinnzisou_description);
                 yasai_syasinn.setImageResource(R.drawable.kinnzisou);
+                textView.setText("きんじそう");
                 break;
         }
 
