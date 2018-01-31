@@ -26,19 +26,14 @@
         <activity android:name=".Zukan.KagayasaiZukan1Activity" />
 
         <activity android:name=".MapActivity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-
-        <activity android:name=".Kaga2Test">
         </activity>
 
         <activity android:name=".Zukan.DetailsZukanActivity" />
         <activity android:name=".Zukan.KagayasaiZukan2Activity" />
         <activity android:name=".Zukan.WashiZukanActivity" />
+
         <activity android:name=".Event.EventActivity" />
+
         <activity android:name=".map1Activity" />
         <activity android:name=".map2Activity" />
         <activity android:name=".map3Activity" />
@@ -46,10 +41,19 @@
         <activity android:name=".map5Activity" />
         <activity android:name=".map6Activity" />
         <activity android:name=".map7Activity" />
+
         <activity android:name=".zukanActivity" />
+
         <activity android:name=".Kaga2ActivityHazure" />
         <activity android:name=".Kaga2Activity" />
         <activity android:name=".Kaga2ActivityCongrats" />
+
+        <activity android:name=".Kaga1Activity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
     </application>
 </manifest>
