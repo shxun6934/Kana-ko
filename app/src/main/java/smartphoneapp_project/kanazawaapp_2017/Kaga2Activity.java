@@ -20,7 +20,6 @@ public class Kaga2Activity extends Activity {
         setContentView(R.layout.activity_kaga2);
 
         ImageView yasai_syasinn = (ImageView) findViewById(R.id.yasai);
-
         TextView textView = (TextView) findViewById(R.id.yasai_name);
         TextView textView_description = (TextView) findViewById(R.id.description);
         Button button = (Button) findViewById(R.id.next_button);
