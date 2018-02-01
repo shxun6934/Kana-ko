@@ -19,7 +19,8 @@ public class Kaga2Activity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kaga2);
 
-             ImageView yasai_syasinn = (ImageView) findViewById(R.id.yasai);
+        ImageView yasai_syasinn = (ImageView) findViewById(R.id.yasai);
+
         TextView textView = (TextView) findViewById(R.id.yasai_name);
         TextView textView_description = (TextView) findViewById(R.id.description);
         Button button = (Button) findViewById(R.id.next_button);
@@ -31,24 +32,28 @@ public class Kaga2Activity extends Activity {
             case "きゅうり":
                 textView_description.setText(R.string.hutokyuuri_description);
                 yasai_syasinn.setImageResource(R.drawable.kyuuri800_sironuki);
+                textView.setText("かがふときゅうり");
                 break;
 
             case "ねぎ":
                 textView_description.setText(R.string.hutonegi_description);
                 yasai_syasinn.setImageResource(R.drawable.negi);
+                textView.setText("かなざわいっぽん");
                 break;
 
             case "れんこん":
                 textView_description.setText(R.string.rennkonn_description);
                 yasai_syasinn.setImageResource(R.drawable.kaga1_renkon);
+                textView.setText("かがれんこん");
                 break;
 
             case "きんじそう":
                 textView_description.setText(R.string.kinnzisou_description);
-                yasai_syasinn.setImageResource(R.drawable.kinnzisou);
+                yasai_syasinn.setImageResource(R.drawable.kaga1_kinzisou);
+                textView.setText("きんじそう");
                 break;
         }
-        textView.setText(kotae);
+
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override

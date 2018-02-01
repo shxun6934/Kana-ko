@@ -31,13 +31,13 @@ public class Kaga2ActivityCongrats extends Activity {
             case "きんじそう":
                 seikaigazou0.setImageResource(R.drawable.kinnzisou_ira);
                 break;
-            case "かがふときゅうり":
+            case "きゅうり":
                 seikaigazou0.setImageResource(R.drawable.kyuuri_ira);
                 break;
-            case "かなざわいっぽんふとねぎ":
+            case "ねぎ":
                 seikaigazou0.setImageResource(R.drawable.negi_ira);
                 break;
-            case "かがれんこん":
+            case "れんこん":
                 seikaigazou0.setImageResource(R.drawable.rennkonn_ira);
                 break;
         }
@@ -46,13 +46,13 @@ public class Kaga2ActivityCongrats extends Activity {
             case "きんじそう":
                 seikaigazou1.setImageResource(R.drawable.kinnzisou_ira);
                 break;
-            case "かがふときゅうり":
+            case "きゅうり":
                 seikaigazou1.setImageResource(R.drawable.kyuuri_ira);
                 break;
-            case "かなざわいっぽんふとねぎ":
+            case "ねぎ":
                 seikaigazou1.setImageResource(R.drawable.negi_ira);
                 break;
-            case "かがれんこん":
+            case "れんこん":
                 seikaigazou1.setImageResource(R.drawable.rennkonn_ira);
                 break;
         }
@@ -61,13 +61,13 @@ public class Kaga2ActivityCongrats extends Activity {
             case "きんじそう":
                 seikaigazou2.setImageResource(R.drawable.kinnzisou_ira);
                 break;
-            case "かがふときゅうり":
+            case "きゅうり":
                 seikaigazou2.setImageResource(R.drawable.kyuuri_ira);
                 break;
-            case "かなざわいっぽんふとねぎ":
+            case "ねぎ":
                 seikaigazou2.setImageResource(R.drawable.negi_ira);
                 break;
-            case "かがれんこん":
+            case "れんこん":
                 seikaigazou2.setImageResource(R.drawable.rennkonn_ira);
                 break;
         }
