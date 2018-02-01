@@ -1,108 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#fffaf0">
-<ImageView
-    android:id="@+id/imageView"
-    android:layout_width="410dp"
-    android:layout_height="184dp"
-    android:layout_marginLeft="8dp"
-    android:layout_marginRight="8dp"
-    android:layout_marginTop="8dp"
-    android:background="@drawable/wasiwhite"
-    android:scaleType="fitXY"
-    app:layout_constraintLeft_toLeftOf="parent"
-    app:layout_constraintRight_toRightOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintHorizontal_bias="0.503"
-    android:layout_marginBottom="8dp"
-    app:layout_constraintBottom_toTopOf="@+id/textView"
-    android:layout_marginStart="8dp"
-    android:layout_marginEnd="8dp"
-    app:layout_constraintVertical_bias="0.504" />
-
-<ImageView
-    android:id="@+id/imageView3"
-    android:layout_width="83dp"
-    android:layout_height="71dp"
-    android:layout_marginBottom="8dp"
-    android:background="@drawable/momiji2"
-    app:layout_constraintBottom_toBottomOf="@+id/imageView"
-    app:layout_constraintLeft_toLeftOf="@+id/imageView" />
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/wasihaikei"
+    android:orientation="vertical"
+    >
 
     <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="86dp"
-        android:layout_height="76dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
+        android:id="@+id/imageView"
+        android:layout_width="410dp"
+        android:layout_height="184dp"
         android:layout_marginTop="8dp"
-        android:background="@drawable/momiji1"
-        app:layout_constraintBottom_toTopOf="@+id/imageView3"
-        app:layout_constraintLeft_toRightOf="@+id/imageView3"
-        app:layout_constraintRight_toRightOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.0" />
+        android:background="@drawable/wasiwhite"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
 
-    <ImageButton
-        android:id="@+id/imageButton3"
-        android:layout_width="210dp"
+    <ImageView
+        android:id="@+id/otivaView"
+        android:layout_width="83dp"
         android:layout_height="71dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:background="@drawable/endbutton"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintLeft_toRightOf="@+id/textView"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageButton4"
-        android:layout_marginTop="0dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp" />
+        android:background="@drawable/momiji1"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="@+id/imageView" />
 
-<ImageButton
-    android:id="@+id/imageButton4"
-    android:layout_width="210dp"
-    android:layout_height="71dp"
-    android:layout_marginBottom="8dp"
-    android:background="@drawable/restartbutton"
-    app:layout_constraintBottom_toBottomOf="parent"
-    android:layout_marginStart="8dp"
-    android:layout_marginEnd="8dp"
-    android:layout_marginLeft="8dp"
-    app:layout_constraintLeft_toLeftOf="parent"
-    app:layout_constraintRight_toLeftOf="@+id/textView"
-    android:layout_marginRight="8dp" />
+    <ImageView
+        android:id="@+id/momijiView"
+        android:layout_width="80dp"
+        android:layout_height="88dp"
+        android:background="@drawable/momiji2"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toEndOf="@+id/otivaView"
+        app:layout_constraintTop_toTopOf="@+id/imageView" />
 
-<TextView
-    android:id="@+id/textView"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    app:layout_constraintLeft_toLeftOf="parent"
-    app:layout_constraintRight_toRightOf="parent"
-    android:layout_marginRight="8dp"
-    android:layout_marginLeft="8dp"
-    app:layout_constraintBottom_toBottomOf="parent"
-    android:layout_marginBottom="0dp"
-    android:layout_marginStart="8dp"
-    android:layout_marginEnd="8dp" />
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
-<ImageView
-    android:id="@+id/imageView5"
-    android:layout_width="589dp"
-    android:layout_height="66dp"
-    android:layout_marginBottom="8dp"
-    android:layout_marginLeft="0dp"
-    android:layout_marginRight="0dp"
-    android:background="@drawable/kannsei"
-    app:layout_constraintBottom_toTopOf="@+id/imageView"
-    app:layout_constraintLeft_toLeftOf="parent"
-    app:layout_constraintRight_toRightOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    android:layout_marginTop="0dp"
-    app:layout_constraintHorizontal_bias="0.666" />
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="450dp"
+        android:layout_height="69dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/wasikannsei"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="450dp"
+        android:layout_height="69dp"
+        android:gravity="center"
+        android:text=" かんせい！"
+        android:textColor="@android:color/holo_red_light"
+        android:textSize="50dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/imageView5"
+        app:layout_constraintStart_toStartOf="@+id/imageView5"
+        app:layout_constraintTop_toTopOf="@+id/imageView5" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="159dp"
+        android:layout_height="57dp"
+        android:background="@drawable/shape_sample"
+        android:text="おわる"
+        android:textColor="#b22222"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="159dp"
+        android:layout_height="57dp"
+        android:background="@drawable/shape_sample"
+        android:gravity="center"
+        android:text="もう１かい"
+        android:textColor="#b22222"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
 </android.support.constraint.ConstraintLayout>
 

@@ -10,13 +10,20 @@
         android:scaleType="centerCrop"
         android:src="@drawable/zukan_bg"> </ImageView>
 
+    <LinearLayout
+        android:layout_width="350dp"
+        android:layout_height="70dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/zukan_frame_green"
+        android:layout_marginTop="12dp">
+    </LinearLayout>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:background="@drawable/zukan_frame_green"
         android:layout_marginTop="15dp"
-        android:text=" かがやさい１ "
+        android:text="かがやさい1"
         android:textSize="50dp"
         android:textStyle="bold"
         android:textColor="#008000"/>
