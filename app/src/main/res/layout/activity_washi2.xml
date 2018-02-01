@@ -26,8 +26,8 @@
         android:id="@+id/ImageView3S"
         android:layout_width="80dp"
         android:layout_height="90dp"
-        android:layout_marginLeft="220dp"
-        android:layout_marginTop="230dp"
+        android:layout_marginLeft="210dp"
+        android:layout_marginTop="220dp"
         android:src="@drawable/momiji1kage" />
     <FrameLayout
         android:id="@+id/frameLayout"
@@ -54,6 +54,7 @@
         android:onClick="returnClick"
         android:textColor="#b22222"
         android:text="もどる"
+        android:textStyle="bold"
         android:visibility="visible" />
     <ImageView
         android:id="@+id/ImageView1"
