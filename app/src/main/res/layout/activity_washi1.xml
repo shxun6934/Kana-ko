@@ -34,7 +34,7 @@
 
 
     <TextView
-        android:id="@+id/button"
+        android:id="@+id/button100"
         android:layout_width="100dp"
         android:layout_height="50dp"
         android:layout_gravity="bottom"

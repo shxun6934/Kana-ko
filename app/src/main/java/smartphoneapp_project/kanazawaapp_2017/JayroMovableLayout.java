@@ -29,8 +29,6 @@ public class JayroMovableLayout extends FrameLayout implements SensorEventListen
     }
     public static final int DIRECTION_VERTICAL = 4;
     public static final int DIRECTION_HORIZONTAL = 5;
-    private static final float THRESHOLD_X = 0.4f;
-    private static final float THRESHOLD_Y = 0.4f;
 
     private SparseArray<Float> accelerations = new SparseArray<>();
     private SensorManager sensorManager;

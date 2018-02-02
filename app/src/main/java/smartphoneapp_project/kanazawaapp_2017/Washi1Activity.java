@@ -10,19 +10,16 @@ import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.ImageButton;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import smartphoneapp_project.kanazawaapp_2017.Zukan.DetailsZukanActivity;
+
 
 
 public class Washi1Activity extends Activity implements SensorEventListener,View.OnClickListener {
 
     private static final String LOG_TAG = "WASHI1";
-    //SensorManager sensorManager;
     private JayroMovableLayout jayroMovableLayout;
     private SensorManager sensorManager;
 
@@ -34,7 +31,7 @@ public class Washi1Activity extends Activity implements SensorEventListener,View
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_washi1);
 
-        TextView imageButton = (TextView) findViewById(R.id.button);
+        TextView imageButton = (TextView) findViewById(R.id.button100);
         imageButton.setOnClickListener(this);
 
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -56,7 +53,7 @@ public class Washi1Activity extends Activity implements SensorEventListener,View
     }
 
     public void onClick(View v) {
-        Log.d("aaa","aaaaaaa");
+        //Log.d("aaa","aaaaaaa");
         Intent intent = new Intent(getApplicationContext(),MapActivity.class);
         startActivity(intent);
     }
