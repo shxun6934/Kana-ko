@@ -29,8 +29,6 @@ public class JayroMovableLayout extends FrameLayout implements SensorEventListen
     }
     public static final int DIRECTION_VERTICAL = 4;
     public static final int DIRECTION_HORIZONTAL = 5;
-    private static final float THRESHOLD_X = 0.4f;
-    private static final float THRESHOLD_Y = 0.4f;
 
     private SparseArray<Float> accelerations = new SparseArray<>();
     private SensorManager sensorManager;
@@ -84,8 +82,8 @@ public class JayroMovableLayout extends FrameLayout implements SensorEventListen
             return;
         }
 
-        float sensorX = sensorEvent.values[0] * -1; // 右に傾けていくと負に大きくなるため反転させる
-        float sensorY = sensorEvent.values[1];
+        float sensorY = sensorEvent.values[0] * -1; // 右に傾けていくと負に大きくなるため反転させる
+        float sensorX = sensorEvent.values[1];
 
         for (int i = 0; i < getChildCount(); i++) {
             View childView = getChildAt(i);

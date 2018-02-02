@@ -32,13 +32,25 @@
         android:scaleType="fitXY"
         android:src="@drawable/frame_00023" />
 
-    <ImageView
-        android:id="@+id/button"
+
+    <TextView
+        android:id="@+id/button100"
         android:layout_width="100dp"
         android:layout_height="50dp"
         android:layout_gravity="bottom"
         android:layout_marginLeft="250dp"
-        android:background="@drawable/zukan_frame_sienna"
-        android:src="@drawable/washi1_modoru"/>
+        android:background="@drawable/washi1_button"
+        android:src="@drawable/washi1_modoru"
+
+        android:text="もどる"
+        android:textSize="30sp"
+        android:textColor="#000"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+
+
+
+        />
 
 </FrameLayout>
+

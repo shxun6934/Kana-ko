@@ -1,5 +1,4 @@
 package smartphoneapp_project.kanazawaapp_2017;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.hardware.Sensor;
@@ -11,24 +10,16 @@ import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
-public class Washi1Activity extends Activity implements SensorEventListener {
 
-    private Button button_segue;
 
-//    public  void  onClick(View v){
-//
-//        Intent intent = new Intent(Washi1Activity.this,Washi.class);
-//        startActivity(intent);
-//    }
-
+public class Washi1Activity extends Activity implements SensorEventListener,View.OnClickListener {
 
     private static final String LOG_TAG = "WASHI1";
-
     private JayroMovableLayout jayroMovableLayout;
     private SensorManager sensorManager;
 
@@ -39,15 +30,9 @@ public class Washi1Activity extends Activity implements SensorEventListener {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_washi1);
-        Button button = (Button) findViewById(R.id.test);
 
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Washi1Activity.this, Washi.class);
-                startActivity(intent);
-            }
-        });
+        TextView imageButton = (TextView) findViewById(R.id.button100);
+        imageButton.setOnClickListener(this);
 
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
@@ -61,9 +46,16 @@ public class Washi1Activity extends Activity implements SensorEventListener {
         washiView.setScaleY(2);
         jayroMovableLayout.addView(washiView, 16.0f);
 
-        SensorManager sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
+        sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
         Sensor accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         sensorManager.registerListener(this, accelerometer, SensorManager.SENSOR_DELAY_GAME);
+
+    }
+
+    public void onClick(View v) {
+        //Log.d("aaa","aaaaaaa");
+        Intent intent = new Intent(getApplicationContext(),MapActivity.class);
+        startActivity(intent);
     }
 
     @Override
@@ -78,8 +70,9 @@ public class Washi1Activity extends Activity implements SensorEventListener {
         if (unregister != null) {
             unregister.unregister();
         }
-
-        sensorManager.unregisterListener(this);
+        if(sensorManager!=null) {
+            sensorManager.unregisterListener(this);
+        }
     }
 
     private int count;
@@ -113,4 +106,5 @@ public class Washi1Activity extends Activity implements SensorEventListener {
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
 
     }
+
 }
