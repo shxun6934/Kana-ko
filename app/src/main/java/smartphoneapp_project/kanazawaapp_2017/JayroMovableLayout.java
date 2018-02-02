@@ -84,8 +84,8 @@ public class JayroMovableLayout extends FrameLayout implements SensorEventListen
             return;
         }
 
-        float sensorX = sensorEvent.values[0] * -1; // 右に傾けていくと負に大きくなるため反転させる
-        float sensorY = sensorEvent.values[1];
+        float sensorY = sensorEvent.values[0] * -1; // 右に傾けていくと負に大きくなるため反転させる
+        float sensorX = sensorEvent.values[1];
 
         for (int i = 0; i < getChildCount(); i++) {
             View childView = getChildAt(i);
