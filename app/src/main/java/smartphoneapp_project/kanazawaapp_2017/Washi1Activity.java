@@ -31,7 +31,7 @@ public class Washi1Activity extends Activity implements SensorEventListener,View
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_washi1);
 
-        TextView imageButton = (TextView) findViewById(R.id.button100);
+        TextView imageButton = (TextView) findViewById(R.id.difficulty_back_button);
         imageButton.setOnClickListener(this);
 
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);

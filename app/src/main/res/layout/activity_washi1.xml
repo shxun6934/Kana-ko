@@ -7,14 +7,12 @@
 
 
     <ImageView
-        android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="fitXY"
         android:src="@drawable/sudare01_01" />
 
     <ImageView
-        android:id="@+id/imageView6"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="fitXY"
@@ -26,7 +24,6 @@
         android:layout_height="match_parent"/>
 
     <ImageView
-        android:id="@+id/imageView7"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="fitXY"
@@ -34,7 +31,7 @@
 
 
     <TextView
-        android:id="@+id/button100"
+        android:id="@+id/difficulty_back_button"
         android:layout_width="100dp"
         android:layout_height="50dp"
         android:layout_gravity="bottom"

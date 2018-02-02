@@ -18,7 +18,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="20dp">
         <ImageView
-            android:id="@+id/image"
+            android:id="@+id/zukan_image"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:src=""/>
@@ -31,7 +31,7 @@
         android:layout_marginTop="225dp">
 
         <TextView
-            android:id="@+id/name"
+            android:id="@+id/zukan_name"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:text=""
@@ -64,7 +64,7 @@
         android:layout_marginTop="305dp">
 
         <TextView
-            android:id="@+id/description"
+            android:id="@+id/zukan_description"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:textColor="#000000"
@@ -79,7 +79,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="452dp">
         <ImageView
-            android:id="@+id/back"
+            android:id="@+id/zukan_back_button"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:src="@drawable/zukan_button"/>

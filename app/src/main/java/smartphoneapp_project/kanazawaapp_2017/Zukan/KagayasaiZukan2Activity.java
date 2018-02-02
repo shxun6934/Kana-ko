@@ -7,7 +7,6 @@ import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.ImageView;
 
-import smartphoneapp_project.kanazawaapp_2017.Event.EventActivity;
 import smartphoneapp_project.kanazawaapp_2017.MapActivity;
 import smartphoneapp_project.kanazawaapp_2017.R;
 
@@ -18,7 +17,7 @@ public class KagayasaiZukan2Activity extends Activity implements View.OnClickLis
         setContentView(R.layout.activity_zukan_kagayasai2);
         ImageView hidariyajirusibutton = (ImageView) findViewById(R.id.yajirusi_hidari_image);
         ImageView migiyajirusibutton = (ImageView) findViewById(R.id.yajirusi_migi_image);
-        ImageView backbutton = (ImageView) findViewById(R.id.back);
+        ImageView backbutton = (ImageView) findViewById(R.id.map_back_button);
 
         hidariyajirusibutton.setOnClickListener(this);
         migiyajirusibutton.setOnClickListener(this);
@@ -42,7 +41,7 @@ public class KagayasaiZukan2Activity extends Activity implements View.OnClickLis
                 overridePendingTransition(R.animator.slide_in_right, R.animator.slide_out_left);
                 break;
 
-            case R.id.back:
+            case R.id.map_back_button:
                 startActivity(map);
                 break;
         }
