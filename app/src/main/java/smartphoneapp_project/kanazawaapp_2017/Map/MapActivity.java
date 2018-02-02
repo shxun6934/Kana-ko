@@ -1,4 +1,4 @@
-package smartphoneapp_project.kanazawaapp_2017;
+package smartphoneapp_project.kanazawaapp_2017.Map;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -10,6 +10,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+import smartphoneapp_project.kanazawaapp_2017.Map.map1Activity;
+import smartphoneapp_project.kanazawaapp_2017.Map.map2Activity;
+import smartphoneapp_project.kanazawaapp_2017.Map.map3Activity;
+import smartphoneapp_project.kanazawaapp_2017.Map.map4Activity;
+import smartphoneapp_project.kanazawaapp_2017.Map.map5Activity;
+import smartphoneapp_project.kanazawaapp_2017.Map.map6Activity;
+import smartphoneapp_project.kanazawaapp_2017.Map.map7Activity;
+import smartphoneapp_project.kanazawaapp_2017.R;
 import smartphoneapp_project.kanazawaapp_2017.Zukan.KagayasaiZukan1Activity;
 
 public class MapActivity extends AppCompatActivity {
