@@ -45,6 +45,15 @@
         android:layout_marginLeft="13dp"
         android:src="@drawable/map_event"/>
 
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginLeft="160dp"
+        android:src="@drawable/kanazawajou"
+        android:visibility="gone"/>
+
     <!--画面遷移１-->
     <Button
         android:layout_width="78dp"
