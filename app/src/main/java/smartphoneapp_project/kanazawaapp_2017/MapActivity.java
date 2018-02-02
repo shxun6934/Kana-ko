@@ -1,6 +1,6 @@
 package smartphoneapp_project.kanazawaapp_2017;
 
-import android.app.assist.AssistStructure;
+import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -9,44 +9,35 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.Toast;
-
 import smartphoneapp_project.kanazawaapp_2017.Event.EventActivity;
 import smartphoneapp_project.kanazawaapp_2017.Zukan.KagayasaiZukan1Activity;
 
-public class MapActivity extends AppCompatActivity {
-
+public class MapActivity extends Activity {
 
     //TODO:Viewの表示・非表示がうまくいかずにエラー
-    View view = findViewById(R.id.imageView5);
+    private ImageView castleView;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-        SharedPreferences data = getSharedPreferences("addKey", Context.MODE_PRIVATE);
-
-        //int datasave = data.getInt("StatusSava", 0);//データがない際に初期化する値：0
-
-        // "input"から読み出す、何もないときは"Nothing"を返す
-        String str = data.getString("StatusSave", "Nothing");
-
-        if (str.equals("WashiEasy")) {//追加した値：WashiEasy があったら、画像を表示
-            view.setVisibility(View.VISIBLE);
-        } else {
-            findViewById(R.id.imageView5).setVisibility(View.GONE);
-        }
-//        if(!str.equals("Nothing")) {
-//            textRead.setText(str);
-//        }
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
-        /*Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);*/
+
+        castleView = (ImageView) findViewById(R.id.imageView5);
+        //データの読み込み
+        SharedPreferences data = getSharedPreferences("addKey", Context.MODE_PRIVATE);
+        //キーの代入
+        String str = data.getString("StatusSave", "Nothing");
+
+        //追加した値：WashiEasy があったら、画像を表示
+        if (str.equals("WashiEasy")) {
+            castleView.setVisibility(View.VISIBLE);
+        } else {
+            findViewById(R.id.imageView5).setVisibility(View.GONE);//非表示
+        }
 
         View.OnClickListener a = new View.OnClickListener() {
             @Override
