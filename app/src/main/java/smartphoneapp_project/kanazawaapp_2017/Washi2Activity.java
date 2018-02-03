@@ -8,6 +8,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Rect;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -160,6 +161,19 @@ public class Washi2Activity extends Activity  implements View.OnTouchListener {
         }
         return true;
     }
+
+    @Override
+    public boolean dispatchKeyEvent(KeyEvent event){
+        if(event.getAction() == KeyEvent.ACTION_UP){
+            switch (event.getKeyCode()){
+                case KeyEvent.KEYCODE_BACK:
+                    //ダイアログ表示などの処理を行う時はここに記述する
+                    return true;
+            }
+        }
+        return super.dispatchKeyEvent(event);
+    }
+
     //戻るボタンで和紙1の画面に行く処理
     public void returnClick(View view){
         Intent intent= new Intent(this,Washi1Activity.class);
@@ -170,4 +184,5 @@ public class Washi2Activity extends Activity  implements View.OnTouchListener {
       Intent intent = new Intent(this, Washi3Activity.class);
        startActivity(intent);
     }
+
 }

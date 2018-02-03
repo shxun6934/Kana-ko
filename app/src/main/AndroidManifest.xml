@@ -24,8 +24,7 @@
 
         <activity
             android:name=".Washi1Activity"
-            android:screenOrientation="landscape">
-        </activity>
+            android:screenOrientation="landscape" />
         <activity
             android:name=".Washi2Activity"
             android:screenOrientation="landscape" />
@@ -52,8 +51,8 @@
         <activity android:name=".Kaga2Activity" />
         <activity android:name=".Kaga2ActivityHazure" />
         <activity android:name=".Kaga2ActivityCongrats" />
-        <activity android:name=".Washi1Activity"/>
-        <activity android:name=".Kaga1Activity"/>
 
+        <activity android:name=".DifficultyActivity" />
+        
     </application>
 </manifest>

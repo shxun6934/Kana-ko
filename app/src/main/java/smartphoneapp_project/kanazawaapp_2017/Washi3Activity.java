@@ -6,12 +6,9 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
-
-/**
- * Created by isidadaiti on 2018/01/03.
- */
 
 public class Washi3Activity extends Activity {
 
@@ -35,6 +32,18 @@ public class Washi3Activity extends Activity {
                 startActivity(intent);
             }
         });
+    }
+
+    @Override
+    public boolean dispatchKeyEvent(KeyEvent event){
+        if(event.getAction() == KeyEvent.ACTION_UP){
+            switch (event.getKeyCode()){
+                case KeyEvent.KEYCODE_BACK:
+                    //ダイアログ表示などの処理を行う時はここに記述する
+                    return true;
+            }
+        }
+        return super.dispatchKeyEvent(event);
     }
 
 //        Intent intent= new Intent(this,DifficultyActivity.class);
