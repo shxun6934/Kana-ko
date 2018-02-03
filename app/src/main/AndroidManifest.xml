@@ -51,6 +51,8 @@
         <activity android:name=".Kaga2Activity" />
         <activity android:name=".Kaga2ActivityHazure" />
         <activity android:name=".Kaga2ActivityCongrats" />
+
+        <activity android:name=".DifficultyActivity" />
         
     </application>
 </manifest>
