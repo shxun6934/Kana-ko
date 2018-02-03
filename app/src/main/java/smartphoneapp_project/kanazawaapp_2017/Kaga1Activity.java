@@ -17,8 +17,6 @@ public class Kaga1Activity extends Activity {
 
     ImageView imageView;
 
-    static int a;
-
     static int answer = 0;
 
     {
