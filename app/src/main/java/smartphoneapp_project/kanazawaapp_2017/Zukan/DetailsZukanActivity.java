@@ -22,10 +22,10 @@ public class DetailsZukanActivity extends Activity implements View.OnClickListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_zukan_details);
 
-        ImageView imageview = (ImageView) findViewById(R.id.image);
-        TextView nametext = (TextView) findViewById(R.id.name);
-        TextView descriptiontext = (TextView) findViewById(R.id.description);
-        ImageView backbutton = (ImageView) findViewById(R.id.back);
+        ImageView imageview = (ImageView) findViewById(R.id.zukan_image);
+        TextView nametext = (TextView) findViewById(R.id.zukan_name);
+        TextView descriptiontext = (TextView) findViewById(R.id.zukan_description);
+        ImageView backbutton = (ImageView) findViewById(R.id.zukan_back_button);
         backbutton.setOnClickListener(this);
         Intent intent = getIntent();
         key = intent.getIntExtra("key",0);
