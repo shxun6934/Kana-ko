@@ -38,8 +38,8 @@ public class EventActivity extends Activity implements View.OnClickListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event);
 
-        TextView mapbutton = (TextView) findViewById(R.id.back);
-        TextView webbutton = (TextView) findViewById(R.id.web);
+        TextView mapbutton = (TextView) findViewById(R.id.mapBack);
+        TextView webbutton = (TextView) findViewById(R.id.toWeb);
         mapbutton.setOnClickListener(this);
         webbutton.setOnClickListener(this);
 
@@ -139,11 +139,11 @@ public class EventActivity extends Activity implements View.OnClickListener{
         Intent map = new Intent(EventActivity.this, MapActivity.class);
         Intent homepage = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.utatsu-kogei.gr.jp/"));
         switch (v.getId()){
-            case R.id.back:
+            case R.id.mapBack:
                 startActivity(map);
                 break;
 
-            case R.id.web:
+            case R.id.toWeb:
                 startActivity(homepage);
                 break;
         }

@@ -17,10 +17,11 @@ public class Kaga2ActivityHazure extends Activity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kaga2_hazere);
-        TextView textView = (TextView) findViewById(R.id.yasai_name);
+
+        TextView textView = (TextView) findViewById(R.id.vegtable_name_incorrect);
         TextView textView_description = (TextView) findViewById(R.id.description);
-        ImageView yasai_syasinn = (ImageView) findViewById(R.id.yasai);
-        Button button = (Button) findViewById(R.id.next_button);
+        ImageView yasai_syasinn = (ImageView) findViewById(R.id.vegetable_incorrect);
+        Button button = (Button) findViewById(R.id.quiz_Backbutton);
         Intent intent = getIntent();
 
 
