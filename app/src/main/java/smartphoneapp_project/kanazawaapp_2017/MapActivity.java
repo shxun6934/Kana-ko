@@ -44,16 +44,16 @@ public class MapActivity extends Activity {
             public void onClick(final View v) {//押下時の処理
                 //確認ダイアログの作成
                 AlertDialog.Builder alertDialog = new AlertDialog.Builder(MapActivity.this, R.style.MyAlertDialogStyle);
-                alertDialog.setTitle("間違い探し(仮)");
+                alertDialog.setTitle("まちがいさがし");
                 alertDialog.setMessage("このあそびをやってみる？？");
                 alertDialog.setPositiveButton("　　　 すすむ　　　 ", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
                         // TODO:すすむボタンが押されたときの処理
-                        Intent map1_change = new Intent(MapActivity.this, map1Activity.class);
-                        map1_change.putExtra("kind_game", 1);
-                        startActivity(map1_change);//画面遷移を行う
+                        Intent activity_difficulty = new Intent(MapActivity.this, DifficultyActivity.class);
+                        activity_difficulty.putExtra("kind_game", 1);
+                        startActivity(activity_difficulty);//画面遷移を行う
                     }
                 });
                 alertDialog.setNegativeButton("　　　もどる　　 ", null);
@@ -66,16 +66,16 @@ public class MapActivity extends Activity {
             public void onClick(final View v) {//押下時の処理
                 //確認ダイアログの作成
                 AlertDialog.Builder alertDialog = new AlertDialog.Builder(MapActivity.this, R.style.MyAlertDialogStyle);
-                alertDialog.setTitle("和紙(仮)");
+                alertDialog.setTitle("わしづくり");
                 alertDialog.setMessage("このあそびをやってみる？？");
                 alertDialog.setPositiveButton("　　　 すすむ　　　 ", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
                         // TODO:すすむボタンが押されたときの処理
-                        Intent map2_change = new Intent(MapActivity.this, map2Activity.class);
-                        map2_change.putExtra("kind_game", 2);
-                        startActivity(map2_change);//画面遷移を行う
+                        Intent activity_difficulty = new Intent(MapActivity.this, DifficultyActivity.class);
+                        activity_difficulty.putExtra("kind_game", 2);
+                        startActivity(activity_difficulty);//画面遷移を行う
                     }
                 });
                 alertDialog.setNegativeButton("　　　もどる　　 ", null);
@@ -88,16 +88,16 @@ public class MapActivity extends Activity {
             public void onClick(final View v) {//押下時の処理
                 //確認ダイアログの作成
                 AlertDialog.Builder alertDialog = new AlertDialog.Builder(MapActivity.this, R.style.MyAlertDialogStyle);
-                alertDialog.setTitle("水飴(仮)");
+                alertDialog.setTitle("みずあめづくり");
                 alertDialog.setMessage("このあそびをやってみる？？");
                 alertDialog.setPositiveButton("　　　 すすむ　　　 ", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
                         // TODO:すすむボタンが押されたときの処理
-                        Intent map3_change = new Intent(MapActivity.this, map3Activity.class);
-                        map3_change.putExtra("kind_game", 3);
-                        startActivity(map3_change);//画面遷移を行う
+                        Intent activity_difficulty = new Intent(MapActivity.this, DifficultyActivity.class);
+                        activity_difficulty.putExtra("kind_game", 3);
+                        startActivity(activity_difficulty);//画面遷移を行う
                     }
                 });
                 alertDialog.setNegativeButton("　　　もどる　　 ", null);
@@ -110,16 +110,16 @@ public class MapActivity extends Activity {
             public void onClick(final View v) {//押下時の処理
                 //確認ダイアログの作成
                 AlertDialog.Builder alertDialog = new AlertDialog.Builder(MapActivity.this, R.style.MyAlertDialogStyle);
-                alertDialog.setTitle("きんつば(仮)");
+                alertDialog.setTitle("きんつばづくり");
                 alertDialog.setMessage("このあそびをやってみる？？");
                 alertDialog.setPositiveButton("　　　 すすむ　　　 ", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
                         // TODO:すすむボタンが押されたときの処理
-                        Intent map4_change = new Intent(MapActivity.this, map4Activity.class);
-                        map4_change.putExtra("kind_game", 4);
-                        startActivity(map4_change);//画面遷移を行う
+                        Intent activity_difficulty = new Intent(MapActivity.this, DifficultyActivity.class);
+                        activity_difficulty.putExtra("kind_game", 4);
+                        startActivity(activity_difficulty);//画面遷移を行う
                     }
                 });
                 alertDialog.setNegativeButton("　　　もどる　　 ", null);
@@ -132,16 +132,16 @@ public class MapActivity extends Activity {
             public void onClick(final View v) {//押下時の処理
                 //確認ダイアログの作成
                 AlertDialog.Builder alertDialog = new AlertDialog.Builder(MapActivity.this, R.style.MyAlertDialogStyle);
-                alertDialog.setTitle("野菜クイズ(仮)");
+                alertDialog.setTitle("やさいくいず");
                 alertDialog.setMessage("このあそびをやってみる？？");
                 alertDialog.setPositiveButton("　　　 すすむ　　　 ", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
                         // TODO:すすむボタンが押されたときの処理
-                        Intent map5_change = new Intent(MapActivity.this, map5Activity.class);
-                        map5_change.putExtra("kind_game", 5);
-                        startActivity(map5_change);//画面遷移を行う
+                        Intent activity_difficulty = new Intent(MapActivity.this, DifficultyActivity.class);
+                        activity_difficulty.putExtra("kind_game", 5);
+                        startActivity(activity_difficulty);//画面遷移を行う
                     }
                 });
                 alertDialog.setNegativeButton("　　　もどる　　 ", null);
@@ -154,16 +154,16 @@ public class MapActivity extends Activity {
             public void onClick(final View v) {//押下時の処理
                 //確認ダイアログの作成
                 AlertDialog.Builder alertDialog = new AlertDialog.Builder(MapActivity.this, R.style.MyAlertDialogStyle);
-                alertDialog.setTitle("金箔(仮)");
+                alertDialog.setTitle("きんぱくのばし");
                 alertDialog.setMessage("このあそびをやってみる？？");
                 alertDialog.setPositiveButton("　　　 すすむ　　　 ", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
                         // TODO:すすむボタンが押されたときの処理
-                        Intent map6_change = new Intent(MapActivity.this, map6Activity.class);
-                        map6_change.putExtra("kind_game", 6);
-                        startActivity(map6_change);//画面遷移を行う
+                        Intent activity_difficulty = new Intent(MapActivity.this, DifficultyActivity.class);
+                        activity_difficulty.putExtra("kind_game", 6);
+                        startActivity(activity_difficulty);//画面遷移を行う
                     }
                 });
                 alertDialog.setNegativeButton("　　　もどる　　 ", null);
@@ -176,16 +176,16 @@ public class MapActivity extends Activity {
             public void onClick(final View v) {//押下時の処理
                 //確認ダイアログの作成
                 AlertDialog.Builder alertDialog = new AlertDialog.Builder(MapActivity.this, R.style.MyAlertDialogStyle);
-                alertDialog.setTitle("漆器(仮)");
+                alertDialog.setTitle("しっき");
                 alertDialog.setMessage("このあそびをやってみる？？");
                 alertDialog.setPositiveButton("　　　 すすむ　　　 ", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
                         // TODO:すすむボタンが押されたときの処理
-                        Intent map7_change = new Intent(MapActivity.this, map7Activity.class);
-                        map7_change.putExtra("kind_game", 7);
-                        startActivity(map7_change);//画面遷移を行う
+                        Intent activity_difficulty = new Intent(MapActivity.this, DifficultyActivity.class);
+                        activity_difficulty.putExtra("kind_game", 7);
+                        startActivity(activity_difficulty);//画面遷移を行う
                     }
                 });
                 alertDialog.setNegativeButton("　　　もどる　　 ", null);
