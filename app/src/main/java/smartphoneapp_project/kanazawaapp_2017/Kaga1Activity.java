@@ -3,6 +3,7 @@ package smartphoneapp_project.kanazawaapp_2017;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -155,5 +156,17 @@ public class Kaga1Activity extends Activity {
 
         }
     }
+
+    @Override
+    public boolean dispatchKeyEvent(KeyEvent event){
+        if(event.getAction() == KeyEvent.ACTION_UP){
+            switch (event.getKeyCode()){
+                case KeyEvent.KEYCODE_BACK:
+                    return true;
+            }
+        }
+        return super.dispatchKeyEvent(event);
+    }
+
 
 }

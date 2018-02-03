@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -47,4 +48,16 @@ public class KagayasaiZukan2Activity extends Activity implements View.OnClickLis
                 break;
         }
     }
+    @Override
+    public boolean dispatchKeyEvent(KeyEvent event){
+        if(event.getAction() == KeyEvent.ACTION_UP){
+            switch (event.getKeyCode()){
+                case KeyEvent.KEYCODE_BACK:
+                    //ダイアログ表示などの処理を行う時はここに記述する
+                    return true;
+            }
+        }
+        return super.dispatchKeyEvent(event);
+    }
+
 }

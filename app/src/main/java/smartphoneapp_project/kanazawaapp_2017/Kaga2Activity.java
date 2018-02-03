@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -73,5 +74,17 @@ public class Kaga2Activity extends Activity {
             }
         });
     }
+
+    @Override
+    public boolean dispatchKeyEvent(KeyEvent event){
+        if(event.getAction() == KeyEvent.ACTION_UP){
+            switch (event.getKeyCode()){
+                case KeyEvent.KEYCODE_BACK:
+                    return true;
+            }
+        }
+        return super.dispatchKeyEvent(event);
+    }
+
 }
 

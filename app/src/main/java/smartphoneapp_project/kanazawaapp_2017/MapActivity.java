@@ -9,6 +9,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AlertDialog;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -306,5 +307,16 @@ public class MapActivity extends Activity {
 
         event.setOnClickListener(i);
 
+    }
+
+    @Override
+    public boolean dispatchKeyEvent(KeyEvent event){
+        if(event.getAction() == KeyEvent.ACTION_UP){
+            switch (event.getKeyCode()){
+                case KeyEvent.KEYCODE_BACK:
+                    return true;
+            }
+        }
+        return super.dispatchKeyEvent(event);
     }
 }
