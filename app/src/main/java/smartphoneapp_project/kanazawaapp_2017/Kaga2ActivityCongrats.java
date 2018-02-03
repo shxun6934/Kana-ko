@@ -20,9 +20,10 @@ public class Kaga2ActivityCongrats extends Activity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kaga2_congrats);
-        ImageView seikaigazou0 = (ImageView) findViewById(R.id.seikai_gazou0);
-        ImageView seikaigazou1 = (ImageView) findViewById(R.id.seikai_gazou1);
-        ImageView seikaigazou2 = (ImageView) findViewById(R.id.seikai_gazou2);
+
+        ImageView seikaigazou0 = (ImageView) findViewById(R.id.correct_image1);
+        ImageView seikaigazou1 = (ImageView) findViewById(R.id.correct_image2);
+        ImageView seikaigazou2 = (ImageView) findViewById(R.id.correct_image3);
 
         Button tap = (Button) findViewById(R.id.tap);
 
