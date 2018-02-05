@@ -8,6 +8,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Rect;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,13 +41,13 @@ public class Washi2Activity extends Activity  implements View.OnTouchListener {
         Bitmap otibaBmp = BitmapFactory.decodeResource(r, R.drawable.momiji2);
         Bitmap momijikage = BitmapFactory.decodeResource(r, R.drawable.momiji1kage);
         Bitmap otibakage = BitmapFactory.decodeResource(r, R.drawable.momiji2kage);
-        Button returnButton = (Button) findViewById(R.id.button);
-        kurobaView = (ImageView) findViewById(R.id.ImageView1);
-        momijiView = (ImageView) findViewById(R.id.ImageView2);
-        otibaView = (ImageView) findViewById(R.id.ImageView3);
-        momijishadow = (ImageView) findViewById(R.id.ImageView2S);
+        Button returnButton = (Button) findViewById(R.id.washi1_back_button);
+        kurobaView = (ImageView) findViewById(R.id.momiji0);
+        momijiView = (ImageView) findViewById(R.id.momiji1);
+        otibaView = (ImageView) findViewById(R.id.momiji2);
+        momijishadow = (ImageView) findViewById(R.id.momiji_Shadow1);
         momijishadow.setImageBitmap(momijikage);
-        otibashadow = (ImageView) findViewById(R.id.ImageView3S);
+        otibashadow = (ImageView) findViewById(R.id.momiji_Shadow2);
         otibashadow.setImageBitmap(otibakage);
         kurobaView.setImageBitmap(kurobaBmp);
         momijiView.setImageBitmap(momijiBmp);
@@ -57,13 +58,13 @@ public class Washi2Activity extends Activity  implements View.OnTouchListener {
         startmarginkuroba = (ViewGroup.MarginLayoutParams) kurobaView.getLayoutParams();
         startmarginmomiji = (ViewGroup.MarginLayoutParams) momijiView.getLayoutParams();
         startmarginotiba = (ViewGroup.MarginLayoutParams) otibaView.getLayoutParams();
-        button = (Button) findViewById(R.id.nextbutton);
+        button = (Button) findViewById(R.id.washi3_next_button);
     }
 
     @Override
     public boolean onTouch(View view, MotionEvent event) {
         switch (view.getId()) {
-            case R.id.ImageView1://黄色のクローバーのドラッグアンドドロップの動作
+            case R.id.momiji0://黄色のクローバーのドラッグアンドドロップの動作
                 // タッチした時の位置を取得
                 x = (int) event.getRawX();
                 y = (int) event.getRawY();
@@ -84,7 +85,7 @@ public class Washi2Activity extends Activity  implements View.OnTouchListener {
                     kurobaView.setLayoutParams(startmarginkuroba);
                 }
                 break;
-            case R.id.ImageView2://枝分かれしている紅葉のドラッグアンドドロップの操作
+            case R.id.momiji1://枝分かれしている紅葉のドラッグアンドドロップの操作
                 Resources r = getResources();
                 Bitmap bmp2 = BitmapFactory.decodeResource(r, R.drawable.momiji1);
                 //タッチしたときの位置を取得
@@ -119,7 +120,7 @@ public class Washi2Activity extends Activity  implements View.OnTouchListener {
                     }
                 }
                 break;
-            case R.id.ImageView3://一枚の葉っぱの形をしたモミジのドラッグアンドドロップ
+            case R.id.momiji2://一枚の葉っぱの形をしたモミジのドラッグアンドドロップ
                 //タッチしたときのviewの位置を取得
                 int startX = (int) otibaView.getX();
                 int startY = (int) otibaView.getY();
@@ -160,6 +161,19 @@ public class Washi2Activity extends Activity  implements View.OnTouchListener {
         }
         return true;
     }
+
+    @Override
+    public boolean dispatchKeyEvent(KeyEvent event){
+        if(event.getAction() == KeyEvent.ACTION_UP){
+            switch (event.getKeyCode()){
+                case KeyEvent.KEYCODE_BACK:
+                    //ダイアログ表示などの処理を行う時はここに記述する
+                    return true;
+            }
+        }
+        return super.dispatchKeyEvent(event);
+    }
+
     //戻るボタンで和紙1の画面に行く処理
     public void returnClick(View view){
         Intent intent= new Intent(this,Washi1Activity.class);
@@ -170,4 +184,5 @@ public class Washi2Activity extends Activity  implements View.OnTouchListener {
       Intent intent = new Intent(this, Washi3Activity.class);
        startActivity(intent);
     }
+
 }

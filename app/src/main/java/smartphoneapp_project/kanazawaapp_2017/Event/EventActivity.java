@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -37,8 +38,8 @@ public class EventActivity extends Activity implements View.OnClickListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event);
 
-        TextView mapbutton = (TextView) findViewById(R.id.back);
-        TextView webbutton = (TextView) findViewById(R.id.web);
+        TextView mapbutton = (TextView) findViewById(R.id.mapBack);
+        TextView webbutton = (TextView) findViewById(R.id.toWeb);
         mapbutton.setOnClickListener(this);
         webbutton.setOnClickListener(this);
 
@@ -138,14 +139,26 @@ public class EventActivity extends Activity implements View.OnClickListener{
         Intent map = new Intent(EventActivity.this, MapActivity.class);
         Intent homepage = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.utatsu-kogei.gr.jp/"));
         switch (v.getId()){
-            case R.id.back:
+            case R.id.mapBack:
                 startActivity(map);
                 break;
 
-            case R.id.web:
+            case R.id.toWeb:
                 startActivity(homepage);
                 break;
         }
+    }
+
+    @Override
+    public boolean dispatchKeyEvent(KeyEvent event){
+        if(event.getAction() == KeyEvent.ACTION_UP){
+            switch (event.getKeyCode()){
+                case KeyEvent.KEYCODE_BACK:
+                    //ダイアログ表示などの処理を行う時はここに記述する
+                    return true;
+            }
+        }
+        return super.dispatchKeyEvent(event);
     }
 }
 

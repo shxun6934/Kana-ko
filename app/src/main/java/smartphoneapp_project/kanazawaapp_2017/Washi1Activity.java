@@ -7,15 +7,13 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
-
-
 
 public class Washi1Activity extends Activity implements SensorEventListener,View.OnClickListener {
 
@@ -31,7 +29,7 @@ public class Washi1Activity extends Activity implements SensorEventListener,View
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_washi1);
 
-        TextView imageButton = (TextView) findViewById(R.id.button100);
+        TextView imageButton = (TextView) findViewById(R.id.difficulty_back_button);
         imageButton.setOnClickListener(this);
 
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -106,5 +104,18 @@ public class Washi1Activity extends Activity implements SensorEventListener,View
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
 
     }
+
+    @Override
+    public boolean dispatchKeyEvent(KeyEvent event){
+        if(event.getAction() == KeyEvent.ACTION_UP){
+            switch (event.getKeyCode()){
+                case KeyEvent.KEYCODE_BACK:
+                    //ダイアログ表示などの処理を行う時はここに記述する
+                    return true;
+            }
+        }
+        return super.dispatchKeyEvent(event);
+    }
+
 
 }

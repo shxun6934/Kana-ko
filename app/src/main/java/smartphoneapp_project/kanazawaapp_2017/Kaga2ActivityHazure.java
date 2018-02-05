@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -16,11 +17,12 @@ public class Kaga2ActivityHazure extends Activity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kaga2_hazere);
-        TextView textView = (TextView) findViewById(R.id.yasai_name);
+
+        TextView textView = (TextView) findViewById(R.id.vegtable_name_incorrect);
         TextView textView_description = (TextView) findViewById(R.id.description);
-        ImageView yasai_syasinn = (ImageView) findViewById(R.id.yasai);
-        Button button = (Button) findViewById(R.id.next_button);
-        Intent intent = getIntent();
+        ImageView yasai_syasinn = (ImageView) findViewById(R.id.vegetable_incorrect);
+        Button button = (Button) findViewById(R.id.quiz_Backbutton);
+        final Intent intent = getIntent();
 
 
         kotae = intent.getStringExtra("answer");
@@ -56,9 +58,23 @@ public class Kaga2ActivityHazure extends Activity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent1 = new Intent(Kaga2ActivityHazure.this, Kaga1Activity.class);
+                Intent intent1 = new Intent(Kaga2ActivityHazure.this, DifficultyActivity.class);
+                intent1.putExtra("kind_game",5);
                 startActivity(intent1);
             }
         });
     }
+
+    @Override
+    public boolean dispatchKeyEvent(KeyEvent event){
+        if(event.getAction() == KeyEvent.ACTION_UP){
+            switch (event.getKeyCode()){
+                case KeyEvent.KEYCODE_BACK:
+                    //ダイアログ表示などの処理を行う時はここに記述する
+                    return true;
+            }
+        }
+        return super.dispatchKeyEvent(event);
+    }
+
 }

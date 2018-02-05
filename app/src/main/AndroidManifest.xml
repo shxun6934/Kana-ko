@@ -24,8 +24,7 @@
 
         <activity
             android:name=".Washi1Activity"
-            android:screenOrientation="landscape">
-        </activity>
+            android:screenOrientation="landscape" />
         <activity
             android:name=".Washi2Activity"
             android:screenOrientation="landscape" />
@@ -40,18 +39,12 @@
 
         <activity android:name=".Event.EventActivity" />
 
-        <activity android:name=".map1Activity" />
-        <activity android:name=".map2Activity" />
-        <activity android:name=".map3Activity" />
-        <activity android:name=".map4Activity" />
-        <activity android:name=".map5Activity" />
-        <activity android:name=".map6Activity" />
-        <activity android:name=".map7Activity" />
-
         <activity android:name=".Kaga1Activity" />
         <activity android:name=".Kaga2Activity" />
         <activity android:name=".Kaga2ActivityHazure" />
         <activity android:name=".Kaga2ActivityCongrats" />
 
+        <activity android:name=".DifficultyActivity" />
+        
     </application>
 </manifest>

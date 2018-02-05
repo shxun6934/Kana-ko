@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -19,10 +20,10 @@ public class Kaga2Activity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kaga2);
 
-        ImageView yasai_syasinn = (ImageView) findViewById(R.id.yasai);
-        TextView textView = (TextView) findViewById(R.id.yasai_name);
+        ImageView yasai_syasinn = (ImageView) findViewById(R.id.vegetable_correct);
+        TextView textView = (TextView) findViewById(R.id.vegetable_name_correct);
         TextView textView_description = (TextView) findViewById(R.id.description);
-        Button button = (Button) findViewById(R.id.next_button);
+        Button button = (Button) findViewById(R.id.quiz_nextbutton);
 
         final Intent intent = getIntent();
         kotae = intent.getStringExtra("answer");
@@ -73,5 +74,17 @@ public class Kaga2Activity extends Activity {
             }
         });
     }
+
+    @Override
+    public boolean dispatchKeyEvent(KeyEvent event){
+        if(event.getAction() == KeyEvent.ACTION_UP){
+            switch (event.getKeyCode()){
+                case KeyEvent.KEYCODE_BACK:
+                    return true;
+            }
+        }
+        return super.dispatchKeyEvent(event);
+    }
+
 }
 

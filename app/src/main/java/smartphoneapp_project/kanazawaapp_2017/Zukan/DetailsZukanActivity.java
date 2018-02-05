@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -22,10 +23,10 @@ public class DetailsZukanActivity extends Activity implements View.OnClickListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_zukan_details);
 
-        ImageView imageview = (ImageView) findViewById(R.id.image);
-        TextView nametext = (TextView) findViewById(R.id.name);
-        TextView descriptiontext = (TextView) findViewById(R.id.description);
-        ImageView backbutton = (ImageView) findViewById(R.id.back);
+        ImageView imageview = (ImageView) findViewById(R.id.zukan_image);
+        TextView nametext = (TextView) findViewById(R.id.zukan_name);
+        TextView descriptiontext = (TextView) findViewById(R.id.zukan_description);
+        ImageView backbutton = (ImageView) findViewById(R.id.zukan_back_button);
         backbutton.setOnClickListener(this);
         Intent intent = getIntent();
         key = intent.getIntExtra("key",0);
@@ -77,5 +78,17 @@ public class DetailsZukanActivity extends Activity implements View.OnClickListen
         }else if(19 <= i && i <= 28) {
             startActivity(washizukan);
         }
+    }
+
+    @Override
+    public boolean dispatchKeyEvent(KeyEvent event){
+        if(event.getAction() == KeyEvent.ACTION_UP){
+            switch (event.getKeyCode()){
+                case KeyEvent.KEYCODE_BACK:
+                    //ダイアログ表示などの処理を行う時はここに記述する
+                    return true;
+            }
+        }
+        return super.dispatchKeyEvent(event);
     }
 }
