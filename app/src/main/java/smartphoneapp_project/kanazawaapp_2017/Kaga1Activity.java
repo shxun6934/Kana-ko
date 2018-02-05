@@ -25,6 +25,7 @@ public class Kaga1Activity extends Activity {
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kaga1);
+        answer = 0;
 
         yasainame = new ArrayList<String>();
         question = new ArrayList<String>();
