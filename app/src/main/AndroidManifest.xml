@@ -39,14 +39,6 @@
 
         <activity android:name=".Event.EventActivity" />
 
-        <activity android:name=".map1Activity" />
-        <activity android:name=".map2Activity" />
-        <activity android:name=".map3Activity" />
-        <activity android:name=".map4Activity" />
-        <activity android:name=".map5Activity" />
-        <activity android:name=".map6Activity" />
-        <activity android:name=".map7Activity" />
-
         <activity android:name=".KagaYasaiQuiz.Kaga1Activity" />
         <activity android:name=".KagaYasaiQuiz.Kaga2Activity" />
         <activity android:name=".KagaYasaiQuiz.Kaga2ActivityHazure" />
