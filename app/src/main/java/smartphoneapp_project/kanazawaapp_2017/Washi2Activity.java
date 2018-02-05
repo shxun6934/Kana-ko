@@ -36,11 +36,11 @@ public class Washi2Activity extends Activity  implements View.OnTouchListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_washi2);
         Resources r = getResources();
-        Bitmap kurobaBmp = BitmapFactory.decodeResource(r,R.drawable.kuroba);
-        Bitmap momijiBmp = BitmapFactory.decodeResource(r, R.drawable.momiji1);
-        Bitmap otibaBmp = BitmapFactory.decodeResource(r, R.drawable.momiji2);
-        Bitmap momijikage = BitmapFactory.decodeResource(r, R.drawable.momiji1kage);
-        Bitmap otibakage = BitmapFactory.decodeResource(r, R.drawable.momiji2kage);
+        Bitmap kurobaBmp = BitmapFactory.decodeResource(r,R.drawable.washi2_kuroba);
+        Bitmap momijiBmp = BitmapFactory.decodeResource(r, R.drawable.washi2_momiji1);
+        Bitmap otibaBmp = BitmapFactory.decodeResource(r, R.drawable.washi2_momiji2);
+        Bitmap momijikage = BitmapFactory.decodeResource(r, R.drawable.washi2_momiji1kage);
+        Bitmap otibakage = BitmapFactory.decodeResource(r, R.drawable.washi2_momiji2kage);
         Button returnButton = (Button) findViewById(R.id.washi1_back_button);
         kurobaView = (ImageView) findViewById(R.id.momiji0);
         momijiView = (ImageView) findViewById(R.id.momiji1);
@@ -87,7 +87,7 @@ public class Washi2Activity extends Activity  implements View.OnTouchListener {
                 break;
             case R.id.momiji1://枝分かれしている紅葉のドラッグアンドドロップの操作
                 Resources r = getResources();
-                Bitmap bmp2 = BitmapFactory.decodeResource(r, R.drawable.momiji1);
+                Bitmap bmp2 = BitmapFactory.decodeResource(r, R.drawable.washi2_momiji1);
                 //タッチしたときの位置を取得
                 x = (int) event.getRawX();
                 y = (int) event.getRawY();
@@ -125,7 +125,7 @@ public class Washi2Activity extends Activity  implements View.OnTouchListener {
                 int startX = (int) otibaView.getX();
                 int startY = (int) otibaView.getY();
                 Resources r2 = getResources();
-                Bitmap bmp3 = BitmapFactory.decodeResource(r2, R.drawable.momiji2);
+                Bitmap bmp3 = BitmapFactory.decodeResource(r2, R.drawable.washi2_momiji2);
                 //タッチしたviewの位置を取得
                 x = (int) event.getRawX();
                 y = (int) event.getRawY();

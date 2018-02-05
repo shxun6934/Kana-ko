@@ -21,7 +21,7 @@ public class DifficultyActivity extends Activity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_difficulty);
-        Intent intent = getIntent();
+        final Intent intent = getIntent();
         kindGame = intent.getIntExtra("kind_game",0);
         Resources resources = getResources();
         Bitmap washi1Bitmap = BitmapFactory.decodeResource(resources,R.drawable.difficulty_description_washi1);
@@ -96,7 +96,8 @@ public class DifficultyActivity extends Activity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();
+                Intent intentMap = new Intent(DifficultyActivity.this,MapActivity.class);
+                startActivity(intentMap);
             }
         });
 
