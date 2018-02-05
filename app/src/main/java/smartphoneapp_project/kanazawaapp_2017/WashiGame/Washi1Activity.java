@@ -1,4 +1,4 @@
-package smartphoneapp_project.kanazawaapp_2017;
+package smartphoneapp_project.kanazawaapp_2017.WashiGame;
 import android.app.Activity;
 import android.content.Intent;
 import android.hardware.Sensor;
@@ -14,6 +14,9 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import smartphoneapp_project.kanazawaapp_2017.MapActivity;
+import smartphoneapp_project.kanazawaapp_2017.R;
 
 public class Washi1Activity extends Activity implements SensorEventListener,View.OnClickListener {
 

@@ -1,4 +1,4 @@
-package smartphoneapp_project.kanazawaapp_2017;
+package smartphoneapp_project.kanazawaapp_2017.WashiGame;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -14,6 +14,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+
+import smartphoneapp_project.kanazawaapp_2017.R;
 
 public class Washi2Activity extends Activity  implements View.OnTouchListener {
     private ImageView kurobaView;
