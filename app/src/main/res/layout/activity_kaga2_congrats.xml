@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingTop="40dp"
-    android:background="@drawable/congrats_back">
+    android:background="@drawable/kaga2_congrats_back">
 
     <LinearLayout
         android:layout_height="match_parent"
@@ -21,13 +21,13 @@
                 android:id="@+id/correct_image1"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
-                android:src="@drawable/negi_ira"
+                android:src="@drawable/kaga2_negi_ira"
                 />
             <ImageView
                 android:id="@+id/correct_image2"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
-                android:src="@drawable/kyuuri_ira"/>
+                android:src="@drawable/kaga2_kyuuri_ira"/>
         </LinearLayout>
 
         <LinearLayout
@@ -38,7 +38,7 @@
                 android:id="@+id/correct_image3"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
-                android:src="@drawable/kinnzisou_ira"
+                android:src="@drawable/kaga2_kinzisou_ira"
                 />
 
         </LinearLayout>

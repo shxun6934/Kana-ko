@@ -74,19 +74,19 @@ public class Kaga1Activity extends Activity {
     private void setVegetable() {
         switch (question.get(answer)) {
             case "きんじそう":
-                imageView.setImageResource(R.drawable.kaga1_kinzisou);
+                imageView.setImageResource(R.drawable.kaga_kinzisou);
                 break;
 
             case "ねぎ":
-                imageView.setImageResource(R.drawable.kaga1_negi);
+                imageView.setImageResource(R.drawable.kaga_negi);
                 break;
 
             case "れんこん":
-                imageView.setImageResource(R.drawable.kaga1_renkon);
+                imageView.setImageResource(R.drawable.kaga_renkon);
                 break;
 
             case "きゅうり":
-                imageView.setImageResource(R.drawable.kaga1_cucumber);
+                imageView.setImageResource(R.drawable.kaga_kyuuri);
                 break;
 
         }

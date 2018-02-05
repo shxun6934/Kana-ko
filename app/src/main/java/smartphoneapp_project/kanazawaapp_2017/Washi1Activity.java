@@ -38,7 +38,7 @@ public class Washi1Activity extends Activity implements SensorEventListener,View
 
         ImageView washiView = new ImageView(this);
         washiView.setId(View.generateViewId());
-        washiView.setImageResource(R.drawable.kami2);
+        washiView.setImageResource(R.drawable.washi1_kami2);
         washiView.setScaleType(ImageView.ScaleType.FIT_XY);
         washiView.setScaleX(2);
         washiView.setScaleY(2);
@@ -52,7 +52,7 @@ public class Washi1Activity extends Activity implements SensorEventListener,View
 
     public void onClick(View v) {
         //Log.d("aaa","aaaaaaa");
-        Intent intent = new Intent(getApplicationContext(),MapActivity.class);
+        Intent intent = new Intent(getApplicationContext(),DifficultyActivity.class);
         startActivity(intent);
     }
 
