@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import static smartphoneapp_project.kanazawaapp_2017.Kaga1Activity.answer;
 
 //正解画面
@@ -24,6 +25,9 @@ public class Kaga2Activity extends Activity {
         TextView textView = (TextView) findViewById(R.id.vegetable_name_correct);
         TextView textView_description = (TextView) findViewById(R.id.description);
         Button button = (Button) findViewById(R.id.quiz_nextbutton);
+        if (answer >= 2) {
+            button.setText("おわり");
+        }
 
         final Intent intent = getIntent();
         kotae = intent.getStringExtra("answer");
@@ -76,9 +80,9 @@ public class Kaga2Activity extends Activity {
     }
 
     @Override
-    public boolean dispatchKeyEvent(KeyEvent event){
-        if(event.getAction() == KeyEvent.ACTION_UP){
-            switch (event.getKeyCode()){
+    public boolean dispatchKeyEvent(KeyEvent event) {
+        if (event.getAction() == KeyEvent.ACTION_UP) {
+            switch (event.getKeyCode()) {
                 case KeyEvent.KEYCODE_BACK:
                     return true;
             }

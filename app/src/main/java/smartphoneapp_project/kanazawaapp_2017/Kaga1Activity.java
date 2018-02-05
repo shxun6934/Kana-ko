@@ -3,6 +3,7 @@ package smartphoneapp_project.kanazawaapp_2017;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
@@ -20,22 +21,13 @@ public class Kaga1Activity extends Activity {
 
     static int answer = 0;
 
-    {
-        question.add("きゅうり");
-        question.add("きんじそう");
-        question.add("ねぎ");
-        question.add("れんこん");
-
-        yasainame.add("きゅうり");
-        yasainame.add("きんじそう");
-        yasainame.add("ねぎ");
-        yasainame.add("れんこん");
-    }
-
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kaga1);
+
+        yasainame = new ArrayList<String>();
+        question = new ArrayList<String>();
 
         Button questionbutton1 =
                 (Button) findViewById(R.id.quiz_button1);
@@ -53,12 +45,26 @@ public class Kaga1Activity extends Activity {
         ImageView imageView3 = (ImageView) findViewById(R.id.quiz_Rump3);
         imageView3.setImageResource(R.drawable.kaga1_off_rump);
 
+        yasainame.add("きゅうり");
+        yasainame.add("きんじそう");
+        yasainame.add("ねぎ");
+        yasainame.add("れんこん");
+
+        question.add("きゅうり");
+        question.add("きんじそう");
+        question.add("ねぎ");
+        question.add("れんこん");
+
         Collections.shuffle(yasainame);
 
         questionbutton1.setText(yasainame.get(0));
         questionbutton2.setText(yasainame.get(1));
         questionbutton3.setText(yasainame.get(2));
         questionbutton4.setText(yasainame.get(3));
+        Log.d("アイウエオ",yasainame.get(0));
+        Log.d("ア",yasainame.get(1));
+        Log.d("アイ",yasainame.get(2));
+        Log.d("アイウ",yasainame.get(3));
 
         imageView = (ImageView) findViewById(R.id.vegetable);
 

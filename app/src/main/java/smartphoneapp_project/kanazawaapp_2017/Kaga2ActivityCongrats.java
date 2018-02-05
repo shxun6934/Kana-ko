@@ -76,7 +76,8 @@ public class Kaga2ActivityCongrats extends Activity {
         tap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent1 = new Intent(Kaga2ActivityCongrats.this, Kaga1Activity.class);
+                Intent intent1 = new Intent(Kaga2ActivityCongrats.this, DifficultyActivity.class);
+                intent1.putExtra("kind_game",5);
                 startActivity(intent1);
             }
         });
