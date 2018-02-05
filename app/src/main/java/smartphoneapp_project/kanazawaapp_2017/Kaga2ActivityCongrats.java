@@ -73,6 +73,7 @@ public class Kaga2ActivityCongrats extends Activity {
                 seikaigazou2.setImageResource(R.drawable.rennkonn_ira);
                 break;
         }
+
         tap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

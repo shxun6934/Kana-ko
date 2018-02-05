@@ -73,7 +73,6 @@ public class Kaga2Activity extends Activity {
                 } else {
                     Intent intent = new Intent(Kaga2Activity.this, Kaga2ActivityCongrats.class);
                     startActivity(intent);
-
                 }
             }
         });
