@@ -22,7 +22,7 @@ public class Kaga2ActivityHazure extends Activity {
         TextView textView_description = (TextView) findViewById(R.id.description);
         ImageView yasai_syasinn = (ImageView) findViewById(R.id.vegetable_incorrect);
         Button button = (Button) findViewById(R.id.quiz_Backbutton);
-        Intent intent = getIntent();
+        final Intent intent = getIntent();
 
 
         kotae = intent.getStringExtra("answer");
@@ -58,7 +58,8 @@ public class Kaga2ActivityHazure extends Activity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent1 = new Intent(Kaga2ActivityHazure.this, Kaga1Activity.class);
+                Intent intent1 = new Intent(Kaga2ActivityHazure.this, DifficultyActivity.class);
+                intent1.putExtra("kind_game",5);
                 startActivity(intent1);
             }
         });
