@@ -24,7 +24,6 @@ public class Kaga2ActivityHazure extends Activity {
         Button button = (Button) findViewById(R.id.quiz_Backbutton);
         final Intent intent = getIntent();
 
-
         kotae = intent.getStringExtra("answer");
         textView.setText(kotae);
 
