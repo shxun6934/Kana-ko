@@ -1,7 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-</LinearLayout>
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/washi1_sudare01_01" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/washi1_kami2" />
+
+    <smartphoneapp_project.kanazawaapp_2017.JayroMovableLayout
+        android:id="@+id/jayro_movable_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/washi1_frame_00023" />
+
+
+    <TextView
+        android:id="@+id/difficulty_back_button"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_gravity="bottom"
+        android:layout_marginLeft="250dp"
+        android:background="@drawable/washi1_button"
+        android:src="@drawable/washi1_modoru"
+
+        android:text="もどる"
+        android:textSize="30sp"
+        android:textColor="#000"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+
+
+
+        />
+
+</FrameLayout>
+

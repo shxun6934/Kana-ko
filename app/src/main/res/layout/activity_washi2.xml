@@ -1,97 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <ImageView
-        android:id="@+id/ImageViewHaikei"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="matrix"
-        android:src="@drawable/wasi2_haikei" />
+    android:layout_height="match_parent"
+    android:background="@drawable/washi2_wasihaikei">
+
 
     <ImageView
-        android:id="@+id/imageViewWasi"
         android:layout_width="398dp"
         android:layout_height="340dp"
         android:layout_marginLeft="185dp"
         android:layout_marginTop="10dp"
-        android:src="@drawable/wasiwhite" />
+        android:src="@drawable/washi2_wasiwhite" />
+
     <ImageView
-        android:id="@+id/imageView2S"
+        android:id="@+id/momiji_Shadow1"
         android:layout_width="93dp"
         android:layout_height="91dp"
         android:layout_marginLeft="400dp"
         android:layout_marginTop="130dp"
-        android:src="@drawable/momiji1kage"
-         />
+        android:src="@drawable/washi2_momiji2kage" />
     <ImageView
-        android:id="@+id/ImageView3S"
+        android:id="@+id/momiji_Shadow2"
         android:layout_width="80dp"
         android:layout_height="90dp"
-        android:layout_marginLeft="220dp"
-        android:layout_marginTop="230dp"
-        android:src="@drawable/momiji2kage" />
+        android:layout_marginLeft="210dp"
+        android:layout_marginTop="220dp"
+        android:src="@drawable/washi2_momiji1kage" />
     <FrameLayout
-        android:id="@+id/frameLayout"
         android:layout_width="150dp"
         android:layout_height="250dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="30dp"
-        android:background="#8b4513"
-        >
+        android:background="#8b4513">
         <FrameLayout
             android:layout_width="140dp"
             android:layout_height="240dp"
             android:layout_gravity="center"
-            android:background="@android:color/white"
-            >
+            android:background="@android:color/white">
         </FrameLayout>
     </FrameLayout>
-    <Button
 
-        android:id="@+id/button"
+    <Button
+        android:id="@+id/washi1_back_button"
         android:layout_width="88dp"
         android:layout_height="47dp"
         android:layout_marginLeft="50dp"
         android:layout_marginTop="295dp"
-        android:background="@drawable/shape_sample"
+        android:background="@drawable/washi2_shape_sample"
         android:onClick="returnClick"
+        android:textColor="#b22222"
         android:text="もどる"
+        android:textStyle="bold"
         android:visibility="visible" />
     <ImageView
-        android:id="@+id/ImageView1"
+        android:id="@+id/momiji0"
         android:layout_width="100dp"
         android:layout_height="69dp"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="50dp"
         android:scaleType="fitCenter"
-        app:srcCompat="@drawable/kuroba" />
+        android:src="@drawable/washi2_kuroba" />
     <ImageView
-        android:id="@+id/ImageView2"
-        android:layout_width="100dp"
-        android:layout_height="82dp"
+        android:id="@+id/momiji1"
+        android:layout_width="87dp"
+        android:layout_height="70dp"
         android:layout_marginTop="125dp"
         android:layout_marginLeft="40dp"
-        android:src="@drawable/momiji1"
-        />
+        android:src="@drawable/washi2_momiji1" />
     <ImageView
-        android:id="@+id/ImageView3"
+        android:id="@+id/momiji2"
         android:layout_width="80dp"
         android:layout_height="90dp"
         android:layout_marginLeft="50dp"
         android:layout_marginTop="190dp"
-        app:srcCompat="@drawable/momiji2" />
-
+        android:src="@drawable/washi2_momiji2" />
     <Button
-        android:id="@+id/nextbutton"
+        android:id="@+id/washi3_next_button"
         android:layout_width="490dp"
         android:layout_height="134dp"
         android:layout_gravity="center"
-        android:background="@drawable/nextbutton"
-        android:onClick="returnClick"
+        android:background="@drawable/washi2_nextbutton"
+        android:onClick="onClick"
         android:textSize="70dp"
         android:textStyle="italic"
         android:visibility="invisible" />

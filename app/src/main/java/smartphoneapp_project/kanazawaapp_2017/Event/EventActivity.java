@@ -6,7 +6,9 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.view.KeyEvent;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -24,18 +26,20 @@ import java.net.ProtocolException;
 import java.net.URL;
 import java.util.ArrayList;
 
+import smartphoneapp_project.kanazawaapp_2017.MapActivity;
 import smartphoneapp_project.kanazawaapp_2017.R;
-import smartphoneapp_project.kanazawaapp_2017.Zukan.KagayasaiZukan1Activity;
 
 public class EventActivity extends Activity implements View.OnClickListener{
+
+    JSONArray eventArray;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event);
 
-        TextView mapbutton = (TextView) findViewById(R.id.back);
-        TextView webbutton = (TextView) findViewById(R.id.web);
+        TextView mapbutton = (TextView) findViewById(R.id.mapBack);
+        TextView webbutton = (TextView) findViewById(R.id.toWeb);
         mapbutton.setOnClickListener(this);
         webbutton.setOnClickListener(this);
 
@@ -47,7 +51,7 @@ public class EventActivity extends Activity implements View.OnClickListener{
 
     }
 
-    class estAsycTask extends AsyncTask<URL, Void, String> {
+    class estAsycTask extends AsyncTask<URL, Void, String> implements AdapterView.OnItemClickListener{
         @Override
         protected String doInBackground(URL... urls) {
             final StringBuilder result = new StringBuilder();
@@ -97,7 +101,7 @@ public class EventActivity extends Activity implements View.OnClickListener{
             String fileText = s.toString();
             try {
                 JSONObject rootObject = new JSONObject(fileText);
-                JSONArray eventArray = rootObject.getJSONArray("items");
+                eventArray = rootObject.getJSONArray("items");
 
                 ArrayList<Event> items = new ArrayList<>();
                 for (int i = 0; i < eventArray.length(); i++) {
@@ -110,24 +114,51 @@ public class EventActivity extends Activity implements View.OnClickListener{
 
                 listView.setAdapter(adapter);
 
+                listView.setOnItemClickListener(this);
+
             } catch (JSONException e) {
                 e.printStackTrace();
             }
         }
+        @Override
+        public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
+            try {
+                    JSONObject jsonobject = eventArray.getJSONObject(position);
+                    String url = "http://www.utatsu-kogei.gr.jp/" + jsonobject.getString("link");
+                    Intent eventpage = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                    startActivity(eventpage);
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+
     }
 
     public void onClick(View v) {
-        Intent map = new Intent(EventActivity.this, KagayasaiZukan1Activity.class);
-        Intent webpage = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.utatsu-kogei.gr.jp/event/"));
+        Intent map = new Intent(EventActivity.this, MapActivity.class);
+        Intent homepage = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.utatsu-kogei.gr.jp/"));
         switch (v.getId()){
-            case R.id.back:
+            case R.id.mapBack:
                 startActivity(map);
                 break;
 
-            case R.id.web:
-                startActivity(webpage);
+            case R.id.toWeb:
+                startActivity(homepage);
                 break;
         }
+    }
+
+    @Override
+    public boolean dispatchKeyEvent(KeyEvent event){
+        if(event.getAction() == KeyEvent.ACTION_UP){
+            switch (event.getKeyCode()){
+                case KeyEvent.KEYCODE_BACK:
+                    //ダイアログ表示などの処理を行う時はここに記述する
+                    return true;
+            }
+        }
+        return super.dispatchKeyEvent(event);
     }
 }
 

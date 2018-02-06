@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -11,13 +12,6 @@ import android.widget.TextView;
 import smartphoneapp_project.kanazawaapp_2017.R;
 
 public class DetailsZukanActivity extends Activity implements View.OnClickListener{
-
-    String[] kagayasainame = {null,"いっぽんふとねぎ", "かがふときゅうり", "きんじそう", "かがれんこん"};
-    String[] kagayasaidescription = {null,
-            "かなざわいっぽんねぎは、ふつうのねぎよりもやわらかい。\nふゆになるほどあまくなり、\nすきやきやなべにいれる。",
-            "かがふときゅうりは、おもさがふつうのきゅうりよりおもい。\nやわらかくあまい。\nかわをむいてあんかけにするなどしてたべる。",
-            "きんじそうは、はのうらがきんときいものいろににているからきんじそうとよばれている。\nそのははすこしあまい。",
-            "かがれんこんは、ふつうのれんこんよりねばりがつよい。\nれんこんをむしたり、もちにしてたべるのがおすすめ。"};
 
     String[] washiname = {"わし"};
     String[] washidescription = {".........."};
@@ -29,10 +23,10 @@ public class DetailsZukanActivity extends Activity implements View.OnClickListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_zukan_details);
 
-        ImageView imageview = (ImageView) findViewById(R.id.image);
-        TextView nametext = (TextView) findViewById(R.id.name);
-        TextView descriptiontext = (TextView) findViewById(R.id.description);
-        ImageView backbutton = (ImageView) findViewById(R.id.back);
+        ImageView imageview = (ImageView) findViewById(R.id.zukan_image);
+        TextView nametext = (TextView) findViewById(R.id.zukan_name);
+        TextView descriptiontext = (TextView) findViewById(R.id.zukan_description);
+        ImageView backbutton = (ImageView) findViewById(R.id.zukan_back_button);
         backbutton.setOnClickListener(this);
         Intent intent = getIntent();
         key = intent.getIntExtra("key",0);
@@ -40,26 +34,26 @@ public class DetailsZukanActivity extends Activity implements View.OnClickListen
         switch (key){
             case 1:
                 imageview.setImageResource(R.drawable.zukan_negi2);
-                nametext.setText(kagayasainame[1]);
-                descriptiontext.setText(kagayasaidescription[1]);
+                nametext.setText(R.string.hutonegi);
+                descriptiontext.setText(R.string.hutonegi_description);
                 break;
 
             case 2:
-                imageview.setImageResource(R.drawable.zukan_kyuri2);
-                nametext.setText(kagayasainame[2]);
-                descriptiontext.setText(kagayasaidescription[2]);
+                imageview.setImageResource(R.drawable.zukan_kyuuri2);
+                nametext.setText(R.string.hutokyuuri);
+                descriptiontext.setText(R.string.hutokyuuri_description);
                 break;
 
             case 3:
-                imageview.setImageResource(R.drawable.zukan_kinjisou2);
-                nametext.setText(kagayasainame[3]);
-                descriptiontext.setText(kagayasaidescription[3]);
+                imageview.setImageResource(R.drawable.zukan_kinzisou2);
+                nametext.setText(R.string.kinnzisou);
+                descriptiontext.setText(R.string.kinnzisou_description);
                 break;
 
             case 4:
                 imageview.setImageResource(R.drawable.zukan_renkon2);
-                nametext.setText(kagayasainame[4]);
-                descriptiontext.setText(kagayasaidescription[4]);
+                nametext.setText(R.string.rennkonn);
+                descriptiontext.setText(R.string.rennkonn_description);
                 break;
 
             case 19:
@@ -84,5 +78,17 @@ public class DetailsZukanActivity extends Activity implements View.OnClickListen
         }else if(19 <= i && i <= 28) {
             startActivity(washizukan);
         }
+    }
+
+    @Override
+    public boolean dispatchKeyEvent(KeyEvent event){
+        if(event.getAction() == KeyEvent.ACTION_UP){
+            switch (event.getKeyCode()){
+                case KeyEvent.KEYCODE_BACK:
+                    //ダイアログ表示などの処理を行う時はここに記述する
+                    return true;
+            }
+        }
+        return super.dispatchKeyEvent(event);
     }
 }

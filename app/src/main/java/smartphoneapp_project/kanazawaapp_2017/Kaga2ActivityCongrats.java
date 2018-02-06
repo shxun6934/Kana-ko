@@ -4,12 +4,12 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.view.MotionEvent;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import static smartphoneapp_project.kanazawaapp_2017.Kaga2Test.mondai;
+import static smartphoneapp_project.kanazawaapp_2017.Kaga1Activity.question;
 
 /**
  * Created by Yuta on 2017/12/17.
@@ -20,66 +20,80 @@ public class Kaga2ActivityCongrats extends Activity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kaga2_congrats);
-        ImageView seikaigazou0 = (ImageView) findViewById(R.id.seikai_gazou0);
-        ImageView seikaigazou1 = (ImageView) findViewById(R.id.seikai_gazou1);
-        ImageView seikaigazou2 = (ImageView) findViewById(R.id.seikai_gazou2);
+
+        ImageView seikaigazou0 = (ImageView) findViewById(R.id.correct_image1);
+        ImageView seikaigazou1 = (ImageView) findViewById(R.id.correct_image2);
+        ImageView seikaigazou2 = (ImageView) findViewById(R.id.correct_image3);
 
         Button tap = (Button) findViewById(R.id.tap);
 
 
-        switch (mondai.get(0)) {
+        switch (question.get(0)) {
             case "きんじそう":
-                seikaigazou0.setImageResource(R.drawable.kinnzisou_ira);
+                seikaigazou0.setImageResource(R.drawable.kaga2_kinzisou_ira);
                 break;
-            case "かがふときゅうり":
-                seikaigazou0.setImageResource(R.drawable.kyuuri_ira);
+            case "きゅうり":
+                seikaigazou0.setImageResource(R.drawable.kaga2_kyuuri_ira);
                 break;
-            case "かなざわいっぽんふとねぎ":
-                seikaigazou0.setImageResource(R.drawable.negi_ira);
+            case "ねぎ":
+                seikaigazou0.setImageResource(R.drawable.kaga2_negi_ira);
                 break;
-            case "かがれんこん":
-                seikaigazou0.setImageResource(R.drawable.rennkonn_ira);
+            case "れんこん":
+                seikaigazou0.setImageResource(R.drawable.kaga2_renkon_ira);
                 break;
         }
 
-        switch (mondai.get(1)) {
+        switch (question.get(1)) {
             case "きんじそう":
-                seikaigazou1.setImageResource(R.drawable.kinnzisou_ira);
+                seikaigazou1.setImageResource(R.drawable.kaga2_kinzisou_ira);
                 break;
-            case "かがふときゅうり":
-                seikaigazou1.setImageResource(R.drawable.kyuuri_ira);
+            case "きゅうり":
+                seikaigazou1.setImageResource(R.drawable.kaga2_kyuuri_ira);
                 break;
-            case "かなざわいっぽんふとねぎ":
-                seikaigazou1.setImageResource(R.drawable.negi_ira);
+            case "ねぎ":
+                seikaigazou1.setImageResource(R.drawable.kaga2_negi_ira);
                 break;
-            case "かがれんこん":
-                seikaigazou1.setImageResource(R.drawable.rennkonn_ira);
+            case "れんこん":
+                seikaigazou1.setImageResource(R.drawable.kaga2_renkon_ira);
                 break;
         }
 
-        switch (mondai.get(2)) {
+        switch (question.get(2)) {
             case "きんじそう":
-                seikaigazou2.setImageResource(R.drawable.kinnzisou_ira);
+                seikaigazou2.setImageResource(R.drawable.kaga2_kinzisou_ira);
                 break;
-            case "かがふときゅうり":
-                seikaigazou2.setImageResource(R.drawable.kyuuri_ira);
+            case "きゅうり":
+                seikaigazou2.setImageResource(R.drawable.kaga2_kyuuri_ira);
                 break;
-            case "かなざわいっぽんふとねぎ":
-                seikaigazou2.setImageResource(R.drawable.negi_ira);
+            case "ねぎ":
+                seikaigazou2.setImageResource(R.drawable.kaga2_negi_ira);
                 break;
-            case "かがれんこん":
-                seikaigazou2.setImageResource(R.drawable.rennkonn_ira);
+            case "れんこん":
+                seikaigazou2.setImageResource(R.drawable.kaga2_renkon_ira);
                 break;
         }
+
         tap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent1 = new Intent(Kaga2ActivityCongrats.this, Kaga2Test.class);
+                Intent intent1 = new Intent(Kaga2ActivityCongrats.this, MapActivity.class);
+                intent1.putExtra("kind_game",5);
                 startActivity(intent1);
             }
         });
 
     }
 
+    @Override
+    public boolean dispatchKeyEvent(KeyEvent event){
+        if(event.getAction() == KeyEvent.ACTION_UP){
+            switch (event.getKeyCode()){
+                case KeyEvent.KEYCODE_BACK:
+                    //ダイアログ表示などの処理を行う時はここに記述する
+                    return true;
+            }
+        }
+        return super.dispatchKeyEvent(event);
+    }
 
 }
