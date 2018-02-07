@@ -1,18 +1,22 @@
 package smartphoneapp_project.kanazawaapp_2017;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Rect;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MizuameActivity extends Activity implements View.OnTouchListener {
+public class MizuameActivity extends Activity implements View.OnTouchListener, RotationGestureDetector.OnRotationGestureListener {
 
     private Rect rect = new Rect();
     private ImageView nabeView;
@@ -21,6 +25,7 @@ public class MizuameActivity extends Activity implements View.OnTouchListener {
     private ImageView nabe_afterView;
     private TextView materialTextView;
     private TextView titleTextView;
+    private Button cancelButton;
     private int oldX;
     private int oldY;
     int x;
@@ -30,6 +35,8 @@ public class MizuameActivity extends Activity implements View.OnTouchListener {
 
     ViewGroup.MarginLayoutParams startmarginkome;
     ViewGroup.MarginLayoutParams startmerginmugi;
+
+    RotationGestureDetector detector;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,14 +49,48 @@ public class MizuameActivity extends Activity implements View.OnTouchListener {
         mugiView = (ImageView) findViewById(R.id.mizuame_mugi_imageview);
         materialTextView = (TextView) findViewById(R.id.mizuame_material_textview);
         titleTextView = (TextView) findViewById(R.id.mizuame_title_textview);
+        cancelButton = (Button) findViewById(R.id.mizuame_cancel_button);
 
         this.komeView.setOnTouchListener(this);
         this.mugiView.setOnTouchListener(this);
+        cancelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MizuameActivity.this, DifficultyActivity.class);
+                startActivity(intent);
+            }
+        });
 
         startmarginkome = (ViewGroup.MarginLayoutParams) komeView.getLayoutParams();
         startmerginmugi = (ViewGroup.MarginLayoutParams) mugiView.getLayoutParams();
 
         nabe_afterView.setVisibility(nabe_afterView.INVISIBLE);
+
+        detector = new RotationGestureDetector((RotationGestureDetector.OnRotationGestureListener) this);
+
+        ViewTreeObserver.OnGlobalLayoutListener listener = new ViewTreeObserver.OnGlobalLayoutListener() {
+            @Override
+            public void onGlobalLayout() {
+                detector.setCenterX(nabe_afterView.getPivotX() + nabe_afterView.getLeft());
+                detector.setCenterY(nabe_afterView.getPivotY() + nabe_afterView.getTop());
+                nabe_afterView.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+
+                if (count == 5) {
+                    count = 0;
+                    Intent intent = new Intent(MizuameActivity.this, MapActivity.class);
+                    startActivity(intent);
+                }
+            }
+        };
+
+        nabe_afterView.getViewTreeObserver().addOnGlobalLayoutListener(listener);
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        detector.onTouchEvent(event);
+        return super.onTouchEvent(event);
+
     }
 
     @Override
@@ -79,6 +120,7 @@ public class MizuameActivity extends Activity implements View.OnTouchListener {
                             nabe_afterView.setVisibility(nabe_afterView.VISIBLE);
                             materialTextView.setVisibility(materialTextView.INVISIBLE);
                             titleTextView.setText("かきまぜよう！！");
+                            Log.d("1","回せ");
                         }
                     } else {
                         komeView.setLayoutParams(startmarginkome);
@@ -109,6 +151,8 @@ public class MizuameActivity extends Activity implements View.OnTouchListener {
                             nabe_afterView.setVisibility(nabe_afterView.VISIBLE);
                             materialTextView.setVisibility(materialTextView.INVISIBLE);
                             titleTextView.setText("かきまぜよう！！");
+
+                            Log.d("1","回せ");
                         }
                     } else {
                         mugiView.setLayoutParams(startmerginmugi);
@@ -119,5 +163,63 @@ public class MizuameActivity extends Activity implements View.OnTouchListener {
         return true;
     }
 
+    @Override
+    public boolean dispatchKeyEvent(KeyEvent event){
+        if(event.getAction() == KeyEvent.ACTION_UP){
+            switch (event.getKeyCode()){
+                case KeyEvent.KEYCODE_BACK:
+                    //ダイアログ表示などの処理を行う時はここに記述する
+                    return true;
+            }
+        }
+        return super.dispatchKeyEvent(event);
+    }
+
+    private float initialAngle = -1;
+    private int checkPointPassed = 0;
+    private int count;
+
+    @Override
+    public void onRotate(float angle) {
+        if (initialAngle == -1) {
+            initialAngle = angle;
+        }
+
+        switch (checkPointPassed) {
+            case 0:
+                if (Math.abs(angle - angleValidate(initialAngle)) > 90) {
+                    checkPointPassed++;
+                    Log.d("90", "90ど");
+                }
+                break;
+            case 1:
+                if (Math.abs(angle - angleValidate(initialAngle)) > 180) {
+                    checkPointPassed++;
+                    Log.d("180", "180ど");
+                }
+                break;
+            case 2:
+                if (Math.abs(angle - angleValidate(initialAngle)) > 270) {
+                    checkPointPassed++;
+                    Log.d("270", "270ど");
+                }
+                break;
+            case 3:
+                if (Math.abs(angle - angleValidate(initialAngle)) < 90) {
+                    Toast.makeText(this, ++count + "周", Toast.LENGTH_SHORT).show();
+                    initialAngle = -1;
+                    checkPointPassed = 0;
+                    Log.d("2","周");
+                }
+                break;
+        }
+    }
+
+    private float angleValidate(float angle) {
+        if (angle >= 360) {
+            return angle - 360;
+        }
+        return angle;
+    }
 }
 

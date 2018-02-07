@@ -43,7 +43,8 @@
         android:layout_marginLeft="15dp"
         android:layout_gravity="bottom"
         android:background="@drawable/shape_rounded_corners_100dp"
-        android:text="やめる" />
+        android:text="やめる"
+        android:textColor="#000"/>
 
     <TextView
         android:id="@+id/mizuame_material_textview"

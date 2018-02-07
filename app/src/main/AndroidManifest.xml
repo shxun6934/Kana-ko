@@ -45,6 +45,8 @@
         <activity android:name=".Kaga2ActivityCongrats" />
 
         <activity android:name=".DifficultyActivity" />
+
+        <activity android:name=".MizuameActivity" />
         
     </application>
 </manifest>
