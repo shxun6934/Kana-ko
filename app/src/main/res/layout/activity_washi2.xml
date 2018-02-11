@@ -54,6 +54,14 @@
         android:text="もどる"
         android:textStyle="bold"
         android:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/murasaki_shadow"
+        android:layout_width="100dp"
+        android:layout_height="69dp"
+        android:layout_marginLeft="250dp"
+        android:layout_marginTop="100dp" />
+
     <ImageView
         android:id="@+id/momiji0"
         android:layout_width="100dp"
@@ -86,5 +94,10 @@
         android:textSize="70dp"
         android:textStyle="italic"
         android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
 </FrameLayout>
