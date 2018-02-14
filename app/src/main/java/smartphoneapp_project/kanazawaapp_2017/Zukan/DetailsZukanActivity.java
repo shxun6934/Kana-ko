@@ -12,10 +12,7 @@ import android.widget.TextView;
 import smartphoneapp_project.kanazawaapp_2017.R;
 
 public class DetailsZukanActivity extends Activity implements View.OnClickListener{
-
-    String[] washiname = {"わし"};
-    String[] washidescription = {".........."};
-
+    
     private static int key;
 
     @Override
@@ -57,9 +54,9 @@ public class DetailsZukanActivity extends Activity implements View.OnClickListen
                 break;
 
             case 19:
-                imageview.setImageResource(R.drawable.zukan_washi1);
-                nametext.setText(washiname[0]);
-                descriptiontext.setText(washidescription[0]);
+                imageview.setImageResource(R.drawable.zukan_washi2);
+                nametext.setText(R.string.washi);
+                descriptiontext.setText(R.string.washi_description);
                 break;
         }
     }
