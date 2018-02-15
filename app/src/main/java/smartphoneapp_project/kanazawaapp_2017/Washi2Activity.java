@@ -1,4 +1,4 @@
-﻿package smartphoneapp_project.kanazawaapp_2017;
+package smartphoneapp_project.kanazawaapp_2017;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -85,6 +85,7 @@ public class Washi2Activity extends Activity  implements View.OnTouchListener {
             }
         }else{
             Bitmap gyakumomijikage=BitmapFactory.decodeResource(r,R.drawable.washi2_gyakumomiji1kage);
+            bigmomiji=BitmapFactory.decodeResource(r,R.drawable.washi2_gyakumomiji);
             bigmomijiView=(ImageView)findViewById(R.id.big_momiji1);
             bigmomijiView.setImageBitmap(bigmomiji);
             bigmomijishadow = (ImageView) findViewById(R.id.bigmomijishadow);
