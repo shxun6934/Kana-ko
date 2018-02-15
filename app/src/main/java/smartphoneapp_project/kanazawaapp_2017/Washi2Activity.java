@@ -38,6 +38,7 @@ public class Washi2Activity extends Activity  implements View.OnTouchListener {
     private int intentkey=0;
     private Bitmap murasaki;
     private Bitmap murasakikage;
+    private Bitmap bigmomiji;
     private Resources r;
     private Bitmap bmp2;
     int startX;
@@ -56,7 +57,6 @@ public class Washi2Activity extends Activity  implements View.OnTouchListener {
         Bitmap otibaBmp = BitmapFactory.decodeResource(r, R.drawable.washi2_momiji2);
         Bitmap momijikage = BitmapFactory.decodeResource(r, R.drawable.washi2_momiji1kage);
         Bitmap otibakage = BitmapFactory.decodeResource(r, R.drawable.washi2_momiji2kage);
-	Bitmap bigmomiji=BitmapFactory.decodeResource(r,R.drawable.washi2_gyakumomiji);
         Button returnButton = (Button) findViewById(R.id.washi1_back_button);
         momijiView = (ImageView) findViewById(R.id.momiji1);
         otibaView = (ImageView) findViewById(R.id.momiji2);
@@ -246,6 +246,7 @@ public class Washi2Activity extends Activity  implements View.OnTouchListener {
                         bigmomijishadow.getHitRect(rect);
                         if (rect.contains(x, y)) {
                             //シルエットにドロップしたときの処理
+                            bigmomiji=BitmapFactory.decodeResource(r,R.drawable.washi2_gyakumomiji);
                             bigmomijishadow.setImageBitmap(bigmomiji);
                             bigmomijiView.setVisibility(bigmomijiView.INVISIBLE);
                             count++;
