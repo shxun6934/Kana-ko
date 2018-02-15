@@ -21,17 +21,18 @@
 
     <ImageView
         android:id="@+id/otivaView"
-        android:layout_width="83dp"
-        android:layout_height="71dp"
-        android:background="@drawable/washi2_momiji1"
+        android:layout_width="73dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/washi2_momiji2"
         app:layout_constraintBottom_toBottomOf="@+id/imageView"
         app:layout_constraintStart_toStartOf="@+id/imageView" />
 
     <ImageView
         android:id="@+id/momijiView"
-        android:layout_width="80dp"
-        android:layout_height="88dp"
-        android:background="@drawable/washi2_momiji2"
+        android:layout_width="73dp"
+        android:layout_height="72dp"
+        android:background="@drawable/washi2_momiji1"
         app:layout_constraintBottom_toBottomOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
         app:layout_constraintStart_toEndOf="@+id/otivaView"
@@ -55,6 +56,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/bigmomijiView"
+        android:layout_width="121dp"
+        android:layout_height="98dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/otivaView"
+        app:layout_constraintEnd_toStartOf="@+id/momijiView"
+        app:layout_constraintStart_toStartOf="@+id/otivaView" />
 
     <TextView
         android:id="@+id/textView2"
@@ -90,7 +102,6 @@
         android:layout_height="57dp"
         android:background="@drawable/washi2_kannsei_button"
         android:gravity="center"
-        android:onClick="onclickreturnbutton"
         android:text="もう１かい"
         android:textColor="#b22222"
         android:textSize="25dp"

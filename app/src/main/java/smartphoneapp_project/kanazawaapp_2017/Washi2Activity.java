@@ -1,4 +1,4 @@
-package smartphoneapp_project.kanazawaapp_2017;
+﻿package smartphoneapp_project.kanazawaapp_2017;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -19,10 +19,12 @@ public class Washi2Activity extends Activity  implements View.OnTouchListener {
     private ImageView kurobaView;
     private ImageView momijiView;
     private ImageView otibaView;
+    private ImageView bigmomijiView;
     private Rect rect = new Rect();
     private ImageView momijishadow;
     private ImageView otibashadow;
     private ImageView murasakishadow;
+    private ImageView bigmomijishadow;
     private int imageoldX = 0;//ドラッグ前の画像のx座標を保持する変数
     private int imageoldY = 0;//ドラッグ前の画像のy座標を保持する変数
     private int count = 0;
@@ -32,47 +34,64 @@ public class Washi2Activity extends Activity  implements View.OnTouchListener {
     private ViewGroup.MarginLayoutParams startmarginkuroba;
     private ViewGroup.MarginLayoutParams startmarginmomiji;
     private ViewGroup.MarginLayoutParams startmarginotiba;
+    private ViewGroup.MarginLayoutParams startmarginbigmomiji;
     private int intentkey=0;
     private Bitmap murasaki;
     private Bitmap murasakikage;
-
+    private Resources r;
+    private Bitmap bmp2;
+    int startX;
+    int startY;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_washi2);
-        Resources r = getResources();
+         r = getResources();
+        Intent intent = getIntent();
+        intentkey = intent.getIntExtra("DIFFICULTY", 0);
+        button = (Button) findViewById(R.id.washi3_next_button);
         Bitmap kurobaBmp = BitmapFactory.decodeResource(r, R.drawable.washi2_kuroba);
         Bitmap momijiBmp = BitmapFactory.decodeResource(r, R.drawable.washi2_momiji1);
         Bitmap otibaBmp = BitmapFactory.decodeResource(r, R.drawable.washi2_momiji2);
         Bitmap momijikage = BitmapFactory.decodeResource(r, R.drawable.washi2_momiji1kage);
         Bitmap otibakage = BitmapFactory.decodeResource(r, R.drawable.washi2_momiji2kage);
+	Bitmap bigmomiji=BitmapFactory.decodeResource(r,R.drawable.washi2_gyakumomiji);
         Button returnButton = (Button) findViewById(R.id.washi1_back_button);
-        kurobaView = (ImageView) findViewById(R.id.momiji0);
         momijiView = (ImageView) findViewById(R.id.momiji1);
         otibaView = (ImageView) findViewById(R.id.momiji2);
         momijishadow = (ImageView) findViewById(R.id.momiji_Shadow1);
         momijishadow.setImageBitmap(momijikage);
+        momijiView.setImageBitmap(momijiBmp);
+        otibaView = (ImageView) findViewById(R.id.momiji2);
+        otibaView.setImageBitmap(otibaBmp);
         otibashadow = (ImageView) findViewById(R.id.momiji_Shadow2);
         otibashadow.setImageBitmap(otibakage);
-        kurobaView.setImageBitmap(kurobaBmp);
-        momijiView.setImageBitmap(momijiBmp);
-        otibaView.setImageBitmap(otibaBmp);
-        murasakishadow=(ImageView)findViewById(R.id.murasaki_shadow);
-        this.kurobaView.setOnTouchListener(this);
         this.momijiView.setOnTouchListener(this);
         this.otibaView.setOnTouchListener(this);
-        startmarginkuroba = (ViewGroup.MarginLayoutParams) kurobaView.getLayoutParams();
         startmarginmomiji = (ViewGroup.MarginLayoutParams) momijiView.getLayoutParams();
         startmarginotiba = (ViewGroup.MarginLayoutParams) otibaView.getLayoutParams();
-        button = (Button) findViewById(R.id.washi3_next_button);
-        Intent intent=getIntent();
-        intentkey=intent.getIntExtra("DIFFICULTY",0);
-        if (intentkey==2){
-            murasaki=BitmapFactory.decodeResource(r,R.drawable.murasakinoha);
-            kurobaView.setImageBitmap(murasaki);
-            murasakikage=BitmapFactory.decodeResource(r,R.drawable.murasakinohakage);
-            murasakishadow.setImageBitmap(murasakikage);
+        if (intentkey==1||intentkey==2){
+            kurobaView = (ImageView) findViewById(R.id.momiji0);
+            kurobaView.setImageBitmap(kurobaBmp);
+            murasakishadow = (ImageView) findViewById(R.id.murasaki_shadow);
+            this.kurobaView.setOnTouchListener(this);
+            startmarginkuroba = (ViewGroup.MarginLayoutParams) kurobaView.getLayoutParams();
+            if (intentkey == 2) {
+                murasaki = BitmapFactory.decodeResource(r, R.drawable.murasakinoha);
+                kurobaView.setImageBitmap(murasaki);
+                murasakikage = BitmapFactory.decodeResource(r, R.drawable.murasakinohakage);
+                murasakishadow.setImageBitmap(murasakikage);
+            }
+        }else{
+            Bitmap gyakumomijikage=BitmapFactory.decodeResource(r,R.drawable.washi2_gyakumomiji1kage);
+            bigmomijiView=(ImageView)findViewById(R.id.big_momiji1);
+            bigmomijiView.setImageBitmap(bigmomiji);
+            bigmomijishadow = (ImageView) findViewById(R.id.bigmomijishadow);
+            bigmomijishadow.setImageBitmap(gyakumomijikage);
+            this.bigmomijiView.setOnTouchListener(this);
+            startmarginbigmomiji=(ViewGroup.MarginLayoutParams) bigmomijiView.getLayoutParams();
+
         }
     }
 
@@ -119,8 +138,8 @@ public class Washi2Activity extends Activity  implements View.OnTouchListener {
                 }
                 break;
             case R.id.momiji1://枝分かれしている紅葉のドラッグアンドドロップの操作
-                Resources r = getResources();
-                Bitmap bmp2 = BitmapFactory.decodeResource(r, R.drawable.washi2_momiji1);
+
+                bmp2 = BitmapFactory.decodeResource(r, R.drawable.washi2_momiji1);
                 //タッチしたときの位置を取得
                 x = (int) event.getRawX();
                 y = (int) event.getRawY();
@@ -148,7 +167,7 @@ public class Washi2Activity extends Activity  implements View.OnTouchListener {
                                 if (count == 2) {
                                     button.setVisibility(button.VISIBLE);
                                 }
-                            }else if (intentkey==2){
+                            }else if (intentkey==2||intentkey==3){
                                 if (count==3) {
                                     button.setVisibility(button.VISIBLE);
                                 }
@@ -162,10 +181,10 @@ public class Washi2Activity extends Activity  implements View.OnTouchListener {
                 break;
             case R.id.momiji2://一枚の葉っぱの形をしたモミジのドラッグアンドドロップ
                 //タッチしたときのviewの位置を取得
-                int startX = (int) otibaView.getX();
-                int startY = (int) otibaView.getY();
-                Resources r2 = getResources();
-                Bitmap bmp3 = BitmapFactory.decodeResource(r2, R.drawable.washi2_momiji2);
+                startX = (int) otibaView.getX();
+                startY = (int) otibaView.getY();
+                r = getResources();
+                bmp2 = BitmapFactory.decodeResource(r, R.drawable.washi2_momiji2);
                 //タッチしたviewの位置を取得
                 x = (int) event.getRawX();
                 y = (int) event.getRawY();
@@ -186,7 +205,7 @@ public class Washi2Activity extends Activity  implements View.OnTouchListener {
                     otibashadow.getHitRect(rect);
                     if (rect.contains(x, y)) {
                         //シルエットにドロップしたときの処理
-                        otibashadow.setImageBitmap(bmp3);
+                        otibashadow.setImageBitmap(bmp2);
                         otibaView.setVisibility(otibaView.INVISIBLE);
                         count++;
                         if (intentkey==1) {
@@ -194,7 +213,7 @@ public class Washi2Activity extends Activity  implements View.OnTouchListener {
                                 button.setVisibility(button.VISIBLE);
 
                             }
-                        }else if (intentkey==2){
+                        }else if (intentkey==2||intentkey==3){
                             if (count==3){
                                 button.setVisibility(button.VISIBLE);
                             }
@@ -205,6 +224,48 @@ public class Washi2Activity extends Activity  implements View.OnTouchListener {
                     }
                 }
                 break;
+                case R.id.big_momiji1:
+                    bmp2 = BitmapFactory.decodeResource(r, R.drawable.washi2_momiji1);
+                    //タッチしたときの位置を取得
+                    x = (int) event.getRawX();
+                    y = (int) event.getRawY();
+                    if (event.getAction() == MotionEvent.ACTION_MOVE) {
+                        //viewの位置を計算
+                        int diffX = bigmomijiView.getLeft() + (x - imageoldX);
+                        int diffY = bigmomijiView.getTop() + (y - imageoldY);
+                        //viewの移動
+                        bigmomijiView.layout(diffX, diffY, diffX + bigmomijiView.getWidth()
+                                , diffY + bigmomijiView.getHeight());
+                        //今回のviewの位置を保持
+                        imageoldX = x;
+                        imageoldY = y;
+                    } else if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                        imageoldX = x;
+                        imageoldY = y;
+                    } else if (event.getAction() == MotionEvent.ACTION_UP) {
+                        bigmomijishadow.getHitRect(rect);
+                        if (rect.contains(x, y)) {
+                            //シルエットにドロップしたときの処理
+                            bigmomijishadow.setImageBitmap(bigmomiji);
+                            bigmomijiView.setVisibility(bigmomijiView.INVISIBLE);
+                            count++;
+                            if (intentkey==1) {
+                                if (count == 2) {
+                                    button.setVisibility(button.VISIBLE);
+                                }
+                            }else if (intentkey==2||intentkey==3){
+                                if (count==3) {
+                                    button.setVisibility(button.VISIBLE);
+                                }
+                            }
+                        }else{
+                            //シルエット以外の場所にドロップしたとき
+                            bigmomijiView.setLayoutParams(startmarginbigmomiji);
+                        }
+
+                    }
+                    break;
+
         }
         return true;
     }
@@ -237,7 +298,7 @@ public class Washi2Activity extends Activity  implements View.OnTouchListener {
     public void onClick(View view) {
       Intent intent = new Intent(this, Washi3Activity.class);
       intent.putExtra("DIFFICULTY",intentkey);
-       startActivity(intent);
+      startActivity(intent);
     }
 
 }
