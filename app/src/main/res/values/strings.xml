@@ -6,9 +6,11 @@
     <string name="kinnzisou">きんじそう</string>
     <string name="kinnzisou_description">きんじそうは、はのうらがきんときいものいろににているからきんじそうとよばれている。\nそのははすこしあまい。</string>
     <string name="hutokyuuri">かがふときゅうり</string>
-    <string name="hutokyuuri_description">かがふときゅうりはおもさがふつうのきゅうりよりおもい。\nやわらかくあまい。\nかわをむいてあんかけにするなどしてたべる。</string>
+    <string name="hutokyuuri_description">かがふときゅうりは、おもさがふつうのきゅうりよりおもい。\nやわらかくあまい。\nかわをむいてあんかけにするなどしてたべる。</string>
     <string name="hutonegi">かがいっぽんふとねぎ</string>
-    <string name="hutonegi_description">かがいっぽんねぎはふつうのねぎよりもやわらかい。\nふゆになるほどあまくなり、すきやきやねべにいれる。</string>
+    <string name="hutonegi_description">かがいっぽんねぎは、ふつうのねぎよりもやわらかい。\nふゆになるほどあまくなり、すきやきやねべにいれる。</string>
     <string name="rennkonn">かがれんこん</string>
-    <string name="rennkonn_description">かがれんこんはふつうのれんこんよりねばりがつよい。\nれんこんをむしたり、もちにしてたべるのがおすすめ。</string>
+    <string name="rennkonn_description">かがれんこんは、ふつうのれんこんよりねばりがつよい。\nれんこんをむしたり、もちにしてたべるのがおすすめ。</string>
+    <string name="washi">わし</string>
+    <string name="washi_description">わしは、ふつうのかみよりもたいきゅうせいがある。\nそのため、かさやふくのざいりょうとしてつかわれることもある。</string>
 </resources>
