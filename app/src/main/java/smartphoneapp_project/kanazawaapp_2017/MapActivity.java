@@ -57,7 +57,7 @@ public class MapActivity extends Activity {
                         startActivity(activity_difficulty);//画面遷移を行う
                     }
                 });
-                alertDialog.setNegativeButton("　　　もどる　　 ", null);
+                alertDialog.setNegativeButton("　　もどる　", null);
                 alertDialog.create().show();
             }
         };
@@ -79,7 +79,7 @@ public class MapActivity extends Activity {
                         startActivity(activity_difficulty);//画面遷移を行う
                     }
                 });
-                alertDialog.setNegativeButton("　　　もどる　　 ", null);
+                alertDialog.setNegativeButton("　　もどる　", null);
                 alertDialog.create().show();
             }
         };
@@ -101,7 +101,7 @@ public class MapActivity extends Activity {
                         startActivity(activity_difficulty);//画面遷移を行う
                     }
                 });
-                alertDialog.setNegativeButton("　　　もどる　　 ", null);
+                alertDialog.setNegativeButton("　　もどる　", null);
                 alertDialog.create().show();
             }
         };
@@ -123,7 +123,7 @@ public class MapActivity extends Activity {
                         startActivity(activity_difficulty);//画面遷移を行う
                     }
                 });
-                alertDialog.setNegativeButton("　　　もどる　　 ", null);
+                alertDialog.setNegativeButton("　　もどる　", null);
                 alertDialog.create().show();
             }
         };
@@ -145,7 +145,7 @@ public class MapActivity extends Activity {
                         startActivity(activity_difficulty);//画面遷移を行う
                     }
                 });
-                alertDialog.setNegativeButton("　　　もどる　　 ", null);
+                alertDialog.setNegativeButton("　　もどる　", null);
                 alertDialog.create().show();
             }
         };
@@ -167,7 +167,7 @@ public class MapActivity extends Activity {
                         startActivity(activity_difficulty);//画面遷移を行う
                     }
                 });
-                alertDialog.setNegativeButton("　　　もどる　　 ", null);
+                alertDialog.setNegativeButton("　　もどる　", null);
                 alertDialog.create().show();
             }
         };
@@ -189,7 +189,7 @@ public class MapActivity extends Activity {
                         startActivity(activity_difficulty);//画面遷移を行う
                     }
                 });
-                alertDialog.setNegativeButton("　　　もどる　　 ", null);
+                alertDialog.setNegativeButton("　　もどる　", null);
                 alertDialog.create().show();
             }
         };
