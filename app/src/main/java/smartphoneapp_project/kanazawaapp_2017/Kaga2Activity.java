@@ -42,7 +42,7 @@ public class Kaga2Activity extends Activity {
             case "ねぎ":
                 textView_description.setText(R.string.hutonegi_description);
                 yasai_syasinn.setImageResource(R.drawable.kaga_negi);
-                textView.setText("かなざわいっぽん");
+                textView.setText("かなざわいっぽんふとねぎ");
                 break;
 
             case "れんこん":
