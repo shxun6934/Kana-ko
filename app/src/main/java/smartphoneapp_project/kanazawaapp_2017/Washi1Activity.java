@@ -20,15 +20,17 @@ public class Washi1Activity extends Activity implements SensorEventListener,View
     private static final String LOG_TAG = "WASHI1";
     private JayroMovableLayout jayroMovableLayout;
     private SensorManager sensorManager;
-
+    private int intentkey=0;
     private JayroMovableLayout.SensorListenerUnregister unregister;
-
+    private Intent getintent= null;
+    Intent intent=null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_washi1);
-
+        getintent=getIntent();
+        intentkey=getintent.getIntExtra("DIFFICULTY",0);
         TextView imageButton = (TextView) findViewById(R.id.difficulty_back_button);
         imageButton.setOnClickListener(this);
 
@@ -53,6 +55,7 @@ public class Washi1Activity extends Activity implements SensorEventListener,View
     public void onClick(View v) {
         //Log.d("aaa","aaaaaaa");
         Intent intent = new Intent(getApplicationContext(),DifficultyActivity.class);
+        intent.putExtra("kind_game",2);
         startActivity(intent);
     }
 
@@ -73,8 +76,8 @@ public class Washi1Activity extends Activity implements SensorEventListener,View
         }
     }
 
-    private int count;
-    private int shaken;
+    private int count=0;
+    private int shaken=0;
 
     @Override
     public void onSensorChanged(SensorEvent event) {
@@ -89,16 +92,38 @@ public class Washi1Activity extends Activity implements SensorEventListener,View
             Toast.makeText(this, "ふって！", Toast.LENGTH_SHORT).show();
             Log.d(LOG_TAG, count + "");
             shaken++;
+             intent = new Intent(Washi1Activity.this, Washi2Activity.class);
+            if (intentkey== 1){
+                if (shaken == 3) {
+                    intent = new Intent(Washi1Activity.this, Washi2Activity.class);
+                    Toast.makeText(this, "かんせい！！", Toast.LENGTH_SHORT).show();
+                    intent.putExtra("DIFFICULTY", intentkey);
+                    shaken = 0;
+                    startActivity(intent);
+                }
+            }else if (intentkey==2){
+                if (shaken == 6) {
+                    intent = new Intent(Washi1Activity.this, Washi2Activity.class);
+                    Toast.makeText(this, "かんせい！！", Toast.LENGTH_SHORT).show();
+                    intent.putExtra("DIFFICULTY", intentkey);
+                    shaken = 0;
+                    startActivity(intent);
+                }
+            }else if (intentkey==3){
+                if (shaken==9) {
+                    intent = new Intent(Washi1Activity.this, Washi2Activity.class);
+                    Toast.makeText(this, "かんせい！！", Toast.LENGTH_SHORT).show();
+                    intent.putExtra("DIFFICULTY",intentkey);
+                    shaken = 0;
+                    startActivity(intent);
 
-            if (shaken == 3) {
-                Toast.makeText(this, "かんせい！！", Toast.LENGTH_SHORT).show();
-                shaken = 0;
-                Intent intent = new Intent(Washi1Activity.this, Washi2Activity.class);
-                startActivity(intent);
+                }
             }
             count = 0;
         }
     }
+
+
 
     @Override
     public void onAccuracyChanged(Sensor sensor, int accuracy) {

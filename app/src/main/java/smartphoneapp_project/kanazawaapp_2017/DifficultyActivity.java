@@ -17,6 +17,12 @@ import android.widget.ImageView;
 public class DifficultyActivity extends Activity {
     int kindGame;
     Intent intentGame;
+    Button easyButton;
+    Button normalButton;
+    Button hardButton;
+    int easy=1;
+    int normal=2;
+    int hard=3;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -86,9 +92,9 @@ public class DifficultyActivity extends Activity {
             case 7:
                 break;
         }
-        Button easyButton = (Button)findViewById(R.id.button_easy);
-        Button normalButton = (Button)findViewById(R.id.button_normal);
-        Button hardButton = (Button)findViewById(R.id.button_hard);
+        easyButton = (Button)findViewById(R.id.button_easy);
+        normalButton = (Button)findViewById(R.id.button_normal);
+        hardButton = (Button)findViewById(R.id.button_hard);
         Button backButton = (Button)findViewById(R.id.button_back);
         easyButton.setOnClickListener(difficultyClick);
         normalButton.setOnClickListener(difficultyClick);
@@ -111,6 +117,13 @@ public class DifficultyActivity extends Activity {
 
                 case 2:
                     intentGame = new Intent(DifficultyActivity.this,Washi1Activity.class);
+                    if(view==easyButton){
+                    intentGame.putExtra("DIFFICULTY",easy);
+                    }else if (view==normalButton){
+                        intentGame.putExtra("DIFFICULTY",normal);
+                    }else{
+                        intentGame.putExtra("DIFFICULTY",hard);
+                    }
                     startActivity(intentGame);
                     break;
 
