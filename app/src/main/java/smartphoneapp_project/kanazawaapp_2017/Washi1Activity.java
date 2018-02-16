@@ -94,7 +94,7 @@ public class Washi1Activity extends Activity implements SensorEventListener,View
             shaken++;
              intent = new Intent(Washi1Activity.this, Washi2Activity.class);
             if (intentkey== 1){
-                if (shaken == 3) {
+                if (shaken == 5) {
                     intent = new Intent(Washi1Activity.this, Washi2Activity.class);
                     Toast.makeText(this, "かんせい！！", Toast.LENGTH_SHORT).show();
                     intent.putExtra("DIFFICULTY", intentkey);
@@ -110,7 +110,7 @@ public class Washi1Activity extends Activity implements SensorEventListener,View
                     startActivity(intent);
                 }
             }else if (intentkey==3){
-                if (shaken==9) {
+                if (shaken== 9) {
                     intent = new Intent(Washi1Activity.this, Washi2Activity.class);
                     Toast.makeText(this, "かんせい！！", Toast.LENGTH_SHORT).show();
                     intent.putExtra("DIFFICULTY",intentkey);
