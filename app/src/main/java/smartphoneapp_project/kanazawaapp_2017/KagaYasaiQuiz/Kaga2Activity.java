@@ -1,4 +1,4 @@
-package smartphoneapp_project.kanazawaapp_2017;
+package smartphoneapp_project.kanazawaapp_2017.KagaYasaiQuiz;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -10,7 +10,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import static smartphoneapp_project.kanazawaapp_2017.Kaga1Activity.answer;
+import smartphoneapp_project.kanazawaapp_2017.R;
+
+import static smartphoneapp_project.kanazawaapp_2017.KagaYasaiQuiz.Kaga1Activity.answer;
 
 //正解画面
 public class Kaga2Activity extends Activity {

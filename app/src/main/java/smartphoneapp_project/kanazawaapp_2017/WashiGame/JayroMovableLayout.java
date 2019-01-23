@@ -1,4 +1,4 @@
-package smartphoneapp_project.kanazawaapp_2017;
+package smartphoneapp_project.kanazawaapp_2017.WashiGame;
 
 import android.content.Context;
 import android.hardware.Sensor;
@@ -9,7 +9,6 @@ import android.support.annotation.IntDef;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.util.SparseArray;
 import android.view.View;
 import android.widget.FrameLayout;

@@ -1,4 +1,4 @@
-package smartphoneapp_project.kanazawaapp_2017;
+package smartphoneapp_project.kanazawaapp_2017.WashiGame;
 
 import android.app.Activity;
 import android.content.Context;
@@ -13,6 +13,10 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+
+import smartphoneapp_project.kanazawaapp_2017.DifficultyActivity;
+import smartphoneapp_project.kanazawaapp_2017.MapActivity;
+import smartphoneapp_project.kanazawaapp_2017.R;
 
 public class Washi3Activity extends Activity {
     private int intentkey=0;
@@ -55,7 +59,7 @@ public class Washi3Activity extends Activity {
         todifficult.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(Washi3Activity.this,DifficultyActivity.class);
+                Intent intent=new Intent(Washi3Activity.this, DifficultyActivity.class);
                 intent.putExtra("kind_game",2);
                 startActivity(intent);
             }

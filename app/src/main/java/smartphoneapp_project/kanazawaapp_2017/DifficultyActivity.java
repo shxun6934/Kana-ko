@@ -14,6 +14,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import smartphoneapp_project.kanazawaapp_2017.KagaYasaiQuiz.Kaga1Activity;
+import smartphoneapp_project.kanazawaapp_2017.WashiGame.Washi1Activity;
+
 public class DifficultyActivity extends Activity {
     int kindGame;
     Intent intentGame;

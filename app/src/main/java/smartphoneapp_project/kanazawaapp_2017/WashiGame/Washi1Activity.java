@@ -1,4 +1,4 @@
-package smartphoneapp_project.kanazawaapp_2017;
+package smartphoneapp_project.kanazawaapp_2017.WashiGame;
 import android.app.Activity;
 import android.content.Intent;
 import android.hardware.Sensor;
@@ -14,6 +14,10 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import smartphoneapp_project.kanazawaapp_2017.DifficultyActivity;
+import smartphoneapp_project.kanazawaapp_2017.MapActivity;
+import smartphoneapp_project.kanazawaapp_2017.R;
 
 public class Washi1Activity extends Activity implements SensorEventListener,View.OnClickListener {
 
@@ -54,7 +58,7 @@ public class Washi1Activity extends Activity implements SensorEventListener,View
 
     public void onClick(View v) {
         //Log.d("aaa","aaaaaaa");
-        Intent intent = new Intent(getApplicationContext(),DifficultyActivity.class);
+        Intent intent = new Intent(getApplicationContext(), DifficultyActivity.class);
         intent.putExtra("kind_game",2);
         startActivity(intent);
     }

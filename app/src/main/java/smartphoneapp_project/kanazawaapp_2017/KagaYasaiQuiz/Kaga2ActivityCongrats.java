@@ -1,4 +1,4 @@
-package smartphoneapp_project.kanazawaapp_2017;
+package smartphoneapp_project.kanazawaapp_2017.KagaYasaiQuiz;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -9,7 +9,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import static smartphoneapp_project.kanazawaapp_2017.Kaga1Activity.question;
+import smartphoneapp_project.kanazawaapp_2017.MapActivity;
+import smartphoneapp_project.kanazawaapp_2017.R;
+
+import static smartphoneapp_project.kanazawaapp_2017.KagaYasaiQuiz.Kaga1Activity.question;
 
 /**
  * Created by Yuta on 2017/12/17.
