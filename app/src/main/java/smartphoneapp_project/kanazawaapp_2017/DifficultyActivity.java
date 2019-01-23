@@ -20,11 +20,17 @@ import smartphoneapp_project.kanazawaapp_2017.WashiGame.Washi1Activity;
 public class DifficultyActivity extends Activity {
     int kindGame;
     Intent intentGame;
+    Button easyButton;
+    Button normalButton;
+    Button hardButton;
+    int easy=1;
+    int normal=2;
+    int hard=3;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_difficulty);
-        Intent intent = getIntent();
+        final Intent intent = getIntent();
         kindGame = intent.getIntExtra("kind_game",0);
         Resources resources = getResources();
         Bitmap washi1Bitmap = BitmapFactory.decodeResource(resources,R.drawable.difficulty_description_washi1);
@@ -89,9 +95,9 @@ public class DifficultyActivity extends Activity {
             case 7:
                 break;
         }
-        Button easyButton = (Button)findViewById(R.id.button_easy);
-        Button normalButton = (Button)findViewById(R.id.button_normal);
-        Button hardButton = (Button)findViewById(R.id.button_hard);
+        easyButton = (Button)findViewById(R.id.button_easy);
+        normalButton = (Button)findViewById(R.id.button_normal);
+        hardButton = (Button)findViewById(R.id.button_hard);
         Button backButton = (Button)findViewById(R.id.button_back);
         easyButton.setOnClickListener(difficultyClick);
         normalButton.setOnClickListener(difficultyClick);
@@ -99,7 +105,8 @@ public class DifficultyActivity extends Activity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();
+                Intent intentMap = new Intent(DifficultyActivity.this,MapActivity.class);
+                startActivity(intentMap);
             }
         });
 
@@ -113,6 +120,13 @@ public class DifficultyActivity extends Activity {
 
                 case 2:
                     intentGame = new Intent(DifficultyActivity.this,Washi1Activity.class);
+                    if(view==easyButton){
+                    intentGame.putExtra("DIFFICULTY",easy);
+                    }else if (view==normalButton){
+                        intentGame.putExtra("DIFFICULTY",normal);
+                    }else{
+                        intentGame.putExtra("DIFFICULTY",hard);
+                    }
                     startActivity(intentGame);
                     break;
 

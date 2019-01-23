@@ -27,6 +27,9 @@ public class Kaga2Activity extends Activity {
         TextView textView = (TextView) findViewById(R.id.vegetable_name_correct);
         TextView textView_description = (TextView) findViewById(R.id.description);
         Button button = (Button) findViewById(R.id.quiz_nextbutton);
+        if (answer >= 2) {
+            button.setText("おわり");
+        }
 
         final Intent intent = getIntent();
         kotae = intent.getStringExtra("answer");
@@ -34,25 +37,25 @@ public class Kaga2Activity extends Activity {
         switch (kotae) {
             case "きゅうり":
                 textView_description.setText(R.string.hutokyuuri_description);
-                yasai_syasinn.setImageResource(R.drawable.kyuuri800_sironuki);
+                yasai_syasinn.setImageResource(R.drawable.kaga_kyuuri);
                 textView.setText("かがふときゅうり");
                 break;
 
             case "ねぎ":
                 textView_description.setText(R.string.hutonegi_description);
-                yasai_syasinn.setImageResource(R.drawable.negi);
-                textView.setText("かなざわいっぽん");
+                yasai_syasinn.setImageResource(R.drawable.kaga_negi);
+                textView.setText("かなざわいっぽんふとねぎ");
                 break;
 
             case "れんこん":
                 textView_description.setText(R.string.rennkonn_description);
-                yasai_syasinn.setImageResource(R.drawable.kaga1_renkon);
+                yasai_syasinn.setImageResource(R.drawable.kaga_renkon);
                 textView.setText("かがれんこん");
                 break;
 
             case "きんじそう":
                 textView_description.setText(R.string.kinnzisou_description);
-                yasai_syasinn.setImageResource(R.drawable.kaga1_kinzisou);
+                yasai_syasinn.setImageResource(R.drawable.kaga_kinzisou);
                 textView.setText("きんじそう");
                 break;
         }
@@ -72,16 +75,15 @@ public class Kaga2Activity extends Activity {
                 } else {
                     Intent intent = new Intent(Kaga2Activity.this, Kaga2ActivityCongrats.class);
                     startActivity(intent);
-
                 }
             }
         });
     }
 
     @Override
-    public boolean dispatchKeyEvent(KeyEvent event){
-        if(event.getAction() == KeyEvent.ACTION_UP){
-            switch (event.getKeyCode()){
+    public boolean dispatchKeyEvent(KeyEvent event) {
+        if (event.getAction() == KeyEvent.ACTION_UP) {
+            switch (event.getKeyCode()) {
                 case KeyEvent.KEYCODE_BACK:
                     return true;
             }

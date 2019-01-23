@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/wasihaikei"
+    android:background="@drawable/washi2_wasihaikei"
     android:orientation="vertical"
     >
 
@@ -13,7 +13,7 @@
         android:layout_width="410dp"
         android:layout_height="184dp"
         android:layout_marginTop="8dp"
-        android:background="@drawable/wasiwhite"
+        android:background="@drawable/washi2_wasiwhite"
         android:scaleType="fitXY"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,17 +21,18 @@
 
     <ImageView
         android:id="@+id/otivaView"
-        android:layout_width="83dp"
-        android:layout_height="71dp"
-        android:background="@drawable/momiji1"
+        android:layout_width="73dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/washi2_momiji2"
         app:layout_constraintBottom_toBottomOf="@+id/imageView"
         app:layout_constraintStart_toStartOf="@+id/imageView" />
 
     <ImageView
         android:id="@+id/momijiView"
-        android:layout_width="80dp"
-        android:layout_height="88dp"
-        android:background="@drawable/momiji2"
+        android:layout_width="73dp"
+        android:layout_height="72dp"
+        android:background="@drawable/washi2_momiji1"
         app:layout_constraintBottom_toBottomOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
         app:layout_constraintStart_toEndOf="@+id/otivaView"
@@ -51,10 +52,21 @@
         android:layout_width="450dp"
         android:layout_height="69dp"
         android:layout_marginTop="8dp"
-        android:background="@drawable/wasikannsei"
+        android:background="@drawable/washi2_wasikannsei"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/bigmomijiView"
+        android:layout_width="121dp"
+        android:layout_height="98dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/otivaView"
+        app:layout_constraintEnd_toStartOf="@+id/momijiView"
+        app:layout_constraintStart_toStartOf="@+id/otivaView" />
 
     <TextView
         android:id="@+id/textView2"
@@ -73,7 +85,7 @@
         android:id="@+id/button2"
         android:layout_width="159dp"
         android:layout_height="57dp"
-        android:background="@drawable/wasi_kannsei_button"
+        android:background="@drawable/washi2_kannsei_button"
         android:onClick="onclicknextbutton"
         android:text="おわる"
         android:textColor="#b22222"
@@ -88,9 +100,8 @@
         android:id="@+id/button3"
         android:layout_width="159dp"
         android:layout_height="57dp"
-        android:background="@drawable/wasi_kannsei_button"
+        android:background="@drawable/washi2_kannsei_button"
         android:gravity="center"
-        android:onClick="onclickreturnbutton"
         android:text="もう１かい"
         android:textColor="#b22222"
         android:textSize="25dp"
@@ -99,6 +110,18 @@
         app:layout_constraintEnd_toStartOf="@+id/textView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <ImageView
+        android:id="@+id/murasakiView"
+        android:layout_width="82dp"
+        android:layout_height="79dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toTopOf="@+id/otivaView"
+        app:layout_constraintEnd_toStartOf="@+id/momijiView"
+        app:layout_constraintStart_toStartOf="@+id/otivaView" />
 
 </android.support.constraint.ConstraintLayout>
 

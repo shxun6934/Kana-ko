@@ -10,13 +10,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="fitXY"
-        android:src="@drawable/sudare01_01" />
+        android:src="@drawable/washi1_sudare01_01" />
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="fitXY"
-        android:src="@drawable/kami2" />
+        android:src="@drawable/washi1_kami2" />
 
     <smartphoneapp_project.kanazawaapp_2017.WashiGame.JayroMovableLayout
         android:id="@+id/jayro_movable_layout"
@@ -27,7 +27,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="fitXY"
-        android:src="@drawable/frame_00023" />
+        android:src="@drawable/washi1_frame_00023" />
 
 
     <TextView

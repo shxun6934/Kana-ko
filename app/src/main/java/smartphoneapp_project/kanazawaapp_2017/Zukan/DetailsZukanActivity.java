@@ -12,10 +12,7 @@ import android.widget.TextView;
 import smartphoneapp_project.kanazawaapp_2017.R;
 
 public class DetailsZukanActivity extends Activity implements View.OnClickListener{
-
-    String[] washiname = {"わし"};
-    String[] washidescription = {".........."};
-
+    
     private static int key;
 
     @Override
@@ -33,33 +30,33 @@ public class DetailsZukanActivity extends Activity implements View.OnClickListen
 
         switch (key){
             case 1:
-                imageview.setImageResource(R.drawable.zukan_hutonegi2);
+                imageview.setImageResource(R.drawable.zukan_negi2);
                 nametext.setText(R.string.hutonegi);
                 descriptiontext.setText(R.string.hutonegi_description);
                 break;
 
             case 2:
-                imageview.setImageResource(R.drawable.zukan_hutokyuuri2);
+                imageview.setImageResource(R.drawable.zukan_kyuuri2);
                 nametext.setText(R.string.hutokyuuri);
                 descriptiontext.setText(R.string.hutokyuuri_description);
                 break;
 
             case 3:
-                imageview.setImageResource(R.drawable.zukan_kinnzisou2);
+                imageview.setImageResource(R.drawable.zukan_kinzisou2);
                 nametext.setText(R.string.kinnzisou);
                 descriptiontext.setText(R.string.kinnzisou_description);
                 break;
 
             case 4:
-                imageview.setImageResource(R.drawable.zukan_rennkonn2);
+                imageview.setImageResource(R.drawable.zukan_renkon2);
                 nametext.setText(R.string.rennkonn);
                 descriptiontext.setText(R.string.rennkonn_description);
                 break;
 
             case 19:
-                imageview.setImageResource(R.drawable.zukan_washi1);
-                nametext.setText(washiname[0]);
-                descriptiontext.setText(washidescription[0]);
+                imageview.setImageResource(R.drawable.zukan_washi2);
+                nametext.setText(R.string.washi);
+                descriptiontext.setText(R.string.washi_description);
                 break;
         }
     }
