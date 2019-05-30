@@ -13,7 +13,7 @@ public class TitleActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_title);
 
-        Button toMap = (Button)findViewById(R.id.titleButton);
+        Button toMap = findViewById(R.id.titleButton);
         toMap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -21,7 +21,5 @@ public class TitleActivity extends Activity {
                 startActivity(intent);
             }
         });
-
     }
-
 }

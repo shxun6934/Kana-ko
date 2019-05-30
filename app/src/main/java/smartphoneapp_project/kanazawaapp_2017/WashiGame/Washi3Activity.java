@@ -19,26 +19,28 @@ import smartphoneapp_project.kanazawaapp_2017.MapActivity;
 import smartphoneapp_project.kanazawaapp_2017.R;
 
 public class Washi3Activity extends Activity {
+
     private int intentkey=0;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_washi3);
-        ImageView murasakiView=(ImageView) findViewById(R.id.murasakiView);
-        Button tomap =(Button)findViewById(R.id.button2);
-        Button todifficult=(Button)findViewById(R.id.button3);
-        Resources r=getResources();
-        Intent intent=getIntent();
-        Bitmap momijibmp=BitmapFactory.decodeResource(r,R.drawable.washi2_momiji1);
-        ImageView momijiview=(ImageView)findViewById(R.id.momijiView);
+
+        ImageView murasakiView = findViewById(R.id.murasakiView);
+        Button tomap = findViewById(R.id.button2);
+        Button todifficult = findViewById(R.id.button3);
+
+        Resources r = getResources();
+        Intent intent = getIntent();
+
         intentkey=intent.getIntExtra("DIFFICULTY",0);
-        if (intentkey==2){
+        if (intentkey == 2) {
             Bitmap murasakibmp= BitmapFactory.decodeResource(r,R.drawable.murasakinoha);
             murasakiView.setImageBitmap(murasakibmp);
-        }else if(intentkey==3){
-            Bitmap gyakumomiji=BitmapFactory.decodeResource(r,R.drawable.washi2_gyakumomiji);
-            ImageView bigmomijiView=(ImageView)findViewById(R.id.bigmomijiView);
+        } else if(intentkey == 3) {
+            Bitmap gyakumomiji = BitmapFactory.decodeResource(r,R.drawable.washi2_gyakumomiji);
+            ImageView bigmomijiView = findViewById(R.id.bigmomijiView);
             bigmomijiView.setImageBitmap(gyakumomiji);
         }
         tomap.setOnClickListener(new View.OnClickListener() {
@@ -59,7 +61,7 @@ public class Washi3Activity extends Activity {
         todifficult.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(Washi3Activity.this, DifficultyActivity.class);
+                Intent intent = new Intent(Washi3Activity.this, DifficultyActivity.class);
                 intent.putExtra("kind_game",2);
                 startActivity(intent);
             }
@@ -77,6 +79,4 @@ public class Washi3Activity extends Activity {
         }
         return super.dispatchKeyEvent(event);
     }
-
-
 }

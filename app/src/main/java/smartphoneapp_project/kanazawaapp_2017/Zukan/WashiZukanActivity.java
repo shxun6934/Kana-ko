@@ -17,10 +17,10 @@ public class WashiZukanActivity extends Activity implements View.OnClickListener
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_zukan_washi);
 
-        ImageView washibutton = (ImageView) findViewById(R.id.washi_image);
-        ImageView hidariyajirusibutton = (ImageView) findViewById(R.id.yajirusi_hidari_image);
-        ImageView migiyajirusibutton = (ImageView) findViewById(R.id.yajirusi_migi_image);
-        ImageView backbutton = (ImageView) findViewById(R.id.map_back_button);
+        ImageView washibutton = findViewById(R.id.washi_image);
+        ImageView hidariyajirusibutton = findViewById(R.id.yajirusi_hidari_image);
+        ImageView migiyajirusibutton = findViewById(R.id.yajirusi_migi_image);
+        ImageView backbutton = findViewById(R.id.map_back_button);
 
         washibutton.setOnClickListener(this);
         hidariyajirusibutton.setOnClickListener(this);
@@ -33,31 +33,30 @@ public class WashiZukanActivity extends Activity implements View.OnClickListener
         Intent kagayasaizukan2 = new Intent(WashiZukanActivity.this, KagayasaiZukan2Activity.class);
         Intent kagayasaizukan1 = new Intent(WashiZukanActivity.this, KagayasaiZukan1Activity.class);
         Intent map = new Intent(WashiZukanActivity.this, MapActivity.class);
-        switch (v.getId()){
+
+        switch (v.getId()) {
             case R.id.washi_image:
                 detailszukan.putExtra("key",19);
                 startActivity(detailszukan);
                 break;
-
             case R.id.yajirusi_hidari_image:
                 startActivity(kagayasaizukan2);
                 overridePendingTransition(R.animator.slide_out_right, R.animator.slide_in_left);
                 break;
-
             case R.id.yajirusi_migi_image:
                 startActivity(kagayasaizukan1);
                 overridePendingTransition(R.animator.slide_in_right, R.animator.slide_out_left);
                 break;
-
             case R.id.map_back_button:
                 startActivity(map);
                 break;
         }
     }
+
     @Override
-    public boolean dispatchKeyEvent(KeyEvent event){
-        if(event.getAction() == KeyEvent.ACTION_UP){
-            switch (event.getKeyCode()){
+    public boolean dispatchKeyEvent(KeyEvent event) {
+        if (event.getAction() == KeyEvent.ACTION_UP) {
+            switch (event.getKeyCode()) {
                 case KeyEvent.KEYCODE_BACK:
                     //ダイアログ表示などの処理を行う時はここに記述する
                     return true;
@@ -65,5 +64,4 @@ public class WashiZukanActivity extends Activity implements View.OnClickListener
         }
         return super.dispatchKeyEvent(event);
     }
-
 }

@@ -38,8 +38,9 @@ public class EventActivity extends Activity implements View.OnClickListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event);
 
-        TextView mapbutton = (TextView) findViewById(R.id.mapBack);
-        TextView webbutton = (TextView) findViewById(R.id.toWeb);
+        TextView mapbutton = findViewById(R.id.mapBack);
+        TextView webbutton = findViewById(R.id.toWeb);
+
         mapbutton.setOnClickListener(this);
         webbutton.setOnClickListener(this);
 
@@ -48,10 +49,9 @@ public class EventActivity extends Activity implements View.OnClickListener{
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
-
     }
 
-    class estAsycTask extends AsyncTask<URL, Void, String> implements AdapterView.OnItemClickListener{
+    class estAsycTask extends AsyncTask<URL, Void, String> implements AdapterView.OnItemClickListener {
         @Override
         protected String doInBackground(URL... urls) {
             final StringBuilder result = new StringBuilder();
@@ -77,8 +77,6 @@ public class EventActivity extends Activity implements View.OnClickListener{
                     inReader.close();
                     in.close();
                 }
-
-
             } catch (MalformedURLException e1) {
                 e1.printStackTrace();
             } catch (ProtocolException e1) {
@@ -96,7 +94,7 @@ public class EventActivity extends Activity implements View.OnClickListener{
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
-            ListView listView = (ListView) findViewById(R.id.listView);
+            ListView listView = findViewById(R.id.listView);
 
             String fileText = s.toString();
             try {
@@ -113,13 +111,12 @@ public class EventActivity extends Activity implements View.OnClickListener{
                         = new EventAdapter(EventActivity.this, items);
 
                 listView.setAdapter(adapter);
-
                 listView.setOnItemClickListener(this);
-
             } catch (JSONException e) {
                 e.printStackTrace();
             }
         }
+
         @Override
         public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
             try {
@@ -127,12 +124,10 @@ public class EventActivity extends Activity implements View.OnClickListener{
                     String url = "http://www.utatsu-kogei.gr.jp/" + jsonobject.getString("link");
                     Intent eventpage = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
                     startActivity(eventpage);
-
             } catch (JSONException e) {
                 e.printStackTrace();
             }
         }
-
     }
 
     public void onClick(View v) {
@@ -142,7 +137,6 @@ public class EventActivity extends Activity implements View.OnClickListener{
             case R.id.mapBack:
                 startActivity(map);
                 break;
-
             case R.id.toWeb:
                 startActivity(homepage);
                 break;
@@ -150,8 +144,8 @@ public class EventActivity extends Activity implements View.OnClickListener{
     }
 
     @Override
-    public boolean dispatchKeyEvent(KeyEvent event){
-        if(event.getAction() == KeyEvent.ACTION_UP){
+    public boolean dispatchKeyEvent(KeyEvent event) {
+        if (event.getAction() == KeyEvent.ACTION_UP) {
             switch (event.getKeyCode()){
                 case KeyEvent.KEYCODE_BACK:
                     //ダイアログ表示などの処理を行う時はここに記述する

@@ -22,12 +22,13 @@ public class MapActivity extends Activity {
     private ImageView castleView;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
 
-        castleView = (ImageView) findViewById(R.id.imageView5);
+        castleView = findViewById(R.id.imageView5);
         //データの読み込み
         SharedPreferences data = getSharedPreferences("addKey", Context.MODE_PRIVATE);
         //キーの代入
@@ -211,14 +212,14 @@ public class MapActivity extends Activity {
         };
 
 /*map1へ画面遷移*/
-        final Button map1_1 = (Button) findViewById(R.id.button1_1);
-        final Button map1_2 = (Button) findViewById(R.id.button1_2);
-        final Button map1_3 = (Button) findViewById(R.id.button1_3);
-        final Button map1_4 = (Button) findViewById(R.id.button1_4);
-        final Button map1_5 = (Button) findViewById(R.id.button1_5);
-        final Button map1_6 = (Button) findViewById(R.id.button1_6);
-        final Button map1_7 = (Button) findViewById(R.id.button1_7);
-        final Button map1_8 = (Button) findViewById(R.id.button1_8);
+        final Button map1_1 = findViewById(R.id.button1_1);
+        final Button map1_2 = findViewById(R.id.button1_2);
+        final Button map1_3 = findViewById(R.id.button1_3);
+        final Button map1_4 = findViewById(R.id.button1_4);
+        final Button map1_5 = findViewById(R.id.button1_5);
+        final Button map1_6 = findViewById(R.id.button1_6);
+        final Button map1_7 = findViewById(R.id.button1_7);
+        final Button map1_8 = findViewById(R.id.button1_8);
 
         map1_1.setOnClickListener(a);
         map1_2.setOnClickListener(a);
@@ -230,11 +231,11 @@ public class MapActivity extends Activity {
         map1_8.setOnClickListener(a);
 
 /*map2へ画面遷移*/
-        final Button map2_1 = (Button) findViewById(R.id.button2_1);
-        final Button map2_2 = (Button) findViewById(R.id.button2_2);
-        final Button map2_3 = (Button) findViewById(R.id.button2_3);
-        final Button map2_4 = (Button) findViewById(R.id.button2_4);
-        final Button map2_5 = (Button) findViewById(R.id.button2_5);
+        final Button map2_1 = findViewById(R.id.button2_1);
+        final Button map2_2 = findViewById(R.id.button2_2);
+        final Button map2_3 = findViewById(R.id.button2_3);
+        final Button map2_4 = findViewById(R.id.button2_4);
+        final Button map2_5 = findViewById(R.id.button2_5);
 
         map2_1.setOnClickListener(b);
         map2_2.setOnClickListener(b);
@@ -244,11 +245,12 @@ public class MapActivity extends Activity {
 
 /*map3へ画面遷移*/
 
-        final Button map3_1 = (Button) findViewById(R.id.button3_1);
-        final Button map3_2 = (Button) findViewById(R.id.button3_2);
-        final Button map3_3 = (Button) findViewById(R.id.button3_3);
-        final Button map3_4 = (Button) findViewById(R.id.button3_4);
-        final Button map3_5 = (Button) findViewById(R.id.button3_5);
+        final Button map3_1 = findViewById(R.id.button3_1);
+        final Button map3_2 = findViewById(R.id.button3_2);
+        final Button map3_3 = findViewById(R.id.button3_3);
+        final Button map3_4 = findViewById(R.id.button3_4);
+        final Button map3_5 = findViewById(R.id.button3_5);
+
         map3_1.setOnClickListener(c);
         map3_2.setOnClickListener(c);
         map3_3.setOnClickListener(c);
@@ -256,19 +258,19 @@ public class MapActivity extends Activity {
         map3_5.setOnClickListener(c);
 
 /*map4へ画面遷移*/
-        final Button map4_1 = (Button) findViewById(R.id.button4_1);
-        final Button map4_2 = (Button) findViewById(R.id.button4_2);
-        final Button map4_3 = (Button) findViewById(R.id.button4_3);
+        final Button map4_1 = findViewById(R.id.button4_1);
+        final Button map4_2 = findViewById(R.id.button4_2);
+        final Button map4_3 = findViewById(R.id.button4_3);
 
         map4_1.setOnClickListener(d);
         map4_2.setOnClickListener(d);
         map4_3.setOnClickListener(d);
 
 /*map5へ画面遷移*/
-        final Button map5_1 = (Button) findViewById(R.id.button5_1);
-        final Button map5_2 = (Button) findViewById(R.id.button5_2);
-        final Button map5_3 = (Button) findViewById(R.id.button5_3);
-        final Button map5_4 = (Button) findViewById(R.id.button5_4);
+        final Button map5_1 = findViewById(R.id.button5_1);
+        final Button map5_2 = findViewById(R.id.button5_2);
+        final Button map5_3 = findViewById(R.id.button5_3);
+        final Button map5_4 = findViewById(R.id.button5_4);
 
         map5_1.setOnClickListener(e);
         map5_2.setOnClickListener(e);
@@ -276,10 +278,10 @@ public class MapActivity extends Activity {
         map5_4.setOnClickListener(e);
 
 /*map6へ画面遷移*/
-        final Button map6_1 = (Button) findViewById(R.id.button6_1);
-        final Button map6_2 = (Button) findViewById(R.id.button6_2);
-        final Button map6_3 = (Button) findViewById(R.id.button6_3);
-        final Button map6_4 = (Button) findViewById(R.id.button6_4);
+        final Button map6_1 = findViewById(R.id.button6_1);
+        final Button map6_2 = findViewById(R.id.button6_2);
+        final Button map6_3 = findViewById(R.id.button6_3);
+        final Button map6_4 = findViewById(R.id.button6_4);
 
         map6_1.setOnClickListener(f);
         map6_2.setOnClickListener(f);
@@ -287,10 +289,10 @@ public class MapActivity extends Activity {
         map6_4.setOnClickListener(f);
 
 /*map7へ画面遷移*/
-        final Button map7_1 = (Button) findViewById(R.id.button7_1);
-        final Button map7_2 = (Button) findViewById(R.id.button7_2);
-        final Button map7_3 = (Button) findViewById(R.id.button7_3);
-        final Button map7_4 = (Button) findViewById(R.id.button7_4);
+        final Button map7_1 = findViewById(R.id.button7_1);
+        final Button map7_2 = findViewById(R.id.button7_2);
+        final Button map7_3 = findViewById(R.id.button7_3);
+        final Button map7_4 = findViewById(R.id.button7_4);
 
         map7_1.setOnClickListener(g);
         map7_2.setOnClickListener(g);
@@ -298,21 +300,20 @@ public class MapActivity extends Activity {
         map7_4.setOnClickListener(g);
 
 /*図鑑へ画面遷移*/
-        final Button zukan = (Button) findViewById(R.id.zukan);
+        final Button zukan = findViewById(R.id.zukan);
 
         zukan.setOnClickListener(z);
 
 /*イベントへ画面遷移*/
-        final Button event = (Button) findViewById(R.id.event);
+        final Button event = findViewById(R.id.event);
 
         event.setOnClickListener(i);
-
     }
 
     @Override
-    public boolean dispatchKeyEvent(KeyEvent event){
-        if(event.getAction() == KeyEvent.ACTION_UP){
-            switch (event.getKeyCode()){
+    public boolean dispatchKeyEvent(KeyEvent event) {
+        if (event.getAction() == KeyEvent.ACTION_UP) {
+            switch (event.getKeyCode()) {
                 case KeyEvent.KEYCODE_BACK:
                     return true;
             }

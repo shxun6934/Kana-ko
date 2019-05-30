@@ -16,17 +16,20 @@ import static smartphoneapp_project.kanazawaapp_2017.KagaYasaiQuiz.Kaga1Activity
 
 //正解画面
 public class Kaga2Activity extends Activity {
-    String kotae;
+    private String kotae;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kaga2);
 
-        ImageView yasai_syasinn = (ImageView) findViewById(R.id.vegetable_correct);
-        TextView textView = (TextView) findViewById(R.id.vegetable_name_correct);
-        TextView textView_description = (TextView) findViewById(R.id.description);
-        Button button = (Button) findViewById(R.id.quiz_nextbutton);
+        ImageView yasai_syasinn = findViewById(R.id.vegetable_correct);
+
+        TextView textView = findViewById(R.id.vegetable_name_correct);
+        TextView textView_description = findViewById(R.id.description);
+
+        Button button = findViewById(R.id.quiz_nextbutton);
+
         if (answer >= 2) {
             button.setText("おわり");
         }
@@ -40,19 +43,16 @@ public class Kaga2Activity extends Activity {
                 yasai_syasinn.setImageResource(R.drawable.kaga_kyuuri);
                 textView.setText("かがふときゅうり");
                 break;
-
             case "ねぎ":
                 textView_description.setText(R.string.hutonegi_description);
                 yasai_syasinn.setImageResource(R.drawable.kaga_negi);
                 textView.setText("かなざわいっぽんふとねぎ");
                 break;
-
             case "れんこん":
                 textView_description.setText(R.string.rennkonn_description);
                 yasai_syasinn.setImageResource(R.drawable.kaga_renkon);
                 textView.setText("かがれんこん");
                 break;
-
             case "きんじそう":
                 textView_description.setText(R.string.kinnzisou_description);
                 yasai_syasinn.setImageResource(R.drawable.kaga_kinzisou);
@@ -60,14 +60,12 @@ public class Kaga2Activity extends Activity {
                 break;
         }
 
-
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 intent.putExtra("nextQ", "nimonme");
                 //問題番号を増やす
                 answer++;
-
                 if (answer < 3) {
                     intent.putExtra("nextQ", answer);
                     setResult(RESULT_OK, intent);
@@ -90,6 +88,5 @@ public class Kaga2Activity extends Activity {
         }
         return super.dispatchKeyEvent(event);
     }
-
 }
 

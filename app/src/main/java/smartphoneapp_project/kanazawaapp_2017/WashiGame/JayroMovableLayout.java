@@ -98,6 +98,7 @@ public class JayroMovableLayout extends FrameLayout implements SensorEventListen
             } else {
                 childView.setX(childView.getX() + sensorX);
             }
+
             if (willOver(DIRECTION_VERTICAL, childView, (int) sensorY)) {
                 childView.setY(getEdgeOf(DIRECTION_VERTICAL, childView) * Math.signum(sensorY));
             } else {
@@ -113,13 +114,11 @@ public class JayroMovableLayout extends FrameLayout implements SensorEventListen
                     return true;
                 }
                 return Math.abs(amount + v.getX()) > getEdgeOf(direction, v);
-
             case DIRECTION_VERTICAL:
                 if (scaledHeight(v) < getHeight()) {
                     return true;
                 }
                 return Math.abs(amount + v.getY()) > getEdgeOf(direction, v);
-
             default:
                 return false;
         }

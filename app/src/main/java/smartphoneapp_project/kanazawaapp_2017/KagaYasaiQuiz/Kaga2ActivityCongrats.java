@@ -24,12 +24,11 @@ public class Kaga2ActivityCongrats extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kaga2_congrats);
 
-        ImageView seikaigazou0 = (ImageView) findViewById(R.id.correct_image1);
-        ImageView seikaigazou1 = (ImageView) findViewById(R.id.correct_image2);
-        ImageView seikaigazou2 = (ImageView) findViewById(R.id.correct_image3);
+        ImageView seikaigazou0 = findViewById(R.id.correct_image1);
+        ImageView seikaigazou1 = findViewById(R.id.correct_image2);
+        ImageView seikaigazou2 = findViewById(R.id.correct_image3);
 
-        Button tap = (Button) findViewById(R.id.tap);
-
+        Button tap = findViewById(R.id.tap);
 
         switch (question.get(0)) {
             case "きんじそう":
@@ -84,13 +83,12 @@ public class Kaga2ActivityCongrats extends Activity {
                 startActivity(intent1);
             }
         });
-
     }
 
     @Override
-    public boolean dispatchKeyEvent(KeyEvent event){
-        if(event.getAction() == KeyEvent.ACTION_UP){
-            switch (event.getKeyCode()){
+    public boolean dispatchKeyEvent(KeyEvent event) {
+        if (event.getAction() == KeyEvent.ACTION_UP) {
+            switch (event.getKeyCode()) {
                 case KeyEvent.KEYCODE_BACK:
                     //ダイアログ表示などの処理を行う時はここに記述する
                     return true;
@@ -98,5 +96,4 @@ public class Kaga2ActivityCongrats extends Activity {
         }
         return super.dispatchKeyEvent(event);
     }
-
 }

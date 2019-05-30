@@ -40,13 +40,14 @@ public class EventAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent){
         convertView = layoutInflater.inflate(R.layout.event_listview_cell, parent, false);
-        TextView nameView = (TextView)convertView.findViewById(R.id.titleTextView);
+
+        TextView nameView = convertView.findViewById(R.id.titleTextView);
         nameView.setText(eventList.get(position).getName());
 
-        TextView hobbyView = (TextView)convertView.findViewById(R.id.datesTextView);
+        TextView hobbyView = convertView.findViewById(R.id.datesTextView);
         hobbyView.setText(eventList.get(position).getHobby());
 
-        TextView detailsView = (TextView)convertView.findViewById(R.id.descriptionTextView);
+        TextView detailsView = convertView.findViewById(R.id.descriptionTextView);
         detailsView.setText(eventList.get(position).getDetails());
         return convertView;
     }
