@@ -4,7 +4,9 @@
 *.ipr
 
 # Android
-.gradle
+.gradle/
+gradlew
+gradlew.bat
 local.properties
 /build
 *.apk
