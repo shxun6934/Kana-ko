@@ -20,6 +20,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.lang.reflect.Array;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.ProtocolException;
@@ -30,7 +31,6 @@ import smartphoneapp_project.kanazawaapp_2017.MapActivity;
 import smartphoneapp_project.kanazawaapp_2017.R;
 
 public class EventActivity extends Activity implements View.OnClickListener{
-
     JSONArray eventArray;
 
     @Override
@@ -38,20 +38,20 @@ public class EventActivity extends Activity implements View.OnClickListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event);
 
-        TextView mapbutton = (TextView) findViewById(R.id.mapBack);
-        TextView webbutton = (TextView) findViewById(R.id.toWeb);
+        TextView mapbutton = findViewById(R.id.mapBack);
+        TextView webbutton = findViewById(R.id.toWeb);
+
         mapbutton.setOnClickListener(this);
         webbutton.setOnClickListener(this);
 
         try {
-            new estAsycTask().execute(new URL("http://www.utatsu-kogei.gr.jp/event.json"));
+            new getAsyncTask().execute(new URL("https://info2api.city.kanazawa.ishikawa.jp/events"));
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
-
     }
 
-    class estAsycTask extends AsyncTask<URL, Void, String> implements AdapterView.OnItemClickListener{
+    class getAsyncTask extends AsyncTask<URL, Void, String> implements AdapterView.OnItemClickListener {
         @Override
         protected String doInBackground(URL... urls) {
             final StringBuilder result = new StringBuilder();
@@ -60,13 +60,12 @@ public class EventActivity extends Activity implements View.OnClickListener{
             HttpURLConnection con = null;
             try {
                 con = (HttpURLConnection) url.openConnection();
-                con.setDoInput(true);
                 con.connect();
 
                 final int status = con.getResponseCode();
                 if (status == HttpURLConnection.HTTP_OK) {
                     final InputStream in = con.getInputStream();
-                    final String encoding = "UTF8";
+                     final String encoding = "UTF8";
                     final InputStreamReader inReader = new InputStreamReader(in, encoding);
                     final BufferedReader bufReader = new BufferedReader(inReader);
                     String line = null;
@@ -77,8 +76,6 @@ public class EventActivity extends Activity implements View.OnClickListener{
                     inReader.close();
                     in.close();
                 }
-
-
             } catch (MalformedURLException e1) {
                 e1.printStackTrace();
             } catch (ProtocolException e1) {
@@ -96,53 +93,59 @@ public class EventActivity extends Activity implements View.OnClickListener{
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
-            ListView listView = (ListView) findViewById(R.id.listView);
+            ListView listView = findViewById(R.id.listView);
 
-            String fileText = s.toString();
             try {
-                JSONObject rootObject = new JSONObject(fileText);
-                eventArray = rootObject.getJSONArray("items");
+                JSONObject rootObject = new JSONObject(s);
+                eventArray = rootObject.getJSONArray("events");
 
                 ArrayList<Event> items = new ArrayList<>();
                 for (int i = 0; i < eventArray.length(); i++) {
                     JSONObject jsonobject = eventArray.getJSONObject(i);
-                    items.add(new Event(jsonobject.getString("title"), "　　日程：" + jsonobject.getString("date_from") + " ~ " + jsonobject.getString("date_to"), jsonobject.getString("description")));
+                    String title = jsonobject.getString("title");
+                    String description = jsonobject.getString("description");
+
+
+                    items.add(new Event(title));
                 }
 
                 EventAdapter adapter
                         = new EventAdapter(EventActivity.this, items);
 
                 listView.setAdapter(adapter);
-
                 listView.setOnItemClickListener(this);
-
             } catch (JSONException e) {
                 e.printStackTrace();
             }
         }
+
         @Override
-        public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
+        public void onItemClick(AdapterView<?> adapterView, View view, int i, long l)  {
             try {
-                    JSONObject jsonobject = eventArray.getJSONObject(position);
-                    String url = "http://www.utatsu-kogei.gr.jp/" + jsonobject.getString("link");
-                    Intent eventpage = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-                    startActivity(eventpage);
-
+                    JSONObject jsonObject = eventArray.getJSONObject(i);
+                    JSONArray link = jsonObject.getJSONArray("links");
+                    JSONObject selectEvent = link.getJSONObject(i);
+                    String url = selectEvent.getString("url");
+                    if (url == null) {
+                        Intent eventpage = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                        startActivity(eventpage);
+                    } else {
+                        Intent homepage = new Intent(Intent.ACTION_VIEW, Uri.parse("https://info2.city.kanazawa.ishikawa.jp/www/event/index"));
+                        startActivity(homepage);
+                    }
             } catch (JSONException e) {
                 e.printStackTrace();
             }
         }
-
     }
 
     public void onClick(View v) {
         Intent map = new Intent(EventActivity.this, MapActivity.class);
-        Intent homepage = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.utatsu-kogei.gr.jp/"));
+        Intent homepage = new Intent(Intent.ACTION_VIEW, Uri.parse("https://info2.city.kanazawa.ishikawa.jp/www/event/index"));
         switch (v.getId()){
             case R.id.mapBack:
                 startActivity(map);
                 break;
-
             case R.id.toWeb:
                 startActivity(homepage);
                 break;
@@ -150,15 +153,13 @@ public class EventActivity extends Activity implements View.OnClickListener{
     }
 
     @Override
-    public boolean dispatchKeyEvent(KeyEvent event){
-        if(event.getAction() == KeyEvent.ACTION_UP){
+    public boolean dispatchKeyEvent(KeyEvent event) {
+        if (event.getAction() == KeyEvent.ACTION_UP) {
             switch (event.getKeyCode()){
                 case KeyEvent.KEYCODE_BACK:
-                    //ダイアログ表示などの処理を行う時はここに記述する
                     return true;
             }
         }
         return super.dispatchKeyEvent(event);
     }
 }
-

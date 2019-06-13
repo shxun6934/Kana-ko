@@ -13,4 +13,7 @@
     <string name="rennkonn_description">かがれんこんは、ふつうのれんこんよりねばりがつよい。\nれんこんをむしたり、もちにしてたべるのがおすすめ。</string>
     <string name="washi">わし</string>
     <string name="washi_description">わしは、ふつうのかみよりもたいきゅうせいがある。\nそのため、かさやふくのざいりょうとしてつかわれることもある。</string>
+    <string name="backToMap">＜もどる</string>
+    <string name="KanazawaEvent">金沢市イベント情報</string>
+    <string name="goToHomepage">ホームベージ＞</string>
 </resources>

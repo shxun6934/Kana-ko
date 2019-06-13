@@ -22,25 +22,32 @@ import smartphoneapp_project.kanazawaapp_2017.R;
 public class Washi1Activity extends Activity implements SensorEventListener,View.OnClickListener {
 
     private static final String LOG_TAG = "WASHI1";
+
     private JayroMovableLayout jayroMovableLayout;
     private SensorManager sensorManager;
-    private int intentkey=0;
+
+    private int intentkey = 0;
+
     private JayroMovableLayout.SensorListenerUnregister unregister;
-    private Intent getintent= null;
-    Intent intent=null;
+
+    private Intent getintent = null;
+    Intent intent = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_washi1);
-        getintent=getIntent();
-        intentkey=getintent.getIntExtra("DIFFICULTY",0);
-        TextView imageButton = (TextView) findViewById(R.id.difficulty_back_button);
+
+        getintent = getIntent();
+        intentkey = getintent.getIntExtra("DIFFICULTY",0);
+
+        TextView imageButton = findViewById(R.id.difficulty_back_button);
         imageButton.setOnClickListener(this);
 
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        jayroMovableLayout = (JayroMovableLayout) findViewById(R.id.jayro_movable_layout);
+        jayroMovableLayout = findViewById(R.id.jayro_movable_layout);
 
         ImageView washiView = new ImageView(this);
         washiView.setId(View.generateViewId());
@@ -57,7 +64,6 @@ public class Washi1Activity extends Activity implements SensorEventListener,View
     }
 
     public void onClick(View v) {
-        //Log.d("aaa","aaaaaaa");
         Intent intent = new Intent(getApplicationContext(), DifficultyActivity.class);
         intent.putExtra("kind_game",2);
         startActivity(intent);
@@ -75,7 +81,7 @@ public class Washi1Activity extends Activity implements SensorEventListener,View
         if (unregister != null) {
             unregister.unregister();
         }
-        if(sensorManager!=null) {
+        if (sensorManager != null) {
             sensorManager.unregisterListener(this);
         }
     }
@@ -94,10 +100,11 @@ public class Washi1Activity extends Activity implements SensorEventListener,View
 
         if (count > 500) {
             Toast.makeText(this, "ふって！", Toast.LENGTH_SHORT).show();
-            Log.d(LOG_TAG, count + "");
+
             shaken++;
-             intent = new Intent(Washi1Activity.this, Washi2Activity.class);
-            if (intentkey== 1){
+
+            intent = new Intent(Washi1Activity.this, Washi2Activity.class);
+            if (intentkey == 1) {
                 if (shaken == 5) {
                     intent = new Intent(Washi1Activity.this, Washi2Activity.class);
                     Toast.makeText(this, "かんせい！！", Toast.LENGTH_SHORT).show();
@@ -105,7 +112,7 @@ public class Washi1Activity extends Activity implements SensorEventListener,View
                     shaken = 0;
                     startActivity(intent);
                 }
-            }else if (intentkey==2){
+            } else if (intentkey == 2) {
                 if (shaken == 6) {
                     intent = new Intent(Washi1Activity.this, Washi2Activity.class);
                     Toast.makeText(this, "かんせい！！", Toast.LENGTH_SHORT).show();
@@ -113,31 +120,27 @@ public class Washi1Activity extends Activity implements SensorEventListener,View
                     shaken = 0;
                     startActivity(intent);
                 }
-            }else if (intentkey==3){
-                if (shaken== 9) {
+            } else if (intentkey == 3) {
+                if (shaken == 9) {
                     intent = new Intent(Washi1Activity.this, Washi2Activity.class);
                     Toast.makeText(this, "かんせい！！", Toast.LENGTH_SHORT).show();
                     intent.putExtra("DIFFICULTY",intentkey);
                     shaken = 0;
                     startActivity(intent);
-
                 }
             }
             count = 0;
         }
     }
 
-
-
     @Override
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
-
     }
 
     @Override
     public boolean dispatchKeyEvent(KeyEvent event){
         if(event.getAction() == KeyEvent.ACTION_UP){
-            switch (event.getKeyCode()){
+            switch (event.getKeyCode()) {
                 case KeyEvent.KEYCODE_BACK:
                     //ダイアログ表示などの処理を行う時はここに記述する
                     return true;
@@ -145,6 +148,4 @@ public class Washi1Activity extends Activity implements SensorEventListener,View
         }
         return super.dispatchKeyEvent(event);
     }
-
-
 }

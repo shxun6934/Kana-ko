@@ -17,13 +17,13 @@ public class KagayasaiZukan1Activity extends Activity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_zukan_kagayasai1);
 
-        ImageView negibutton = (ImageView) findViewById(R.id.negi_image);
-        ImageView kyuributton = (ImageView) findViewById(R.id.kyuri_image);
-        ImageView kinjisoubutton = (ImageView) findViewById(R.id.kinjisou_image);
-        ImageView renkonbutton = (ImageView) findViewById(R.id.renkon_image);
-        ImageView hidariyajirusibutton = (ImageView) findViewById(R.id.yajirusi_hidari_image);
-        ImageView migiyajirusibutton = (ImageView) findViewById(R.id.yajirusi_migi_image);
-        ImageView backbutton = (ImageView) findViewById(R.id.map_back_button);
+        ImageView negibutton = findViewById(R.id.negi_image);
+        ImageView kyuributton = findViewById(R.id.kyuri_image);
+        ImageView kinjisoubutton = findViewById(R.id.kinjisou_image);
+        ImageView renkonbutton = findViewById(R.id.renkon_image);
+        ImageView hidariyajirusibutton = findViewById(R.id.yajirusi_hidari_image);
+        ImageView migiyajirusibutton = findViewById(R.id.yajirusi_migi_image);
+        ImageView backbutton = findViewById(R.id.map_back_button);
 
         negibutton.setOnClickListener(this);
         kyuributton.setOnClickListener(this);
@@ -39,46 +39,42 @@ public class KagayasaiZukan1Activity extends Activity implements View.OnClickLis
         Intent washizukan = new Intent(KagayasaiZukan1Activity.this, WashiZukanActivity.class);
         Intent kagayasaizukan2 = new Intent(KagayasaiZukan1Activity.this, KagayasaiZukan2Activity.class);
         Intent map = new Intent(KagayasaiZukan1Activity.this, MapActivity.class);
-        switch (v.getId()){
+
+        switch (v.getId()) {
             case R.id.negi_image:
                 detailszukan.putExtra("key",1);
                 startActivity(detailszukan);
                 break;
-
             case R.id.kyuri_image:
                 detailszukan.putExtra("key",2);
                 startActivity(detailszukan);
                 break;
-
             case R.id.kinjisou_image:
                 detailszukan.putExtra("key",3);
                 startActivity(detailszukan);
                 break;
-
             case R.id.renkon_image:
                 detailszukan.putExtra("key",4);
                 startActivity(detailszukan);
                 break;
-
             case R.id.yajirusi_hidari_image:
                 startActivity(washizukan);
                 overridePendingTransition(R.animator.slide_out_right, R.animator.slide_in_left);
                 break;
-
             case R.id.yajirusi_migi_image:
                 startActivity(kagayasaizukan2);
                 overridePendingTransition(R.animator.slide_in_right, R.animator.slide_out_left);
                 break;
-
             case R.id.map_back_button:
                 startActivity(map);
                 break;
         }
     }
+
     @Override
-    public boolean dispatchKeyEvent(KeyEvent event){
-        if(event.getAction() == KeyEvent.ACTION_UP){
-            switch (event.getKeyCode()){
+    public boolean dispatchKeyEvent(KeyEvent event) {
+        if (event.getAction() == KeyEvent.ACTION_UP) {
+            switch (event.getKeyCode()) {
                 case KeyEvent.KEYCODE_BACK:
                     //ダイアログ表示などの処理を行う時はここに記述する
                     return true;
@@ -86,5 +82,4 @@ public class KagayasaiZukan1Activity extends Activity implements View.OnClickLis
         }
         return super.dispatchKeyEvent(event);
     }
-
 }

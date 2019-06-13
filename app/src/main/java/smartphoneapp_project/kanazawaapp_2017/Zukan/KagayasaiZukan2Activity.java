@@ -16,9 +16,10 @@ public class KagayasaiZukan2Activity extends Activity implements View.OnClickLis
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_zukan_kagayasai2);
-        ImageView hidariyajirusibutton = (ImageView) findViewById(R.id.yajirusi_hidari_image);
-        ImageView migiyajirusibutton = (ImageView) findViewById(R.id.yajirusi_migi_image);
-        ImageView backbutton = (ImageView) findViewById(R.id.map_back_button);
+
+        ImageView hidariyajirusibutton = findViewById(R.id.yajirusi_hidari_image);
+        ImageView migiyajirusibutton = findViewById(R.id.yajirusi_migi_image);
+        ImageView backbutton = findViewById(R.id.map_back_button);
 
         hidariyajirusibutton.setOnClickListener(this);
         migiyajirusibutton.setOnClickListener(this);
@@ -26,31 +27,29 @@ public class KagayasaiZukan2Activity extends Activity implements View.OnClickLis
     }
 
     public void onClick(View v) {
-        Intent detailszukan = new Intent(KagayasaiZukan2Activity.this, DetailsZukanActivity.class);
         Intent kagayasaizukan1 = new Intent(KagayasaiZukan2Activity.this, KagayasaiZukan1Activity.class);
         Intent washizukan = new Intent(KagayasaiZukan2Activity.this, WashiZukanActivity.class);
         Intent map = new Intent(KagayasaiZukan2Activity.this, MapActivity.class);
-        switch (v.getId()){
 
+        switch (v.getId()) {
             case R.id.yajirusi_hidari_image:
                 startActivity(kagayasaizukan1);
                 overridePendingTransition(R.animator.slide_out_right, R.animator.slide_in_left);
                 break;
-
             case R.id.yajirusi_migi_image:
                 startActivity(washizukan);
                 overridePendingTransition(R.animator.slide_in_right, R.animator.slide_out_left);
                 break;
-
             case R.id.map_back_button:
                 startActivity(map);
                 break;
         }
     }
+
     @Override
-    public boolean dispatchKeyEvent(KeyEvent event){
-        if(event.getAction() == KeyEvent.ACTION_UP){
-            switch (event.getKeyCode()){
+    public boolean dispatchKeyEvent(KeyEvent event) {
+        if (event.getAction() == KeyEvent.ACTION_UP) {
+            switch (event.getKeyCode()) {
                 case KeyEvent.KEYCODE_BACK:
                     //ダイアログ表示などの処理を行う時はここに記述する
                     return true;
@@ -58,5 +57,4 @@ public class KagayasaiZukan2Activity extends Activity implements View.OnClickLis
         }
         return super.dispatchKeyEvent(event);
     }
-
 }
