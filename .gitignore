@@ -1,6 +1,13 @@
+# IntelliJ IDEA
 .idea/
-gradlew
-gradlew.bat
 *.iml
-.DS_Store
+*.ipr
+
+# Android
+.gradle
 local.properties
+/build
+*.apk
+
+# Mac
+.DS_Store
