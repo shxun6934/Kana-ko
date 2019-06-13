@@ -4,14 +4,14 @@ import java.lang.reflect.Array;
 
 public class Event {
     private String title;
-    // private String dates;
+    private String dates;
     private String description;
 
-    public Event(String title, String description){
+    public Event(String title){
         super();
 
         this.title = title;
-        // this.dates = dates;
+        this.dates = dates;
         this.description = description;
     }
 
@@ -19,9 +19,9 @@ public class Event {
         return this.title;
     }
 
-//    public String getHobby(){
-//        return this.dates;
-//    }
+    public String getHobby(){
+        return this.dates;
+    }
 
     public String getDetails(){
         return this.description;

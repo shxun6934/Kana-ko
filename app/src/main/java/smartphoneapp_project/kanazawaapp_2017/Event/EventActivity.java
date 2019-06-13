@@ -31,7 +31,6 @@ import smartphoneapp_project.kanazawaapp_2017.MapActivity;
 import smartphoneapp_project.kanazawaapp_2017.R;
 
 public class EventActivity extends Activity implements View.OnClickListener{
-
     JSONArray eventArray;
 
     @Override
@@ -103,7 +102,11 @@ public class EventActivity extends Activity implements View.OnClickListener{
                 ArrayList<Event> items = new ArrayList<>();
                 for (int i = 0; i < eventArray.length(); i++) {
                     JSONObject jsonobject = eventArray.getJSONObject(i);
-                    items.add(new Event(jsonobject.getString("title"), jsonobject.getString("description")));
+                    String title = jsonobject.getString("title");
+                    String description = jsonobject.getString("description");
+
+
+                    items.add(new Event(title));
                 }
 
                 EventAdapter adapter
@@ -117,12 +120,19 @@ public class EventActivity extends Activity implements View.OnClickListener{
         }
 
         @Override
-        public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
+        public void onItemClick(AdapterView<?> adapterView, View view, int i, long l)  {
             try {
-                    JSONObject jsonobject = eventArray.getJSONObject(position);
-                    String url = jsonobject.getString("url");
-                    Intent eventpage = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-                    startActivity(eventpage);
+                    JSONObject jsonObject = eventArray.getJSONObject(i);
+                    JSONArray link = jsonObject.getJSONArray("links");
+                    JSONObject selectEvent = link.getJSONObject(i);
+                    String url = selectEvent.getString("url");
+                    if (url == null) {
+                        Intent eventpage = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                        startActivity(eventpage);
+                    } else {
+                        Intent homepage = new Intent(Intent.ACTION_VIEW, Uri.parse("https://info2.city.kanazawa.ishikawa.jp/www/event/index"));
+                        startActivity(homepage);
+                    }
             } catch (JSONException e) {
                 e.printStackTrace();
             }
