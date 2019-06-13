@@ -9,16 +9,16 @@ Smartphone App Projectが金沢アプリコンテスト2017に提出したもの
     <tbody>
         <tr>
             <td>
-                <img src="https://github.com/shun6934/Kana-ko/wiki/images/Kanazawa-Map.png" />
+                <img src="https://github.com/shun6934/Kana-ko/wiki/images/Kanazawa-Map.png" width="400"/>
             </td>
             <td>
-                <img src="https://github.com/shun6934/Kana-ko/wiki/images/WashiGame-Description.png" />
+                <img src="https://github.com/shun6934/Kana-ko/wiki/images/WashiGame-Description.png" width="400" />
             </td>
             <td>
-                <img src="https://github.com/shun6934/Kana-ko/wiki/images/Zukan.png)" />
+                <img src="https://github.com/shun6934/Kana-ko/wiki/images/Zukan.png" width="400"/>
             </td>
             <td>
-                <img src="https://github.com/shun6934/Kana-ko/wiki/images/Event.png)" />
+                <img src="https://github.com/shun6934/Kana-ko/wiki/images/Event.png" width="400"/>
             </td>
         </tr>
     </tbody>
