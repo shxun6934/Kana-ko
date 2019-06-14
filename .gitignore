@@ -11,5 +11,8 @@ local.properties
 /build
 *.apk
 
+# Wiki
+Kanako-ko.wiki
+
 # Mac
 .DS_Store
