@@ -102,11 +102,16 @@ public class EventActivity extends Activity implements View.OnClickListener{
                 ArrayList<Event> items = new ArrayList<>();
                 for (int i = 0; i < eventArray.length(); i++) {
                     JSONObject jsonobject = eventArray.getJSONObject(i);
+
                     String title = jsonobject.getString("title");
+
+                    JSONArray dates = jsonobject.getJSONArray("dates");
+                    JSONObject event = dates.getJSONObject(0);
+                    String dateFrom = event.getString("date_from");
+
                     String description = jsonobject.getString("description");
 
-
-                    items.add(new Event(title));
+                    items.add(new Event(title, dateFrom, description));
                 }
 
                 EventAdapter adapter
@@ -123,8 +128,8 @@ public class EventActivity extends Activity implements View.OnClickListener{
         public void onItemClick(AdapterView<?> adapterView, View view, int i, long l)  {
             try {
                     JSONObject jsonObject = eventArray.getJSONObject(i);
-                    JSONArray link = jsonObject.getJSONArray("links");
-                    JSONObject selectEvent = link.getJSONObject(i);
+                    JSONArray links = jsonObject.getJSONArray("links");
+                    JSONObject selectEvent = links.getJSONObject(i);
                     String url = selectEvent.getString("url");
                     if (url == null) {
                         Intent eventpage = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
