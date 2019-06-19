@@ -44,10 +44,10 @@ public class EventAdapter extends BaseAdapter {
         TextView nameView = convertView.findViewById(R.id.titleTextView);
         nameView.setText(eventList.get(position).getName());
 
-        TextView hobbyView = convertView.findViewById(R.id.datesTextView);
+        TextView hobbyView = convertView.findViewById(R.id.dataText);
         hobbyView.setText(eventList.get(position).getHobby());
 
-        TextView detailsView = convertView.findViewById(R.id.descriptionTextView);
+        TextView detailsView = convertView.findViewById(R.id.descriptionText);
         detailsView.setText(eventList.get(position).getDetails());
 
         return convertView;

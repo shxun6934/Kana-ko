@@ -6,18 +6,34 @@
     <TextView
         android:id="@+id/titleTextView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="#000000"
-        android:textSize="15dp"
+        android:layout_height="41dp"
         android:gravity="start"
-        />
-    <TextView
-        android:id="@+id/datesTextView"
+        android:textColor="#000000"
+        android:textSize="15dp" />
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="#000000"
-        android:textSize="15dp"
-        android:gravity="start"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:text="日時："
+            android:textSize="15dp"
+            android:gravity="start"
+            />
+
+        <TextView
+            android:id="@+id/dataText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:textSize="15dp"
+            android:gravity="start"
+            />
+    </LinearLayout>
         />
     <LinearLayout
         android:layout_width="match_parent"
@@ -28,13 +44,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#000000"
-            android:text="　　詳細："
+            android:text="詳細："
             android:textSize="15dp"
             android:gravity="start"
             />
 
         <TextView
-            android:id="@+id/descriptionTextView"
+            android:id="@+id/descriptionText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="#000000"

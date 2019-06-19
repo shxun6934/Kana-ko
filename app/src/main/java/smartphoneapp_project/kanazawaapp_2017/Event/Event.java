@@ -7,7 +7,7 @@ public class Event {
     private String dates;
     private String description;
 
-    public Event(String title){
+    public Event(String title, String dates, String description){
         super();
 
         this.title = title;
